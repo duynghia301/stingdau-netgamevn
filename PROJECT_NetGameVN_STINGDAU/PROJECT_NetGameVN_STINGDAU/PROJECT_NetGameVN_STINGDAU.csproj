@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="client.cs">
+    <Compile Include="Cilents.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="client.Designer.cs">
-      <DependentUpon>client.cs</DependentUpon>
+    <Compile Include="Cilents.Designer.cs">
+      <DependentUpon>Cilents.cs</DependentUpon>
     </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
@@ -58,13 +58,22 @@
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="NapTien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NapTien.Designer.cs">
+      <DependentUpon>NapTien.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="client.resx">
-      <DependentUpon>client.cs</DependentUpon>
+    <EmbeddedResource Include="Cilents.resx">
+      <DependentUpon>Cilents.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NapTien.resx">
+      <DependentUpon>NapTien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
