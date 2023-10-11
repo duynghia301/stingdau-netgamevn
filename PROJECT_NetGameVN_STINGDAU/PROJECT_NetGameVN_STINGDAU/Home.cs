@@ -12,9 +12,14 @@ namespace PROJECT_NetGameVN_STINGDAU
 {
     public partial class frmMayChu : Form
     {
+        private List<MayTinh> danhSachMayTinh;
         public frmMayChu()
         {
             InitializeComponent();
+            danhSachMayTinh = new List<MayTinh>();
+            dgvdanhsachmay.ColumnCount = 2;
+            dgvdanhsachmay.Columns[0].Name = "Tên máy tính";
+
         }
         void ResizeTabs()
         {
@@ -32,24 +37,28 @@ namespace PROJECT_NetGameVN_STINGDAU
             tabControl1.Padding = new Point(newX, tabControl1.Padding.Y);
         }
 
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Close();
         }
 
-        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnmomay_Click(object sender, EventArgs e)
         {
 
         }
-
-        private void frmMayChu_Load(object sender, EventArgs e)
+        public class MayTinh
         {
+            public string TenMayTinh { get; set; }
+            public int SoLuongRam { get; set; }
 
+            public MayTinh(string tenMayTinh)
+            {
+                TenMayTinh = tenMayTinh;
+                
+            }
         }
     }
-}
+
+    }
