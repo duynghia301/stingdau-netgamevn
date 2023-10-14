@@ -16,7 +16,7 @@ namespace PROJECT_NetGameVN_STINGDAU
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMayChu());
+            Application.Run(new frmLogin());
         }
     }
 }
