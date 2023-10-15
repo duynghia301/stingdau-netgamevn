@@ -25,7 +25,8 @@ namespace PROJECT_NetGameVN_STINGDAU
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
             // Khởi tạo lớp Sql connection
-            SqlConnection conn = new SqlConnection(@"Data Source=TAI_VO_02\DUYNGHIA;Initial Catalog=QuanLyPhongNet;Integrated Security=True");
+            //SqlConnection conn = new SqlConnection(@"Data SourcAI_VO_02\DUe=TYNGHIA;Initial Catalog=QuanLyPhongNet;Integrated Security=True");
+            SqlConnection conn = new SqlConnection(@"Data Source=MSI\MAYAO;Initial Catalog=QuanLyPhongNet;Integrated Security=True");
             try
             {
                 conn.Open();

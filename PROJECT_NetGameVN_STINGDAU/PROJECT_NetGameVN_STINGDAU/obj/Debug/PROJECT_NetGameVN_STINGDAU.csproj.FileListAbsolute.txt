@@ -23,3 +23,18 @@ C:\Users\david\Documents\HocTap\stingdau\stingdau-netgamevn\PROJECT_NetGameVN_ST
 C:\Users\david\Documents\HocTap\stingdau\stingdau-netgamevn\PROJECT_NetGameVN_STINGDAU\PROJECT_NetGameVN_STINGDAU\obj\Debug\PROJECT_NetGameVN_STINGDAU.frmDichVu.resources
 C:\Users\david\Documents\HocTap\stingdau\stingdau-netgamevn\PROJECT_NetGameVN_STINGDAU\PROJECT_NetGameVN_STINGDAU\obj\Debug\PROJECT_NetGameVN_STINGDAU.frmDoiMatKhau.resources
 C:\Users\david\Documents\HocTap\stingdau\stingdau-netgamevn\PROJECT_NetGameVN_STINGDAU\PROJECT_NetGameVN_STINGDAU\obj\Debug\PROJECT_NetGameVN_STINGDAU.frmNapTien.resources
+C:\Users\Admin\Documents\code c#\stingdau\stingdau-netgamevn\PROJECT_NetGameVN_STINGDAU\PROJECT_NetGameVN_STINGDAU\bin\Debug\PROJECT_NetGameVN_STINGDAU.exe.config
+C:\Users\Admin\Documents\code c#\stingdau\stingdau-netgamevn\PROJECT_NetGameVN_STINGDAU\PROJECT_NetGameVN_STINGDAU\bin\Debug\PROJECT_NetGameVN_STINGDAU.exe
+C:\Users\Admin\Documents\code c#\stingdau\stingdau-netgamevn\PROJECT_NetGameVN_STINGDAU\PROJECT_NetGameVN_STINGDAU\bin\Debug\PROJECT_NetGameVN_STINGDAU.pdb
+C:\Users\Admin\Documents\code c#\stingdau\stingdau-netgamevn\PROJECT_NetGameVN_STINGDAU\PROJECT_NetGameVN_STINGDAU\obj\Debug\PROJECT_NetGameVN_STINGDAU.csprojAssemblyReference.cache
+C:\Users\Admin\Documents\code c#\stingdau\stingdau-netgamevn\PROJECT_NetGameVN_STINGDAU\PROJECT_NetGameVN_STINGDAU\obj\Debug\PROJECT_NetGameVN_STINGDAU.frmDangKy.resources
+C:\Users\Admin\Documents\code c#\stingdau\stingdau-netgamevn\PROJECT_NetGameVN_STINGDAU\PROJECT_NetGameVN_STINGDAU\obj\Debug\PROJECT_NetGameVN_STINGDAU.frmDichVu.resources
+C:\Users\Admin\Documents\code c#\stingdau\stingdau-netgamevn\PROJECT_NetGameVN_STINGDAU\PROJECT_NetGameVN_STINGDAU\obj\Debug\PROJECT_NetGameVN_STINGDAU.frmDoiMatKhau.resources
+C:\Users\Admin\Documents\code c#\stingdau\stingdau-netgamevn\PROJECT_NetGameVN_STINGDAU\PROJECT_NetGameVN_STINGDAU\obj\Debug\PROJECT_NetGameVN_STINGDAU.frmLogin.resources
+C:\Users\Admin\Documents\code c#\stingdau\stingdau-netgamevn\PROJECT_NetGameVN_STINGDAU\PROJECT_NetGameVN_STINGDAU\obj\Debug\PROJECT_NetGameVN_STINGDAU.frmMayChu.resources
+C:\Users\Admin\Documents\code c#\stingdau\stingdau-netgamevn\PROJECT_NetGameVN_STINGDAU\PROJECT_NetGameVN_STINGDAU\obj\Debug\PROJECT_NetGameVN_STINGDAU.frmNapTien.resources
+C:\Users\Admin\Documents\code c#\stingdau\stingdau-netgamevn\PROJECT_NetGameVN_STINGDAU\PROJECT_NetGameVN_STINGDAU\obj\Debug\PROJECT_NetGameVN_STINGDAU.Properties.Resources.resources
+C:\Users\Admin\Documents\code c#\stingdau\stingdau-netgamevn\PROJECT_NetGameVN_STINGDAU\PROJECT_NetGameVN_STINGDAU\obj\Debug\PROJECT_NetGameVN_STINGDAU.csproj.GenerateResource.cache
+C:\Users\Admin\Documents\code c#\stingdau\stingdau-netgamevn\PROJECT_NetGameVN_STINGDAU\PROJECT_NetGameVN_STINGDAU\obj\Debug\PROJECT_NetGameVN_STINGDAU.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\code c#\stingdau\stingdau-netgamevn\PROJECT_NetGameVN_STINGDAU\PROJECT_NetGameVN_STINGDAU\obj\Debug\PROJECT_NetGameVN_STINGDAU.exe
+C:\Users\Admin\Documents\code c#\stingdau\stingdau-netgamevn\PROJECT_NetGameVN_STINGDAU\PROJECT_NetGameVN_STINGDAU\obj\Debug\PROJECT_NetGameVN_STINGDAU.pdb
