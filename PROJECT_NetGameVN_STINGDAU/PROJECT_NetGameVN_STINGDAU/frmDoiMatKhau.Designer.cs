@@ -98,7 +98,7 @@
             this.textBox6.Location = new System.Drawing.Point(179, 163);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(198, 26);
-            this.textBox6.TabIndex = 3;
+            this.textBox6.TabIndex = 2;
             // 
             // textBox3
             // 
@@ -106,7 +106,7 @@
             this.textBox3.Location = new System.Drawing.Point(179, 206);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(198, 26);
-            this.textBox3.TabIndex = 4;
+            this.textBox3.TabIndex = 3;
             // 
             // textBox2
             // 
@@ -114,7 +114,7 @@
             this.textBox2.Location = new System.Drawing.Point(179, 120);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(198, 26);
-            this.textBox2.TabIndex = 6;
+            this.textBox2.TabIndex = 1;
             // 
             // textBox1
             // 
@@ -122,7 +122,7 @@
             this.textBox1.Location = new System.Drawing.Point(179, 79);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(198, 26);
-            this.textBox1.TabIndex = 8;
+            this.textBox1.TabIndex = 0;
             // 
             // btnApply
             // 
@@ -131,7 +131,7 @@
             this.btnApply.Location = new System.Drawing.Point(289, 264);
             this.btnApply.Name = "btnApply";
             this.btnApply.Size = new System.Drawing.Size(88, 31);
-            this.btnApply.TabIndex = 16;
+            this.btnApply.TabIndex = 4;
             this.btnApply.Text = "Apply";
             this.btnApply.UseVisualStyleBackColor = true;
             // 
@@ -141,7 +141,7 @@
             this.btnCancel.Location = new System.Drawing.Point(179, 264);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(88, 31);
-            this.btnCancel.TabIndex = 17;
+            this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 

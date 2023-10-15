@@ -213,7 +213,7 @@
     <value>223, 26</value>
   </data>
   <data name="txtMatKhau.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;txtMatKhau.Name" xml:space="preserve">
     <value>txtMatKhau</value>
@@ -237,7 +237,7 @@
     <value>104, 34</value>
   </data>
   <data name="btnDangNhap.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="btnDangNhap.Text" xml:space="preserve">
     <value>Đăng Nhập</value>

@@ -76,7 +76,7 @@
             this.txtMaDV.Location = new System.Drawing.Point(133, 23);
             this.txtMaDV.Name = "txtMaDV";
             this.txtMaDV.Size = new System.Drawing.Size(198, 26);
-            this.txtMaDV.TabIndex = 3;
+            this.txtMaDV.TabIndex = 0;
             // 
             // txtTenDV
             // 
@@ -84,7 +84,7 @@
             this.txtTenDV.Location = new System.Drawing.Point(133, 68);
             this.txtTenDV.Name = "txtTenDV";
             this.txtTenDV.Size = new System.Drawing.Size(198, 26);
-            this.txtTenDV.TabIndex = 3;
+            this.txtTenDV.TabIndex = 1;
             // 
             // label3
             // 
@@ -103,7 +103,7 @@
             this.txtGiaTien.Location = new System.Drawing.Point(133, 115);
             this.txtGiaTien.Name = "txtGiaTien";
             this.txtGiaTien.Size = new System.Drawing.Size(198, 26);
-            this.txtGiaTien.TabIndex = 3;
+            this.txtGiaTien.TabIndex = 2;
             // 
             // label4
             // 
@@ -122,7 +122,7 @@
             this.btnThem.Location = new System.Drawing.Point(133, 161);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(198, 32);
-            this.btnThem.TabIndex = 5;
+            this.btnThem.TabIndex = 3;
             this.btnThem.Text = "Thêm Dịch Vụ";
             this.btnThem.UseVisualStyleBackColor = true;
             // 
@@ -132,7 +132,7 @@
             this.btnXoa.Location = new System.Drawing.Point(133, 214);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(198, 32);
-            this.btnXoa.TabIndex = 5;
+            this.btnXoa.TabIndex = 4;
             this.btnXoa.Text = "Xóa Dịch Vụ";
             this.btnXoa.UseVisualStyleBackColor = true;
             // 
@@ -153,7 +153,7 @@
             this.btnBaoCao.Location = new System.Drawing.Point(133, 327);
             this.btnBaoCao.Name = "btnBaoCao";
             this.btnBaoCao.Size = new System.Drawing.Size(198, 32);
-            this.btnBaoCao.TabIndex = 5;
+            this.btnBaoCao.TabIndex = 6;
             this.btnBaoCao.Text = "Báo Cáo";
             this.btnBaoCao.UseVisualStyleBackColor = true;
             // 

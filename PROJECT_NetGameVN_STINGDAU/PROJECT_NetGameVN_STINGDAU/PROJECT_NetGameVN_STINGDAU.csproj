@@ -110,6 +110,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -123,6 +124,186 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\28-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\28-5121.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\512_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1392495957.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\13924959571.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2015101183320.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20151011833201.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\app_type_catalog_512px_GREY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\app_type_catalog_512px_GREY1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Apply.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blog.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Calendar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dangnhap.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dangnhap1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete-button-png-27.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete-button-png-271.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disc_256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doimk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doimk1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fast-food-icon-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fast-food-icon-11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\google-sites-icon-large.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\google-sites-icon-large1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-seta1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\internet-startup-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\máy tính.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nhanvien.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nhanvien1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\order-icon-21627 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sa_three.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sync.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\systemcpl_dll_01_14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trangchu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tune.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\uc_shikamaru-mj_hardware.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Unlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User group.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_cards-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vector_285_14-01-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\View.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wsecedit_dll_05_13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\28-5122.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\28-5123.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\28-5124.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\28-5125.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\28-5126.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\28-5127.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\28-5128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\28-5129.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

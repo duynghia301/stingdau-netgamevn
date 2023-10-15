@@ -52,7 +52,7 @@
             this.txtUserName.Location = new System.Drawing.Point(178, 85);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(198, 26);
-            this.txtUserName.TabIndex = 15;
+            this.txtUserName.TabIndex = 1;
             // 
             // label1
             // 
@@ -71,7 +71,7 @@
             this.txtTienNap.Location = new System.Drawing.Point(178, 129);
             this.txtTienNap.Name = "txtTienNap";
             this.txtTienNap.Size = new System.Drawing.Size(198, 26);
-            this.txtTienNap.TabIndex = 15;
+            this.txtTienNap.TabIndex = 2;
             // 
             // label3
             // 
@@ -90,7 +90,7 @@
             this.btnNapTien.Location = new System.Drawing.Point(288, 174);
             this.btnNapTien.Name = "btnNapTien";
             this.btnNapTien.Size = new System.Drawing.Size(88, 31);
-            this.btnNapTien.TabIndex = 18;
+            this.btnNapTien.TabIndex = 3;
             this.btnNapTien.Text = "Nạp Tiền";
             this.btnNapTien.UseVisualStyleBackColor = true;
             // 
