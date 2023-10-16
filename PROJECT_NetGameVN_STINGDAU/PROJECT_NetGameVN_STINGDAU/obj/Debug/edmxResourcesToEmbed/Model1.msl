@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="quanlynetModelStoreContainer" CdmEntityContainer="quanlynetEntities">
+    <EntitySetMapping Name="MayTinhs">
+      <EntityTypeMapping TypeName="quanlynetModel.MayTinh">
+        <MappingFragment StoreEntitySet="MayTinh">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ten_may" ColumnName="ten_may" />
+          <ScalarProperty Name="trang_thai" ColumnName="trang_thai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MoMays">
+      <EntityTypeMapping TypeName="quanlynetModel.MoMay">
+        <MappingFragment StoreEntitySet="MoMay">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="may_tinh_id" ColumnName="may_tinh_id" />
+          <ScalarProperty Name="time_mo" ColumnName="time_mo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="quanlynetModel.user">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ten_dang_nhap" ColumnName="ten_dang_nhap" />
+          <ScalarProperty Name="mat_khau" ColumnName="mat_khau" />
+          <ScalarProperty Name="so_dien_thoai" ColumnName="so_dien_thoai" />
+          <ScalarProperty Name="ho_ten" ColumnName="ho_ten" />
+          <ScalarProperty Name="naptien" ColumnName="naptien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
