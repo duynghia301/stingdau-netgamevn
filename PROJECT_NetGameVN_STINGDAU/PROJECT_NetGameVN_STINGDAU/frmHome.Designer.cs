@@ -35,7 +35,7 @@
             this.picLockClient = new System.Windows.Forms.PictureBox();
             this.picShutdownClient = new System.Windows.Forms.PictureBox();
             this.txtTotal = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dvgList = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -124,7 +124,7 @@
             this.tabMayTram.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLockClient)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picShutdownClient)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabTaiKhoan.SuspendLayout();
@@ -212,7 +212,7 @@
             this.tabMayTram.Controls.Add(this.picLockClient);
             this.tabMayTram.Controls.Add(this.picShutdownClient);
             this.tabMayTram.Controls.Add(this.txtTotal);
-            this.tabMayTram.Controls.Add(this.dataGridView1);
+            this.tabMayTram.Controls.Add(this.dvgList);
             this.tabMayTram.Controls.Add(this.label5);
             this.tabMayTram.Controls.Add(this.label4);
             this.tabMayTram.Controls.Add(this.label3);
@@ -257,14 +257,16 @@
             this.txtTotal.Size = new System.Drawing.Size(229, 31);
             this.txtTotal.TabIndex = 3;
             // 
-            // dataGridView1
+            // dvgList
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 116);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1060, 485);
-            this.dataGridView1.TabIndex = 2;
+            this.dvgList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dvgList.BackgroundColor = System.Drawing.Color.White;
+            this.dvgList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgList.Location = new System.Drawing.Point(3, 116);
+            this.dvgList.Name = "dvgList";
+            this.dvgList.Size = new System.Drawing.Size(1060, 485);
+            this.dvgList.TabIndex = 2;
+            this.dvgList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgList_CellContentClick);
             // 
             // label5
             // 
@@ -1088,7 +1090,7 @@
             this.tabMayTram.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLockClient)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picShutdownClient)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabTaiKhoan.ResumeLayout(false);
@@ -1150,7 +1152,7 @@
         private System.Windows.Forms.TabPage tabDichVu;
         private System.Windows.Forms.Button btnDangXuat;
         private System.Windows.Forms.TabPage tabGroupMems;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dvgList;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
