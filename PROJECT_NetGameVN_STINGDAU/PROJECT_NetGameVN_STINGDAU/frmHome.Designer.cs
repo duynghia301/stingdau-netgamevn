@@ -35,7 +35,7 @@
             this.picLockClient = new System.Windows.Forms.PictureBox();
             this.picShutdownClient = new System.Windows.Forms.PictureBox();
             this.txtTotal = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dvgList = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,7 +49,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbxTimTk = new System.Windows.Forms.ComboBox();
             this.dgvListTaiKhoan = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -124,7 +124,7 @@
             this.tabMayTram.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLockClient)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picShutdownClient)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabTaiKhoan.SuspendLayout();
@@ -212,7 +212,7 @@
             this.tabMayTram.Controls.Add(this.picLockClient);
             this.tabMayTram.Controls.Add(this.picShutdownClient);
             this.tabMayTram.Controls.Add(this.txtTotal);
-            this.tabMayTram.Controls.Add(this.dataGridView1);
+            this.tabMayTram.Controls.Add(this.dvgList);
             this.tabMayTram.Controls.Add(this.label5);
             this.tabMayTram.Controls.Add(this.label4);
             this.tabMayTram.Controls.Add(this.label3);
@@ -242,7 +242,7 @@
             // 
             // picShutdownClient
             // 
-            this.picShutdownClient.Image = global::PROJECT_NetGameVN_STINGDAU.Properties.Resources.Delete;
+            this.picShutdownClient.Image = global::PROJECT_NetGameVN_STINGDAU.Properties.Resources.google_sites_icon_large;
             this.picShutdownClient.Location = new System.Drawing.Point(394, 20);
             this.picShutdownClient.Name = "picShutdownClient";
             this.picShutdownClient.Size = new System.Drawing.Size(79, 65);
@@ -257,14 +257,16 @@
             this.txtTotal.Size = new System.Drawing.Size(229, 31);
             this.txtTotal.TabIndex = 3;
             // 
-            // dataGridView1
+            // dvgList
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 116);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1060, 485);
-            this.dataGridView1.TabIndex = 2;
+            this.dvgList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dvgList.BackgroundColor = System.Drawing.Color.White;
+            this.dvgList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgList.Location = new System.Drawing.Point(3, 116);
+            this.dvgList.Name = "dvgList";
+            this.dvgList.Size = new System.Drawing.Size(1060, 485);
+            this.dvgList.TabIndex = 2;
+            this.dvgList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgList_CellContentClick);
             // 
             // label5
             // 
@@ -383,7 +385,7 @@
             // 
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.pictureBox9);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cbxTimTk);
             this.groupBox1.Location = new System.Drawing.Point(26, 33);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(595, 100);
@@ -406,13 +408,13 @@
             this.pictureBox9.TabIndex = 21;
             this.pictureBox9.TabStop = false;
             // 
-            // comboBox1
+            // cbxTimTk
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 38);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(247, 31);
-            this.comboBox1.TabIndex = 18;
+            this.cbxTimTk.FormattingEnabled = true;
+            this.cbxTimTk.Location = new System.Drawing.Point(12, 38);
+            this.cbxTimTk.Name = "cbxTimTk";
+            this.cbxTimTk.Size = new System.Drawing.Size(247, 31);
+            this.cbxTimTk.TabIndex = 18;
             // 
             // dgvListTaiKhoan
             // 
@@ -1088,7 +1090,7 @@
             this.tabMayTram.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLockClient)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picShutdownClient)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabTaiKhoan.ResumeLayout(false);
@@ -1150,7 +1152,7 @@
         private System.Windows.Forms.TabPage tabDichVu;
         private System.Windows.Forms.Button btnDangXuat;
         private System.Windows.Forms.TabPage tabGroupMems;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dvgList;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -1164,7 +1166,7 @@
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.DataGridView dgvListTaiKhoan;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbxTimTk;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox6;

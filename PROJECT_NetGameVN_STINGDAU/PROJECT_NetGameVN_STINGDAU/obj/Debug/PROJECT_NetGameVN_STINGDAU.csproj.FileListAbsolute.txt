@@ -43,3 +43,8 @@ C:\Users\Admin\Documents\code c#\stingdau\stingdau-netgamevn\PROJECT_NetGameVN_S
 C:\Users\Admin\Documents\code c#\stingdau\stingdau-netgamevn\PROJECT_NetGameVN_STINGDAU\PROJECT_NetGameVN_STINGDAU\bin\Debug\EntityFramework.xml
 C:\Users\Admin\Documents\code c#\stingdau\stingdau-netgamevn\PROJECT_NetGameVN_STINGDAU\PROJECT_NetGameVN_STINGDAU\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Admin\Documents\code c#\stingdau\stingdau-netgamevn\PROJECT_NetGameVN_STINGDAU\PROJECT_NetGameVN_STINGDAU\obj\Debug\PROJECT_NetGameVN_STINGDAU.csproj.CopyComplete
+C:\Users\david\Documents\HocTap\StingDau\stingdau-netgamevn\PROJECT_NetGameVN_STINGDAU\PROJECT_NetGameVN_STINGDAU\bin\Debug\EntityFramework.dll
+C:\Users\david\Documents\HocTap\StingDau\stingdau-netgamevn\PROJECT_NetGameVN_STINGDAU\PROJECT_NetGameVN_STINGDAU\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\david\Documents\HocTap\StingDau\stingdau-netgamevn\PROJECT_NetGameVN_STINGDAU\PROJECT_NetGameVN_STINGDAU\bin\Debug\EntityFramework.xml
+C:\Users\david\Documents\HocTap\StingDau\stingdau-netgamevn\PROJECT_NetGameVN_STINGDAU\PROJECT_NetGameVN_STINGDAU\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\david\Documents\HocTap\StingDau\stingdau-netgamevn\PROJECT_NetGameVN_STINGDAU\PROJECT_NetGameVN_STINGDAU\obj\Debug\PROJECT_NetGameVN_STINGDAU.csproj.CopyComplete

@@ -15,13 +15,12 @@ namespace PROJECT_NetGameVN_STINGDAU
     {
         public static TimeSpan GetTimeFromMoney(int money)
         {
-            return TimeSpan.FromHours(money / 10000);
+            const int costPerHour = 10000;
+            double hours = (double)money / costPerHour;
+            return TimeSpan.FromHours(hours);
         }
 
-        public static TimeSpan ConvertMoneyToTime(int money)
-        {
-            return TimeSpan.FromMinutes(money / 10000);
-        }
+       
 
         public frmDangKy()
         {
@@ -56,8 +55,7 @@ namespace PROJECT_NetGameVN_STINGDAU
                 int money = int.Parse((txtAmount.Text));
                 if (money <= 10000)
                 {
-                    MessageBox.Show("số tiền phải napj phải lớn hơn 10k ");
-
+                    MessageBox.Show("số tiền phải nạp phải lớn hơn 10 nghìn đồng ");
                     return;
                 }
                 TimeSpan timeSpan = GetTimeFromMoney(money);

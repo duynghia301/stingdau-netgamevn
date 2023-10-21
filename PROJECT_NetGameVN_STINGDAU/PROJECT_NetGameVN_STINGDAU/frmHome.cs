@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PROJECT_NetGameVN_STINGDAU.DPContext;
+
+
 namespace PROJECT_NetGameVN_STINGDAU
 {
     public partial class frmMayChu : Form
@@ -20,7 +22,80 @@ namespace PROJECT_NetGameVN_STINGDAU
         {
             InitializeComponent();
         }
-       
+
+        //Máy trạm
+
+        public void Display()
+        {
+            using (NetGameVNEntities _entity = new NetGameVNEntities())
+            {
+                List<Client> _ClientList = new List<Client>();
+                _ClientList = _entity.tbClients.Select(x => new Client
+                {
+                    ClientName = x.ClientName,
+                    GrroupClientName = x.GroupClientName,
+                    StatusClient = x.StatusClient,
+                    Note = x.Note
+                }).ToList();
+                dvgList.DataSource = _ClientList;
+
+
+
+            }
+        }
+        public void DisplayMember()
+        {
+
+            using (NetGameVNEntities _entity = new NetGameVNEntities())
+            {
+                List<Members> _MembersList = new List<Members>();
+                _MembersList = _entity.tbMembers.Select(x => new Members
+                {
+                    MemberID = x.MemberID,
+                    UserName = x.UserName,
+                    Password = x.Password,
+                    Phone = x.Phone,
+                    GroupUser = x.GroupUser,
+                    CurrentTime=x.CurrentTime,
+                    CurrentMoney= x.CurrentMoney,
+                    StatusAccount = x.StatusAccount,
+                    Fullname = x.Fullname,
+                    Birthday = x.Birthday
+                }).ToList();
+                dgvListTaiKhoan.DataSource = _MembersList;
+            }
+               
+
+        }
+        
+
+        private void frmMayChu_Load(object sender, EventArgs e)
+        {
+            Display();
+            DisplayMember();
+
+
+
+            cbxTimTk.Items.Add("UserName");
+            cbxTimTk.Items.Add("Phone");
+            cbxTimTk.Items.Add("GroupUser");
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         void ResizeTabs()
         {
             int numTabs = tabControl1.TabCount;
@@ -49,10 +124,7 @@ namespace PROJECT_NetGameVN_STINGDAU
 
         }
 
-        private void frmMayChu_Load(object sender, EventArgs e)
-        {
-
-        }
+        
         private void LoadSourceToDRGV()
         {
             drgvFood.Columns[0].HeaderText = "Mã Định Danh";
@@ -108,6 +180,8 @@ namespace PROJECT_NetGameVN_STINGDAU
 
         }
 
+
+
         private void đăngKýTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
@@ -120,6 +194,11 @@ namespace PROJECT_NetGameVN_STINGDAU
         {
             frmDoiMatKhau doiMatKhau = new frmDoiMatKhau();
             doiMatKhau.Show();
+        }
+
+        private void dvgList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

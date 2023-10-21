@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using PROJECT_NetGameVN_STINGDAU.DPContext;
+
 namespace PROJECT_NetGameVN_STINGDAU
 {
     public partial class frmLogin : Form
@@ -20,7 +21,7 @@ namespace PROJECT_NetGameVN_STINGDAU
             InitializeComponent();
         }
 
-    
+
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
@@ -29,7 +30,7 @@ namespace PROJECT_NetGameVN_STINGDAU
                
                 string tk = txtTaiKhoan.Text;
                 string mk = txtMatKhau.Text;
-                tbAdmin _user = db.tbAdmins.Where(s => s.UserName == tk  && s.Password == mk).FirstOrDefault();
+                tbAdmin _user = db.tbAdmins.Where(s => s.UserName == tk && s.Password == mk).FirstOrDefault();
 
                 if (_user != null)
                 {
@@ -55,9 +56,26 @@ namespace PROJECT_NetGameVN_STINGDAU
 
         }
 
+
+         
+
         private void frmLogin_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void chkShowPass_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkShowPass.Checked)
+            {
+               
+                txtMatKhau.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                
+                txtMatKhau.UseSystemPasswordChar = true;
+            }
         }
     }
 }
