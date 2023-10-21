@@ -47,7 +47,7 @@ namespace PROJECT_NetGameVN_STINGDAU
                 int money = int.Parse((txtAmount.Text));
                 if (money <= 10.0000)
                 {
-                    MessageBox.Show("số tiền phải napj phải lớn hơn 10k ");
+                    MessageBox.Show("số tiền phải nạp phải lớn hơn 10 nghìn đồng ");
                     return;
                 }
                 st.UserName = txtUser.Text;

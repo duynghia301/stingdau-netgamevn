@@ -34,6 +34,7 @@
             this.txtTaiKhoan = new System.Windows.Forms.TextBox();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.btnDangNhap = new System.Windows.Forms.Button();
+            this.chkShowPass = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -66,17 +67,25 @@
             this.btnDangNhap.UseVisualStyleBackColor = false;
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
+            // chkShowPass
+            // 
+            resources.ApplyResources(this.chkShowPass, "chkShowPass");
+            this.chkShowPass.Name = "chkShowPass";
+            this.chkShowPass.UseVisualStyleBackColor = true;
+            this.chkShowPass.CheckedChanged += new System.EventHandler(this.chkShowPass_CheckedChanged);
+            // 
             // frmLogin
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.chkShowPass);
             this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.txtMatKhau);
             this.Controls.Add(this.txtTaiKhoan);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmLogin";
-        
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmLogin_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -89,5 +98,6 @@
         private System.Windows.Forms.TextBox txtTaiKhoan;
         private System.Windows.Forms.TextBox txtMatKhau;
         private System.Windows.Forms.Button btnDangNhap;
+        private System.Windows.Forms.CheckBox chkShowPass;
     }
 }

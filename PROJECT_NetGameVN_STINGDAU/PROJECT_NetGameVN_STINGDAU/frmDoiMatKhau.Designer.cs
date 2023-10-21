@@ -33,12 +33,20 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNewPass = new System.Windows.Forms.TextBox();
+            this.txtConfirm = new System.Windows.Forms.TextBox();
+            this.txtOldPass = new System.Windows.Forms.TextBox();
+            this.txtUserName = new System.Windows.Forms.TextBox();
             this.btnApply = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chkShowPass = new System.Windows.Forms.CheckBox();
+            this.lblShowUser = new System.Windows.Forms.Label();
+            this.lblShowOld = new System.Windows.Forms.Label();
+            this.lblShowNew = new System.Windows.Forms.Label();
+            this.lblShowInfor = new System.Windows.Forms.Label();
+            this.lblShowConf = new System.Windows.Forms.Label();
+            this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
             this.SuspendLayout();
             // 
             // label1
@@ -56,7 +64,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(56, 171);
+            this.label7.Location = new System.Drawing.Point(56, 202);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(121, 18);
             this.label7.TabIndex = 9;
@@ -66,7 +74,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(56, 214);
+            this.label4.Location = new System.Drawing.Point(56, 256);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 18);
             this.label4.TabIndex = 10;
@@ -76,7 +84,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(56, 128);
+            this.label3.Location = new System.Drawing.Point(56, 144);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(114, 18);
             this.label3.TabIndex = 12;
@@ -92,77 +100,172 @@
             this.label2.TabIndex = 14;
             this.label2.Text = "User Name";
             // 
-            // textBox6
+            // txtNewPass
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(179, 163);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(198, 26);
-            this.textBox6.TabIndex = 2;
+            this.txtNewPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNewPass.Location = new System.Drawing.Point(179, 194);
+            this.txtNewPass.Name = "txtNewPass";
+            this.txtNewPass.Size = new System.Drawing.Size(198, 26);
+            this.txtNewPass.TabIndex = 2;
             // 
-            // textBox3
+            // txtConfirm
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(179, 206);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(198, 26);
-            this.textBox3.TabIndex = 3;
+            this.txtConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConfirm.Location = new System.Drawing.Point(179, 248);
+            this.txtConfirm.Name = "txtConfirm";
+            this.txtConfirm.Size = new System.Drawing.Size(198, 26);
+            this.txtConfirm.TabIndex = 3;
             // 
-            // textBox2
+            // txtOldPass
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(179, 120);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(198, 26);
-            this.textBox2.TabIndex = 1;
+            this.txtOldPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOldPass.Location = new System.Drawing.Point(179, 136);
+            this.txtOldPass.Name = "txtOldPass";
+            this.txtOldPass.Size = new System.Drawing.Size(198, 26);
+            this.txtOldPass.TabIndex = 1;
+            this.txtOldPass.UseSystemPasswordChar = true;
             // 
-            // textBox1
+            // txtUserName
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(179, 79);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(198, 26);
-            this.textBox1.TabIndex = 0;
+            this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserName.Location = new System.Drawing.Point(179, 79);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(198, 26);
+            this.txtUserName.TabIndex = 0;
             // 
             // btnApply
             // 
             this.btnApply.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnApply.ForeColor = System.Drawing.Color.Red;
-            this.btnApply.Location = new System.Drawing.Point(289, 264);
+            this.btnApply.Location = new System.Drawing.Point(289, 353);
             this.btnApply.Name = "btnApply";
             this.btnApply.Size = new System.Drawing.Size(88, 31);
             this.btnApply.TabIndex = 4;
             this.btnApply.Text = "Apply";
             this.btnApply.UseVisualStyleBackColor = true;
+            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(179, 264);
+            this.btnCancel.Location = new System.Drawing.Point(179, 353);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(88, 31);
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(0, 0);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(80, 17);
+            this.checkBox1.TabIndex = 15;
+            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // chkShowPass
+            // 
+            this.chkShowPass.AutoSize = true;
+            this.chkShowPass.Location = new System.Drawing.Point(276, 300);
+            this.chkShowPass.Name = "chkShowPass";
+            this.chkShowPass.Size = new System.Drawing.Size(101, 17);
+            this.chkShowPass.TabIndex = 16;
+            this.chkShowPass.Text = "Show password";
+            this.chkShowPass.UseVisualStyleBackColor = true;
+            this.chkShowPass.CheckedChanged += new System.EventHandler(this.chkShowPass_CheckedChanged);
+            // 
+            // lblShowUser
+            // 
+            this.lblShowUser.AutoSize = true;
+            this.lblShowUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShowUser.ForeColor = System.Drawing.Color.White;
+            this.lblShowUser.Location = new System.Drawing.Point(186, 108);
+            this.lblShowUser.Name = "lblShowUser";
+            this.lblShowUser.Size = new System.Drawing.Size(13, 18);
+            this.lblShowUser.TabIndex = 17;
+            this.lblShowUser.Text = "-";
+            // 
+            // lblShowOld
+            // 
+            this.lblShowOld.AutoSize = true;
+            this.lblShowOld.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShowOld.ForeColor = System.Drawing.Color.White;
+            this.lblShowOld.Location = new System.Drawing.Point(186, 165);
+            this.lblShowOld.Name = "lblShowOld";
+            this.lblShowOld.Size = new System.Drawing.Size(13, 18);
+            this.lblShowOld.TabIndex = 18;
+            this.lblShowOld.Text = "-";
+            // 
+            // lblShowNew
+            // 
+            this.lblShowNew.AutoSize = true;
+            this.lblShowNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShowNew.ForeColor = System.Drawing.Color.White;
+            this.lblShowNew.Location = new System.Drawing.Point(186, 223);
+            this.lblShowNew.Name = "lblShowNew";
+            this.lblShowNew.Size = new System.Drawing.Size(13, 18);
+            this.lblShowNew.TabIndex = 19;
+            this.lblShowNew.Text = "-";
+            // 
+            // lblShowInfor
+            // 
+            this.lblShowInfor.AutoSize = true;
+            this.lblShowInfor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShowInfor.ForeColor = System.Drawing.Color.Black;
+            this.lblShowInfor.Location = new System.Drawing.Point(67, 326);
+            this.lblShowInfor.Name = "lblShowInfor";
+            this.lblShowInfor.Size = new System.Drawing.Size(13, 18);
+            this.lblShowInfor.TabIndex = 20;
+            this.lblShowInfor.Text = "-";
+            // 
+            // lblShowConf
+            // 
+            this.lblShowConf.AutoSize = true;
+            this.lblShowConf.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShowConf.ForeColor = System.Drawing.Color.Black;
+            this.lblShowConf.Location = new System.Drawing.Point(176, 277);
+            this.lblShowConf.Name = "lblShowConf";
+            this.lblShowConf.Size = new System.Drawing.Size(13, 18);
+            this.lblShowConf.TabIndex = 20;
+            this.lblShowConf.Text = "-";
+            // 
+            // entityCommand1
+            // 
+            this.entityCommand1.CommandTimeout = 0;
+            this.entityCommand1.CommandTree = null;
+            this.entityCommand1.Connection = null;
+            this.entityCommand1.EnablePlanCaching = true;
+            this.entityCommand1.Transaction = null;
             // 
             // frmDoiMatKhau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(426, 337);
+            this.ClientSize = new System.Drawing.Size(449, 422);
+            this.Controls.Add(this.lblShowConf);
+            this.Controls.Add(this.lblShowInfor);
+            this.Controls.Add(this.lblShowNew);
+            this.Controls.Add(this.lblShowOld);
+            this.Controls.Add(this.lblShowUser);
+            this.Controls.Add(this.chkShowPass);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnApply);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNewPass);
+            this.Controls.Add(this.txtConfirm);
+            this.Controls.Add(this.txtOldPass);
+            this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.label1);
             this.Name = "frmDoiMatKhau";
             this.Text = "Đổi mật khẩu";
+            this.Load += new System.EventHandler(this.frmDoiMatKhau_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,11 +278,19 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNewPass;
+        private System.Windows.Forms.TextBox txtConfirm;
+        private System.Windows.Forms.TextBox txtOldPass;
+        private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.Button btnApply;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chkShowPass;
+        private System.Windows.Forms.Label lblShowUser;
+        private System.Windows.Forms.Label lblShowOld;
+        private System.Windows.Forms.Label lblShowNew;
+        private System.Windows.Forms.Label lblShowInfor;
+        private System.Windows.Forms.Label lblShowConf;
+        private System.Data.Entity.Core.EntityClient.EntityCommand entityCommand1;
     }
 }

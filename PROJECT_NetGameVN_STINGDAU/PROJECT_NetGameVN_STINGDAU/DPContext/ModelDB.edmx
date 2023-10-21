@@ -1,0 +1,412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="NetGameVNModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="tbAdmins">
+          <Key>
+            <PropertyRef Name="Id_admin" />
+          </Key>
+          <Property Name="Id_admin" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="fullname" Type="nvarchar" MaxLength="10" />
+          <Property Name="GroupUser" Type="nvarchar" MaxLength="30" />
+          <Property Name="isLock" Type="bit" />
+        </EntityType>
+        <EntityType Name="tbClient">
+          <Key>
+            <PropertyRef Name="ClientName" />
+          </Key>
+          <Property Name="ClientName" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="GroupClientName" Type="varchar" MaxLength="30" />
+          <Property Name="StatusClient" Type="nvarchar" MaxLength="50" />
+          <Property Name="Note" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="tbGroupClient">
+          <Key>
+            <PropertyRef Name="GroupName" />
+          </Key>
+          <Property Name="GroupName" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Discription" Type="nvarchar" MaxLength="120" />
+        </EntityType>
+        <EntityType Name="tbGroupUser">
+          <Key>
+            <PropertyRef Name="GroupName" />
+          </Key>
+          <Property Name="GroupName" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="TypeName" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="tbLoginUsers">
+          <Key>
+            <PropertyRef Name="MemberID" />
+            <PropertyRef Name="ClientName" />
+          </Key>
+          <Property Name="MemberID" Type="int" Nullable="false" />
+          <Property Name="ClientName" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="StartTime" Type="time" Precision="7" />
+          <Property Name="UseTime" Type="time" Precision="7" />
+          <Property Name="LeftTime" Type="time" Precision="7" />
+        </EntityType>
+        <EntityType Name="tbMembers">
+          <Key>
+            <PropertyRef Name="MemberID" />
+          </Key>
+          <Property Name="MemberID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="30" />
+          <Property Name="Password" Type="varchar" MaxLength="30" />
+          <Property Name="Phone" Type="char" MaxLength="10" />
+          <Property Name="GroupUser" Type="nvarchar" MaxLength="30" />
+          <Property Name="CurrentTime" Type="time" Precision="7" />
+          <Property Name="CurrentMoney" Type="float" />
+          <Property Name="StatusAccount" Type="nvarchar" MaxLength="20" />
+          <Property Name="Fullname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Birthday" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_tbAdmins_tbGroupUser">
+          <End Role="tbGroupUser" Type="Self.tbGroupUser" Multiplicity="0..1" />
+          <End Role="tbAdmins" Type="Self.tbAdmins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbGroupUser">
+              <PropertyRef Name="GroupName" />
+            </Principal>
+            <Dependent Role="tbAdmins">
+              <PropertyRef Name="GroupUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbLoginUsers_tbClient">
+          <End Role="tbClient" Type="Self.tbClient" Multiplicity="1" />
+          <End Role="tbLoginUsers" Type="Self.tbLoginUsers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbClient">
+              <PropertyRef Name="ClientName" />
+            </Principal>
+            <Dependent Role="tbLoginUsers">
+              <PropertyRef Name="ClientName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbLoginUsers_tbMembers">
+          <End Role="tbMembers" Type="Self.tbMembers" Multiplicity="1" />
+          <End Role="tbLoginUsers" Type="Self.tbLoginUsers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbMembers">
+              <PropertyRef Name="MemberID" />
+            </Principal>
+            <Dependent Role="tbLoginUsers">
+              <PropertyRef Name="MemberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbMembers_tbGroupUser1">
+          <End Role="tbGroupUser" Type="Self.tbGroupUser" Multiplicity="0..1" />
+          <End Role="tbMembers" Type="Self.tbMembers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbGroupUser">
+              <PropertyRef Name="GroupName" />
+            </Principal>
+            <Dependent Role="tbMembers">
+              <PropertyRef Name="GroupUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="NetGameVNModel1StoreContainer">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbAdmins" EntityType="Self.tbAdmins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbClient" EntityType="Self.tbClient" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbGroupClient" EntityType="Self.tbGroupClient" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbGroupUser" EntityType="Self.tbGroupUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbLoginUsers" EntityType="Self.tbLoginUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbMembers" EntityType="Self.tbMembers" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_tbAdmins_tbGroupUser" Association="Self.FK_tbAdmins_tbGroupUser">
+            <End Role="tbGroupUser" EntitySet="tbGroupUser" />
+            <End Role="tbAdmins" EntitySet="tbAdmins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbLoginUsers_tbClient" Association="Self.FK_tbLoginUsers_tbClient">
+            <End Role="tbClient" EntitySet="tbClient" />
+            <End Role="tbLoginUsers" EntitySet="tbLoginUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbLoginUsers_tbMembers" Association="Self.FK_tbLoginUsers_tbMembers">
+            <End Role="tbMembers" EntitySet="tbMembers" />
+            <End Role="tbLoginUsers" EntitySet="tbLoginUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbMembers_tbGroupUser1" Association="Self.FK_tbMembers_tbGroupUser1">
+            <End Role="tbGroupUser" EntitySet="tbGroupUser" />
+            <End Role="tbMembers" EntitySet="tbMembers" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NetGameVNModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tbAdmin">
+          <Key>
+            <PropertyRef Name="Id_admin" />
+          </Key>
+          <Property Name="Id_admin" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fullname" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="GroupUser" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="isLock" Type="Boolean" />
+          <NavigationProperty Name="tbGroupUser" Relationship="Self.FK_tbAdmins_tbGroupUser" FromRole="tbAdmins" ToRole="tbGroupUser" />
+        </EntityType>
+        <EntityType Name="tbClient">
+          <Key>
+            <PropertyRef Name="ClientName" />
+          </Key>
+          <Property Name="ClientName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GroupClientName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="StatusClient" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Note" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tbLoginUsers" Relationship="Self.FK_tbLoginUsers_tbClient" FromRole="tbClient" ToRole="tbLoginUsers" />
+        </EntityType>
+        <EntityType Name="tbGroupClient">
+          <Key>
+            <PropertyRef Name="GroupName" />
+          </Key>
+          <Property Name="GroupName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Discription" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbGroupUser">
+          <Key>
+            <PropertyRef Name="GroupName" />
+          </Key>
+          <Property Name="GroupName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TypeName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbAdmins" Relationship="Self.FK_tbAdmins_tbGroupUser" FromRole="tbGroupUser" ToRole="tbAdmins" />
+          <NavigationProperty Name="tbMembers" Relationship="Self.FK_tbMembers_tbGroupUser1" FromRole="tbGroupUser" ToRole="tbMembers" />
+        </EntityType>
+        <EntityType Name="tbLoginUser">
+          <Key>
+            <PropertyRef Name="MemberID" />
+            <PropertyRef Name="ClientName" />
+          </Key>
+          <Property Name="MemberID" Type="Int32" Nullable="false" />
+          <Property Name="ClientName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="StartTime" Type="Time" Precision="7" />
+          <Property Name="UseTime" Type="Time" Precision="7" />
+          <Property Name="LeftTime" Type="Time" Precision="7" />
+          <NavigationProperty Name="tbClient" Relationship="Self.FK_tbLoginUsers_tbClient" FromRole="tbLoginUsers" ToRole="tbClient" />
+          <NavigationProperty Name="tbMember" Relationship="Self.FK_tbLoginUsers_tbMembers" FromRole="tbLoginUsers" ToRole="tbMembers" />
+        </EntityType>
+        <EntityType Name="tbMember">
+          <Key>
+            <PropertyRef Name="MemberID" />
+          </Key>
+          <Property Name="MemberID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="GroupUser" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="CurrentTime" Type="Time" Precision="7" />
+          <Property Name="CurrentMoney" Type="Double" />
+          <Property Name="StatusAccount" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Fullname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Birthday" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tbGroupUser" Relationship="Self.FK_tbMembers_tbGroupUser1" FromRole="tbMembers" ToRole="tbGroupUser" />
+          <NavigationProperty Name="tbLoginUsers" Relationship="Self.FK_tbLoginUsers_tbMembers" FromRole="tbMembers" ToRole="tbLoginUsers" />
+        </EntityType>
+        <Association Name="FK_tbAdmins_tbGroupUser">
+          <End Role="tbGroupUser" Type="Self.tbGroupUser" Multiplicity="0..1" />
+          <End Role="tbAdmins" Type="Self.tbAdmin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbGroupUser">
+              <PropertyRef Name="GroupName" />
+            </Principal>
+            <Dependent Role="tbAdmins">
+              <PropertyRef Name="GroupUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbLoginUsers_tbClient">
+          <End Role="tbClient" Type="Self.tbClient" Multiplicity="1" />
+          <End Role="tbLoginUsers" Type="Self.tbLoginUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbClient">
+              <PropertyRef Name="ClientName" />
+            </Principal>
+            <Dependent Role="tbLoginUsers">
+              <PropertyRef Name="ClientName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbMembers_tbGroupUser1">
+          <End Role="tbGroupUser" Type="Self.tbGroupUser" Multiplicity="0..1" />
+          <End Role="tbMembers" Type="Self.tbMember" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbGroupUser">
+              <PropertyRef Name="GroupName" />
+            </Principal>
+            <Dependent Role="tbMembers">
+              <PropertyRef Name="GroupUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbLoginUsers_tbMembers">
+          <End Role="tbMembers" Type="Self.tbMember" Multiplicity="1" />
+          <End Role="tbLoginUsers" Type="Self.tbLoginUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbMembers">
+              <PropertyRef Name="MemberID" />
+            </Principal>
+            <Dependent Role="tbLoginUsers">
+              <PropertyRef Name="MemberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="NetGameVNEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="tbAdmins" EntityType="Self.tbAdmin" />
+          <EntitySet Name="tbClients" EntityType="Self.tbClient" />
+          <EntitySet Name="tbGroupClients" EntityType="Self.tbGroupClient" />
+          <EntitySet Name="tbGroupUsers" EntityType="Self.tbGroupUser" />
+          <EntitySet Name="tbLoginUsers" EntityType="Self.tbLoginUser" />
+          <EntitySet Name="tbMembers" EntityType="Self.tbMember" />
+          <AssociationSet Name="FK_tbAdmins_tbGroupUser" Association="Self.FK_tbAdmins_tbGroupUser">
+            <End Role="tbGroupUser" EntitySet="tbGroupUsers" />
+            <End Role="tbAdmins" EntitySet="tbAdmins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbLoginUsers_tbClient" Association="Self.FK_tbLoginUsers_tbClient">
+            <End Role="tbClient" EntitySet="tbClients" />
+            <End Role="tbLoginUsers" EntitySet="tbLoginUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbMembers_tbGroupUser1" Association="Self.FK_tbMembers_tbGroupUser1">
+            <End Role="tbGroupUser" EntitySet="tbGroupUsers" />
+            <End Role="tbMembers" EntitySet="tbMembers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbLoginUsers_tbMembers" Association="Self.FK_tbLoginUsers_tbMembers">
+            <End Role="tbMembers" EntitySet="tbMembers" />
+            <End Role="tbLoginUsers" EntitySet="tbLoginUsers" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NetGameVNModel1StoreContainer" CdmEntityContainer="NetGameVNEntities1">
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="NetGameVNModel1.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbAdmins">
+            <EntityTypeMapping TypeName="NetGameVNModel1.tbAdmin">
+              <MappingFragment StoreEntitySet="tbAdmins">
+                <ScalarProperty Name="Id_admin" ColumnName="Id_admin" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="fullname" ColumnName="fullname" />
+                <ScalarProperty Name="GroupUser" ColumnName="GroupUser" />
+                <ScalarProperty Name="isLock" ColumnName="isLock" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbClients">
+            <EntityTypeMapping TypeName="NetGameVNModel1.tbClient">
+              <MappingFragment StoreEntitySet="tbClient">
+                <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+                <ScalarProperty Name="GroupClientName" ColumnName="GroupClientName" />
+                <ScalarProperty Name="StatusClient" ColumnName="StatusClient" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbGroupClients">
+            <EntityTypeMapping TypeName="NetGameVNModel1.tbGroupClient">
+              <MappingFragment StoreEntitySet="tbGroupClient">
+                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+                <ScalarProperty Name="Discription" ColumnName="Discription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbGroupUsers">
+            <EntityTypeMapping TypeName="NetGameVNModel1.tbGroupUser">
+              <MappingFragment StoreEntitySet="tbGroupUser">
+                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbLoginUsers">
+            <EntityTypeMapping TypeName="NetGameVNModel1.tbLoginUser">
+              <MappingFragment StoreEntitySet="tbLoginUsers">
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="UseTime" ColumnName="UseTime" />
+                <ScalarProperty Name="LeftTime" ColumnName="LeftTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbMembers">
+            <EntityTypeMapping TypeName="NetGameVNModel1.tbMember">
+              <MappingFragment StoreEntitySet="tbMembers">
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="GroupUser" ColumnName="GroupUser" />
+                <ScalarProperty Name="CurrentTime" ColumnName="CurrentTime" />
+                <ScalarProperty Name="CurrentMoney" ColumnName="CurrentMoney" />
+                <ScalarProperty Name="StatusAccount" ColumnName="StatusAccount" />
+                <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
