@@ -49,7 +49,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbxTimTk = new System.Windows.Forms.ComboBox();
             this.dgvListTaiKhoan = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -242,7 +242,7 @@
             // 
             // picShutdownClient
             // 
-            this.picShutdownClient.Image = global::PROJECT_NetGameVN_STINGDAU.Properties.Resources.Delete;
+            this.picShutdownClient.Image = global::PROJECT_NetGameVN_STINGDAU.Properties.Resources.google_sites_icon_large;
             this.picShutdownClient.Location = new System.Drawing.Point(394, 20);
             this.picShutdownClient.Name = "picShutdownClient";
             this.picShutdownClient.Size = new System.Drawing.Size(79, 65);
@@ -385,7 +385,7 @@
             // 
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.pictureBox9);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cbxTimTk);
             this.groupBox1.Location = new System.Drawing.Point(26, 33);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(595, 100);
@@ -408,13 +408,13 @@
             this.pictureBox9.TabIndex = 21;
             this.pictureBox9.TabStop = false;
             // 
-            // comboBox1
+            // cbxTimTk
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 38);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(247, 31);
-            this.comboBox1.TabIndex = 18;
+            this.cbxTimTk.FormattingEnabled = true;
+            this.cbxTimTk.Location = new System.Drawing.Point(12, 38);
+            this.cbxTimTk.Name = "cbxTimTk";
+            this.cbxTimTk.Size = new System.Drawing.Size(247, 31);
+            this.cbxTimTk.TabIndex = 18;
             // 
             // dgvListTaiKhoan
             // 
@@ -1166,7 +1166,7 @@
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.DataGridView dgvListTaiKhoan;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbxTimTk;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox6;

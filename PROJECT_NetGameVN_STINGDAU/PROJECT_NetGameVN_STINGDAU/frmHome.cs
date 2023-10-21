@@ -73,6 +73,13 @@ namespace PROJECT_NetGameVN_STINGDAU
         {
             Display();
             DisplayMember();
+
+
+
+            cbxTimTk.Items.Add("UserName");
+            cbxTimTk.Items.Add("Phone");
+            cbxTimTk.Items.Add("GroupUser");
+
         }
 
 
