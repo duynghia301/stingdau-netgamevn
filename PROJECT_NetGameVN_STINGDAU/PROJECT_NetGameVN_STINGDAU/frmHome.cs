@@ -17,7 +17,7 @@ namespace PROJECT_NetGameVN_STINGDAU
         //tạo biến kiểm tra thoát
         bool isThoat = true;
 
-       
+        NetGameVNEntities db = new NetGameVNEntities();
         public frmMayChu(tbAdmin _user)
         {
             InitializeComponent();
@@ -81,19 +81,6 @@ namespace PROJECT_NetGameVN_STINGDAU
             cbxTimTk.Items.Add("GroupUser");
 
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         void ResizeTabs()
@@ -199,6 +186,59 @@ namespace PROJECT_NetGameVN_STINGDAU
         private void dvgList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            RefreshData();
+        }
+
+       //refrest data members
+        private void RefreshData()
+        {
+            using (NetGameVNEntities _entity = new NetGameVNEntities())
+            {
+                List<Members> _MembersList = new List<Members>();
+                _MembersList = _entity.tbMembers.Select(x => new Members
+                {
+                    MemberID = x.MemberID,
+                    UserName = x.UserName,
+                    Password = x.Password,
+                    Phone = x.Phone,
+                    GroupUser = x.GroupUser,
+                    CurrentTime = x.CurrentTime,
+                    CurrentMoney = x.CurrentMoney,
+                    StatusAccount = x.StatusAccount,
+                    Fullname = x.Fullname,
+                    Birthday = x.Birthday
+                }).ToList();
+                dgvListTaiKhoan.DataSource = _MembersList;
+            }
+        }
+
+
+        //refrest data Client
+        private void RefreshClient()
+        {
+            using (NetGameVNEntities _entity = new NetGameVNEntities())
+            {
+                List<Client> _ClientList = new List<Client>();
+                _ClientList = _entity.tbClients.Select(x => new Client
+                {
+                    ClientName = x.ClientName,
+                    GrroupClientName = x.GroupClientName,
+                    StatusClient = x.StatusClient,
+                    Note = x.Note
+                }).ToList();
+                dvgList.DataSource = _ClientList;
+
+
+
+            }
+        }
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Refresh();
         }
     }
 }
