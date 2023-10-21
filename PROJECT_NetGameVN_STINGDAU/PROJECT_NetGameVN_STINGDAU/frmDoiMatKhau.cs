@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using PROJECT_NetGameVN_STINGDAU.DPContext;
 namespace PROJECT_NetGameVN_STINGDAU
 {
     public partial class frmDoiMatKhau : Form
@@ -15,6 +15,12 @@ namespace PROJECT_NetGameVN_STINGDAU
         public frmDoiMatKhau()
         {
             InitializeComponent();
+        }
+
+        private void btnApply_Click(object sender, EventArgs e)
+        {
+            tbMember st = new tbMember();
+
         }
     }
 }
