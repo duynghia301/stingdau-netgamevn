@@ -8,12 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
+using PROJECT_NetGameVN_STINGDAU.DPContext;
 namespace PROJECT_NetGameVN_STINGDAU
 {
     public partial class frmLogin : Form
     {
-        private object dta;
+        NetGameVNEntities db = new NetGameVNEntities();
 
         public frmLogin()
         {
@@ -24,29 +24,35 @@ namespace PROJECT_NetGameVN_STINGDAU
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            // Khởi tạo lớp Sql connection
-            //SqlConnection conn = new SqlConnection(@"Data SourcAI_VO_02\DUe=TYNGHIA;Initial Catalog=QuanLyPhongNet;Integrated Security=True");
-            SqlConnection conn = new SqlConnection(@"Data Source=MSI\MAYAO;Initial Catalog=QuanLyPhongNet;Integrated Security=True");
             try
             {
-                conn.Open();
+               
                 string tk = txtTaiKhoan.Text;
                 string mk = txtMatKhau.Text;
-                string sql = "select * from Member where AccountName= '"+tk+"' and Password = '"+mk+"'";  
-                SqlCommand cmd = new SqlCommand(sql, conn); //Lớp SQL xác định các thao tác xử lý dữ liệu  2 tham số sql và cái kết nối
-                SqlDataReader data= cmd.ExecuteReader();    //Lớp lấy dữ liệu  từ câu lệnh đọc kết quả
-                if (data.Read()==true)
+                tbAdmin _user = db.tbAdmins.Where(s => s.UserName == tk  && s.Password == mk).FirstOrDefault();
+
+                if (_user != null)
                 {
-                    MessageBox.Show("Đăng Nhập Thành Công","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                    frmMayChu home = new frmMayChu();   //mở form máy chủ
-                    home.ShowDialog();                  // hàm show from
-                    this.Hide();                        // ẩn from đăng nhập
+                    if (_user.GroupUser == "Admin")
+                    {
+                        frmMayChu frm = new frmMayChu(_user);
+                        frm.ShowDialog();
+                    }
+                    else
+                    {
+                        frmStaff frm = new frmStaff(user);
+                        frm.ShowDialog();
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Đăng Nhập Thất Bại","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Vui long kiem tra lai!");
+                    txtUser.Focus();
+                    return;
                 }
-                   
+            }
+
+
             }
             catch(Exception ex)
             {

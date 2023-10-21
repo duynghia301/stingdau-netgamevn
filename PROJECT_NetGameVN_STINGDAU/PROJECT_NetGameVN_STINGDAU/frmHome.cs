@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using PROJECT_NetGameVN_STINGDAU.DPContext;
 namespace PROJECT_NetGameVN_STINGDAU
 {
     public partial class frmMayChu : Form
@@ -15,10 +15,12 @@ namespace PROJECT_NetGameVN_STINGDAU
         //tạo biến kiểm tra thoát
         bool isThoat = true;
 
+       
         public frmMayChu()
         {
             InitializeComponent();
         }
+       
         void ResizeTabs()
         {
             int numTabs = tabControl1.TabCount;

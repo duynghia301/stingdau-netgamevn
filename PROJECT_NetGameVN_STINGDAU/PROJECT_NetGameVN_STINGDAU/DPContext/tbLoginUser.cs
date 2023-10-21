@@ -7,18 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PROJECT_NetGameVN_STINGDAU
+namespace PROJECT_NetGameVN_STINGDAU.DPContext
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class user
+    public partial class tbLoginUser
     {
-        public int Id { get; set; }
-        public string ten_dang_nhap { get; set; }
-        public string mat_khau { get; set; }
-        public string so_dien_thoai { get; set; }
-        public string ho_ten { get; set; }
-        public double naptien { get; set; }
+        public int MemberID { get; set; }
+        public string ClientName { get; set; }
+        public Nullable<System.TimeSpan> StartTime { get; set; }
+        public Nullable<System.TimeSpan> UseTime { get; set; }
+        public Nullable<System.TimeSpan> LeftTime { get; set; }
+    
+        public virtual tbClient tbClient { get; set; }
+        public virtual tbMember tbMember { get; set; }
     }
 }

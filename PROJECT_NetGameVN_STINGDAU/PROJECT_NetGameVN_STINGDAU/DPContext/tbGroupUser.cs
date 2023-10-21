@@ -7,24 +7,26 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PROJECT_NetGameVN_STINGDAU
+namespace PROJECT_NetGameVN_STINGDAU.DPContext
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class MayTinh
+    public partial class tbGroupUser
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public MayTinh()
+        public tbGroupUser()
         {
-            this.MoMays = new HashSet<MoMay>();
+            this.tbAdmins = new HashSet<tbAdmin>();
+            this.tbMembers = new HashSet<tbMember>();
         }
     
-        public int id { get; set; }
-        public string ten_may { get; set; }
-        public string trang_thai { get; set; }
+        public string GroupName { get; set; }
+        public string TypeName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MoMay> MoMays { get; set; }
+        public virtual ICollection<tbAdmin> tbAdmins { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tbMember> tbMembers { get; set; }
     }
 }

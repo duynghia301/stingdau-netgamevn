@@ -7,17 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PROJECT_NetGameVN_STINGDAU
+namespace PROJECT_NetGameVN_STINGDAU.DPContext
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class MoMay
+    public partial class tbAdmin
     {
-        public int id { get; set; }
-        public int may_tinh_id { get; set; }
-        public System.TimeSpan time_mo { get; set; }
+        public int Id_admin { get; set; }
+        public string UserName { get; set; }
+        public string Password { get; set; }
+        public string fullname { get; set; }
+        public string GroupUser { get; set; }
+        public Nullable<bool> isLock { get; set; }
     
-        public virtual MayTinh MayTinh { get; set; }
+        public virtual tbGroupUser tbGroupUser { get; set; }
     }
 }

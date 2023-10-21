@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PROJECT_NetGameVN_STINGDAU
+namespace PROJECT_NetGameVN_STINGDAU.DPContext
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class quanlynetEntities : DbContext
+    public partial class NetGameVNEntities : DbContext
     {
-        public quanlynetEntities()
-            : base("name=quanlynetEntities")
+        public NetGameVNEntities()
+            : base("name=NetGameVNEntities")
         {
         }
     
@@ -25,8 +25,12 @@ namespace PROJECT_NetGameVN_STINGDAU
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<MayTinh> MayTinhs { get; set; }
-        public virtual DbSet<MoMay> MoMays { get; set; }
-        public virtual DbSet<user> users { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<tbAdmin> tbAdmins { get; set; }
+        public virtual DbSet<tbClient> tbClients { get; set; }
+        public virtual DbSet<tbGroupClient> tbGroupClients { get; set; }
+        public virtual DbSet<tbGroupUser> tbGroupUsers { get; set; }
+        public virtual DbSet<tbLoginUser> tbLoginUsers { get; set; }
+        public virtual DbSet<tbMember> tbMembers { get; set; }
     }
 }
