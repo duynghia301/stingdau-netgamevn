@@ -16,18 +16,20 @@ namespace PROJECT_NetGameVN_STINGDAU
         {
             InitializeComponent();
         }
-      public void Saveuser( user user )
+        public bool Saveuser(user user)
         {
-           
+            bool result = false;
             using (quanlynetEntities _entity = new quanlynetEntities())
             {
                 _entity.users.Add(user);
                 _entity.SaveChanges();
-                return;
+                result = true;
             }
-        }
+            return result;
+                
+         }
 
-        
+
         private void btnRegister_Click(object sender, EventArgs e)
         {
 
@@ -38,9 +40,15 @@ namespace PROJECT_NetGameVN_STINGDAU
             st.so_dien_thoai = txtPhone.Text;
             st.ho_ten = txtName.Text;
             st.naptien = Convert.ToInt32(txtAmount.Text);
-        
-            Saveuser(st);
-            MessageBox.Show("Tạo tài khoản thành công ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            bool result = Saveuser(st);
+            if ( result == true )
+            {
+                MessageBox.Show("Tạo tài khoản thành công ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Tạo tài khoản thấtbại ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }
