@@ -17,7 +17,7 @@ namespace PROJECT_NetGameVN_STINGDAU
         //tạo biến kiểm tra thoát
         bool isThoat = true;
 
-       
+        NetGameVNEntities db = new NetGameVNEntities();
         public frmMayChu(tbAdmin _user)
         {
             InitializeComponent();
@@ -81,19 +81,6 @@ namespace PROJECT_NetGameVN_STINGDAU
             cbxTimTk.Items.Add("GroupUser");
 
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         void ResizeTabs()
@@ -198,6 +185,128 @@ namespace PROJECT_NetGameVN_STINGDAU
 
         private void dvgList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            RefreshData();
+        }
+
+       //refrest data members
+        private void RefreshData()
+        {
+            using (NetGameVNEntities _entity = new NetGameVNEntities())
+            {
+                List<Members> _MembersList = new List<Members>();
+                _MembersList = _entity.tbMembers.Select(x => new Members
+                {
+                    MemberID = x.MemberID,
+                    UserName = x.UserName,
+                    Password = x.Password,
+                    Phone = x.Phone,
+                    GroupUser = x.GroupUser,
+                    CurrentTime = x.CurrentTime,
+                    CurrentMoney = x.CurrentMoney,
+                    StatusAccount = x.StatusAccount,
+                    Fullname = x.Fullname,
+                    Birthday = x.Birthday
+                }).ToList();
+                dgvListTaiKhoan.DataSource = _MembersList;
+            }
+        }
+
+
+        //refrest data Client
+        private void RefreshClient()
+        {
+            using (NetGameVNEntities _entity = new NetGameVNEntities())
+            {
+                List<Client> _ClientList = new List<Client>();
+                _ClientList = _entity.tbClients.Select(x => new Client
+                {
+                    ClientName = x.ClientName,
+                    GrroupClientName = x.GroupClientName,
+                    StatusClient = x.StatusClient,
+                    Note = x.Note
+                }).ToList();
+                dvgList.DataSource = _ClientList;
+
+
+
+            }
+        }
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Refresh();
+        }
+
+
+        public bool DeleteStudentDetails(int id)
+        {
+            bool result = false;
+            try
+            {
+                using (NetGameVNEntities _entity = new NetGameVNEntities())
+                {
+                    tbMember _user = _entity.tbMembers.Find(id);
+                    if (_user != null)
+                    {
+                        _entity.tbMembers.Remove(_user);
+                        _entity.SaveChanges();
+                        result = true;
+
+                    }
+                    else
+                        result = false;
+                }
+            }
+            catch
+            {
+                result = false;
+            }
+            return result;
+
+        }
+
+        public void ClearFields()
+        {
+            tbMember st = new tbMember();
+           
+            st.UserName = "";
+            st.Password = "";
+            st.Phone = "";
+            st.CurrentMoney = Convert.ToInt32("");
+        }
+
+        private void xóaTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tbMember st = new tbMember();
+            int idstudent = Convert.ToInt32(st.MemberID);
+            bool result = DeleteStudentDetails(idstudent);
+            if (result == true)
+            {
+                MessageBox.Show("Delete Succesfully!.", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ClearFields();
+            }
+            else
+            {
+                MessageBox.Show("Something went wrong!. Please try again\n", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+
+
+        }
+        private void tabHoiVien_Click(object sender, EventArgs e)
+        {
+           
+            
+        }
+
+        private void dgvListTaiKhoan_SelectionChanged(object sender, EventArgs e)
+        {
+
+           
 
         }
     }

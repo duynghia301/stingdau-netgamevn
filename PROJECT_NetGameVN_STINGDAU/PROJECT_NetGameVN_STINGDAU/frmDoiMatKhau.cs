@@ -104,5 +104,20 @@ namespace PROJECT_NetGameVN_STINGDAU
         {
             db.Dispose(); // Giải phóng tài nguyên DbContext khi form đóng
         }
+
+        private void lblShowUser_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblShowOld_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblShowNew_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
