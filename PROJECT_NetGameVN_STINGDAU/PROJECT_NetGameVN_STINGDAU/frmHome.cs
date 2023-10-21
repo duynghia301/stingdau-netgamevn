@@ -16,7 +16,7 @@ namespace PROJECT_NetGameVN_STINGDAU
         bool isThoat = true;
 
        
-        public frmMayChu()
+        public frmMayChu(tbAdmin _user)
         {
             InitializeComponent();
         }

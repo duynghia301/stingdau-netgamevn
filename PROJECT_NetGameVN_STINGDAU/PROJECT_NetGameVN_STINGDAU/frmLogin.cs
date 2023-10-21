@@ -24,8 +24,8 @@ namespace PROJECT_NetGameVN_STINGDAU
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            try
-            {
+            
+            
                
                 string tk = txtTaiKhoan.Text;
                 string mk = txtMatKhau.Text;
@@ -38,28 +38,21 @@ namespace PROJECT_NetGameVN_STINGDAU
                         frmMayChu frm = new frmMayChu(_user);
                         frm.ShowDialog();
                     }
-                    else
-                    {
-                        frmStaff frm = new frmStaff(user);
-                        frm.ShowDialog();
-                    }
+
                 }
                 else
                 {
                     MessageBox.Show("Vui long kiem tra lai!");
-                    txtUser.Focus();
+                    txtTaiKhoan.Focus();
                     return;
                 }
-            }
 
 
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Lỗi Kết nối");
-            }
 
             
+            
+
+
         }
 
         private void frmLogin_FormClosed(object sender, FormClosedEventArgs e)

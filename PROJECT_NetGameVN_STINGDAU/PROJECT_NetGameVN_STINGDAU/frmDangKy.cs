@@ -7,48 +7,75 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PROJECT_NetGameVN_STINGDAU.DPContext;
 
 namespace PROJECT_NetGameVN_STINGDAU
 {
     public partial class frmDangKy : Form
     {
+
+        public static TimeSpan ConvertMoneyToTime(int money)
+        {
+            return TimeSpan.FromMinutes(money / 10000);
+        }
+
         public frmDangKy()
         {
             InitializeComponent();
         }
-        public bool Saveuser(user user)
+
+
+        public bool Saveuser(tbMember user)
         {
             bool result = false;
-            using (quanlynetEntities _entity = new quanlynetEntities())
+            using (NetGameVNEntities _entity = new NetGameVNEntities())
             {
-                _entity.users.Add(user);
+                _entity.tbMembers.Add(user);
                 _entity.SaveChanges();
                 result = true;
             }
             return result;
-                
-         }
+        }
 
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
 
-            user st = new user() ;
+            tbMember st = new tbMember();
+               
+             
+                int money = int.Parse((txtAmount.Text));
+                if (money <= 10.0000)
+                {
+                    MessageBox.Show("số tiền phải napj phải lớn hơn 10k ");
+                    return;
+                }
+                st.UserName = txtUser.Text;
+
+                st.CurrentTime = ConvertMoneyToTime(money/10000);
+                st.Password = txtpassword.Text;
+                st.Phone = txtPhone.Text;
+                st.CurrentMoney = Convert.ToInt32(txtAmount.Text);
+
+
+
+
+
+                bool result = Saveuser(st);
+                if (result == true)
+                {
+                    MessageBox.Show("Tạo tài khoản thành công ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Tạo tài khoản thấtbại ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+
+
+                
             
-            st.ten_dang_nhap = txtUser.Text;
-            st.mat_khau = txtpassword.Text;
-            st.so_dien_thoai = txtPhone.Text;
-            st.ho_ten = txtName.Text;
-            st.naptien = Convert.ToInt32(txtAmount.Text);
-            bool result = Saveuser(st);
-            if ( result == true )
-            {
-                MessageBox.Show("Tạo tài khoản thành công ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Tạo tài khoản thấtbại ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
+             }
+           }
     }
-}
+
