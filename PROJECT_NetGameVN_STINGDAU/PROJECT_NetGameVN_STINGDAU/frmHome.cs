@@ -14,6 +14,7 @@ namespace PROJECT_NetGameVN_STINGDAU
 {
     public partial class frmMayChu : Form
     {
+       
         //tạo biến kiểm tra thoát
         bool isThoat = true;
 
@@ -78,7 +79,7 @@ namespace PROJECT_NetGameVN_STINGDAU
 
             cbxTimTk.Items.Add("UserName");
             cbxTimTk.Items.Add("Phone");
-            cbxTimTk.Items.Add("GroupUser");
+            
 
         }
 
@@ -520,6 +521,75 @@ namespace PROJECT_NetGameVN_STINGDAU
                 }
             }
 
+        }
+
+        public void Display_Member(string _ttkusername)
+        {
+
+            using (NetGameVNEntities _entity = new NetGameVNEntities())
+            {
+                List<Members> _MembersList = new List<Members>();
+                _MembersList = _entity.tbMembers.Where(s => s.UserName.Equals(_ttkusername) ).Select(x => new Members
+                {
+                    MemberID = x.MemberID,
+                    UserName = x.UserName,
+                    Password = x.Password,
+                    Phone = x.Phone,
+                    GroupUser = x.GroupUser,
+                    CurrentTime = x.CurrentTime,
+                    CurrentMoney = x.CurrentMoney,
+                    StatusAccount = x.StatusAccount,
+                    Fullname = x.Fullname,
+                    Birthday = x.Birthday
+                }).ToList();
+                dgvListTaiKhoan.DataSource = _MembersList;
+            }
+
+
+        }
+
+        public void Display_pMember(string _ttkphone)
+        {
+
+            using (NetGameVNEntities _entity = new NetGameVNEntities())
+            {
+                List<Members> _MembersList = new List<Members>();
+                _MembersList = _entity.tbMembers.Where(s => s.Phone.Equals(_ttkphone)).Select(x => new Members
+                {
+                    MemberID = x.MemberID,
+                    UserName = x.UserName,
+                    Password = x.Password,
+                    Phone = x.Phone,
+                    GroupUser = x.GroupUser,
+                    CurrentTime = x.CurrentTime,
+                    CurrentMoney = x.CurrentMoney,
+                    StatusAccount = x.StatusAccount,
+                    Fullname = x.Fullname,
+                    Birthday = x.Birthday
+                }).ToList();
+                dgvListTaiKhoan.DataSource = _MembersList;
+            }
+
+
+        }
+
+       
+
+        
+        private void bnttimkiem_Click(object sender, EventArgs e)
+        {
+            string _username = txttimkiem.Text;
+            if (cbxTimTk.Text == "UserName")
+            {
+             
+                Display_Member(_username);
+            }
+            else  
+            {
+
+                Display_pMember(_username);
+            }
+           
         }
     }
 }

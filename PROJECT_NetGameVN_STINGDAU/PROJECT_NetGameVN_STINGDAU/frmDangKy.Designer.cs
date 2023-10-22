@@ -85,6 +85,7 @@
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(263, 30);
             this.txtPhone.TabIndex = 2;
+        
             this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhone_KeyPress);
             // 
             // label4
@@ -198,9 +199,9 @@
             // chkShowPass
             // 
             this.chkShowPass.AutoSize = true;
-            this.chkShowPass.Location = new System.Drawing.Point(410, 127);
+            this.chkShowPass.Location = new System.Drawing.Point(545, 159);
             this.chkShowPass.Name = "chkShowPass";
-            this.chkShowPass.Size = new System.Drawing.Size(53, 17);
+            this.chkShowPass.Size = new System.Drawing.Size(64, 21);
             this.chkShowPass.TabIndex = 15;
             this.chkShowPass.Text = "Show";
             this.chkShowPass.UseVisualStyleBackColor = true;
@@ -210,12 +211,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
-            this.ClientSize = new System.Drawing.Size(651, 546);
-=======
-            this.ClientSize = new System.Drawing.Size(488, 444);
+            this.ClientSize = new System.Drawing.Size(671, 444);
             this.Controls.Add(this.chkShowPass);
->>>>>>> a079a83351700c46fcedc09691332b768eb81dcf
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.label8);

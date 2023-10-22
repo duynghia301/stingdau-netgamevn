@@ -72,46 +72,12 @@ namespace PROJECT_NetGameVN_STINGDAU
 
             try
             {
-<<<<<<< HEAD
-                MessageBox.Show("không được để trống tk hoặc mật khẩu ");
-                return;
-             
-            }
-           
-            else
-            {
-                int money = int.Parse((txtAmount.Text));
-                if (money <= 10000)
-=======
                 tbMember st = new tbMember();
                 if (txtUser == null || txtUser.TextLength == 0 || txtpassword == null || txtpassword.TextLength == 0)
->>>>>>> a079a83351700c46fcedc09691332b768eb81dcf
                 {
                     MessageBox.Show("không được để trống tk hoặc mật khẩu ");
                     return;
                 }
-<<<<<<< HEAD
-                TimeSpan timeSpan = GetTimeFromMoney(money);
-                st.CurrentTime = timeSpan;
-                st.UserName = txtUser.Text;
-                st.Password = txtpassword.Text;
-                st.Phone = txtPhone.Text;
-               
-                st.CurrentMoney = Convert.ToInt32(txtAmount.Text);
-
-
-
-
-
-
-
-                bool result = Saveuser(st);
-                if (result == true)
-                {
-                    MessageBox.Show("Tạo tài khoản thành công ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-=======
->>>>>>> a079a83351700c46fcedc09691332b768eb81dcf
                 else
                 {
                     int money = int.Parse((txtAmount.Text));
@@ -128,8 +94,6 @@ namespace PROJECT_NetGameVN_STINGDAU
                     st.CurrentMoney = Convert.ToInt32(txtAmount.Text);
 
 
-<<<<<<< HEAD
-=======
 
 
 
@@ -153,7 +117,6 @@ namespace PROJECT_NetGameVN_STINGDAU
             {
                 // Handle any exceptions here, e.g., show an error message.
                 MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
->>>>>>> a079a83351700c46fcedc09691332b768eb81dcf
             }
 
 
@@ -165,29 +128,33 @@ namespace PROJECT_NetGameVN_STINGDAU
            this.Close();
         }
 
-<<<<<<< HEAD
         private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
+               
             }
-            if (txtPhone.TextLength != 10)
-            {
-                MessageBox.Show("số điện thoại không đúng ! mời nhập lại  ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return; 
-            }
+            //if (txtPhone.TextLength != 10)
+            //{
+            //    MessageBox.Show("số điện thoại không đúng ! mời nhập lại  ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                
+            //}
         }
 
         private void txtAmount_KeyPress(object sender, KeyPressEventArgs e)
         {
 
-            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
                 e.Handled = true;
+               
+            }
+
         }
-=======
-       
->>>>>>> a079a83351700c46fcedc09691332b768eb81dcf
+
+
+
     }
 
 
