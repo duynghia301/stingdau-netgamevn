@@ -49,7 +49,9 @@ namespace PROJECT_NetGameVN_STINGDAU
             {
                 MessageBox.Show("không được để trống tk hoặc mật khẩu ");
                 return;
+             
             }
+           
             else
             {
                 int money = int.Parse((txtAmount.Text));
@@ -63,6 +65,7 @@ namespace PROJECT_NetGameVN_STINGDAU
                 st.UserName = txtUser.Text;
                 st.Password = txtpassword.Text;
                 st.Phone = txtPhone.Text;
+               
                 st.CurrentMoney = Convert.ToInt32(txtAmount.Text);
 
 
@@ -81,6 +84,7 @@ namespace PROJECT_NetGameVN_STINGDAU
                     MessageBox.Show("Tạo tài khoản thấtbại ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
+
             }
 
                 
@@ -91,6 +95,26 @@ namespace PROJECT_NetGameVN_STINGDAU
         private void btnCancel_Click(object sender, EventArgs e)
         {
            this.Close();
+        }
+
+        private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            if (txtPhone.TextLength != 10)
+            {
+                MessageBox.Show("số điện thoại không đúng ! mời nhập lại  ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; 
+            }
+        }
+
+        private void txtAmount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
         }
     }
 
