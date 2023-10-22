@@ -42,6 +42,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.btnRegister = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.chkShowPass = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -145,6 +146,7 @@
             this.txtpassword.Name = "txtpassword";
             this.txtpassword.Size = new System.Drawing.Size(263, 30);
             this.txtpassword.TabIndex = 1;
+            this.txtpassword.UseSystemPasswordChar = true;
             // 
             // User
             // 
@@ -193,11 +195,27 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // chkShowPass
+            // 
+            this.chkShowPass.AutoSize = true;
+            this.chkShowPass.Location = new System.Drawing.Point(410, 127);
+            this.chkShowPass.Name = "chkShowPass";
+            this.chkShowPass.Size = new System.Drawing.Size(53, 17);
+            this.chkShowPass.TabIndex = 15;
+            this.chkShowPass.Text = "Show";
+            this.chkShowPass.UseVisualStyleBackColor = true;
+            this.chkShowPass.CheckedChanged += new System.EventHandler(this.chkShowPass_CheckedChanged_1);
+            // 
             // frmDangKy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(651, 546);
+=======
+            this.ClientSize = new System.Drawing.Size(488, 444);
+            this.Controls.Add(this.chkShowPass);
+>>>>>>> a079a83351700c46fcedc09691332b768eb81dcf
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.label8);
@@ -235,5 +253,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.CheckBox chkShowPass;
     }
 }

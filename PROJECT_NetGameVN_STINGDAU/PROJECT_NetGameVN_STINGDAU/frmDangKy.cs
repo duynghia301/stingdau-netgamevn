@@ -27,6 +27,21 @@ namespace PROJECT_NetGameVN_STINGDAU
             InitializeComponent();
         }
 
+        private void chkShowPass_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (chkShowPass.Checked)
+            {
+
+                txtpassword.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtpassword.UseSystemPasswordChar = true;
+
+            }
+        }
+       
+       
 
         public bool Saveuser(tbMember user)
         {
@@ -40,13 +55,24 @@ namespace PROJECT_NetGameVN_STINGDAU
             return result;
         }
 
+        private void ClearFields()
+        {
+            // Xóa nội dung của các TextBox
+            txtUser.Text = string.Empty;
+            txtPhone.Text = string.Empty;
+            txtpassword.Text = string.Empty;
+            txtAmount.Text = string.Empty;
+            txtName.Text = string.Empty;
 
+
+
+        }
         private void btnRegister_Click(object sender, EventArgs e)
         {
 
-            tbMember st = new tbMember();
-            if (txtUser == null || txtUser.TextLength == 0 || txtpassword == null || txtpassword.TextLength ==0 )
+            try
             {
+<<<<<<< HEAD
                 MessageBox.Show("không được để trống tk hoặc mật khẩu ");
                 return;
              
@@ -56,10 +82,15 @@ namespace PROJECT_NetGameVN_STINGDAU
             {
                 int money = int.Parse((txtAmount.Text));
                 if (money <= 10000)
+=======
+                tbMember st = new tbMember();
+                if (txtUser == null || txtUser.TextLength == 0 || txtpassword == null || txtpassword.TextLength == 0)
+>>>>>>> a079a83351700c46fcedc09691332b768eb81dcf
                 {
-                    MessageBox.Show("số tiền phải nạp phải lớn hơn 10 nghìn đồng ");
+                    MessageBox.Show("không được để trống tk hoặc mật khẩu ");
                     return;
                 }
+<<<<<<< HEAD
                 TimeSpan timeSpan = GetTimeFromMoney(money);
                 st.CurrentTime = timeSpan;
                 st.UserName = txtUser.Text;
@@ -79,17 +110,54 @@ namespace PROJECT_NetGameVN_STINGDAU
                 {
                     MessageBox.Show("Tạo tài khoản thành công ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+=======
+>>>>>>> a079a83351700c46fcedc09691332b768eb81dcf
                 else
                 {
-                    MessageBox.Show("Tạo tài khoản thấtbại ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    int money = int.Parse((txtAmount.Text));
+                    if (money <= 10000)
+                    {
+                        MessageBox.Show("số tiền phải nạp phải lớn hơn 10 nghìn đồng ");
+                        return;
+                    }
+                    TimeSpan timeSpan = GetTimeFromMoney(money);
+                    st.CurrentTime = timeSpan;
+                    st.UserName = txtUser.Text;
+                    st.Password = txtpassword.Text;
+                    st.Phone = txtPhone.Text;
+                    st.CurrentMoney = Convert.ToInt32(txtAmount.Text);
+
+
+<<<<<<< HEAD
+=======
+
+
+
+
+
+                    bool result = Saveuser(st);
+                    if (result == true)
+                    {
+                        MessageBox.Show("Tạo tài khoản thành công ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ClearFields();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Tạo tài khoản thấtbại ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        ClearFields();
+                    }
+
                 }
-
-
+            }
+            catch (Exception ex)
+            {
+                // Handle any exceptions here, e.g., show an error message.
+                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+>>>>>>> a079a83351700c46fcedc09691332b768eb81dcf
             }
 
-                
 
-            
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -97,6 +165,7 @@ namespace PROJECT_NetGameVN_STINGDAU
            this.Close();
         }
 
+<<<<<<< HEAD
         private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
@@ -116,6 +185,9 @@ namespace PROJECT_NetGameVN_STINGDAU
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
                 e.Handled = true;
         }
+=======
+       
+>>>>>>> a079a83351700c46fcedc09691332b768eb81dcf
     }
 
 
