@@ -36,8 +36,11 @@ namespace PROJECT_NetGameVN_STINGDAU
                 {
                     if (_user.GroupUser == "Admin")
                     {
+                    this.Hide();
                         frmMayChu frm = new frmMayChu(_user);
                         frm.ShowDialog();
+                    this.Close();
+                    
                     }
 
                 }

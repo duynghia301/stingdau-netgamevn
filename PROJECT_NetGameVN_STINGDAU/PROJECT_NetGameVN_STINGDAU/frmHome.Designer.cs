@@ -591,7 +591,7 @@
             this.dataGridView3.Cursor = System.Windows.Forms.Cursors.Default;
             this.dataGridView3.EnableHeadersVisualStyles = false;
             this.dataGridView3.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.dataGridView3.Location = new System.Drawing.Point(0, 53);
+            this.dataGridView3.Location = new System.Drawing.Point(3, 52);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.Size = new System.Drawing.Size(1063, 557);
             this.dataGridView3.TabIndex = 32;
