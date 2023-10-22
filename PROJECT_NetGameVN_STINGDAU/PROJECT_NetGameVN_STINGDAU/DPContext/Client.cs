@@ -10,7 +10,7 @@ namespace PROJECT_NetGameVN_STINGDAU.DPContext
     {
        
         public string ClientName { get; set; }
-        public string GrroupClientName { get; set; }
+        public string GroupClientName { get; set; }
         public string StatusClient { get; set; }
         public string Note { get; set; }
     }

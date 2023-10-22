@@ -33,7 +33,7 @@ namespace PROJECT_NetGameVN_STINGDAU
                 _ClientList = _entity.tbClients.Select(x => new Client
                 {
                     ClientName = x.ClientName,
-                    GrroupClientName = x.GroupClientName,
+                    GroupClientName = x.GroupClientName,
                     StatusClient = x.StatusClient,
                     Note = x.Note
                 }).ToList();
@@ -56,18 +56,18 @@ namespace PROJECT_NetGameVN_STINGDAU
                     Password = x.Password,
                     Phone = x.Phone,
                     GroupUser = x.GroupUser,
-                    CurrentTime=x.CurrentTime,
-                    CurrentMoney= x.CurrentMoney,
+                    CurrentTime = x.CurrentTime,
+                    CurrentMoney = x.CurrentMoney,
                     StatusAccount = x.StatusAccount,
                     Fullname = x.Fullname,
                     Birthday = x.Birthday
                 }).ToList();
                 dgvListTaiKhoan.DataSource = _MembersList;
             }
-               
+
 
         }
-        
+
 
         private void frmMayChu_Load(object sender, EventArgs e)
         {
@@ -104,14 +104,14 @@ namespace PROJECT_NetGameVN_STINGDAU
 
         }
 
-       
+
 
         private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
-        
+
         private void LoadSourceToDRGV()
         {
             drgvFood.Columns[0].HeaderText = "Mã Định Danh";
@@ -135,12 +135,12 @@ namespace PROJECT_NetGameVN_STINGDAU
             drgvCard.Columns[4].HeaderText = "Đơn Vị Tính";
             drgvCard.Columns[5].HeaderText = "Số Lượng Tồn";
 
-           
+
         }
         private void button1_Click(object sender, EventArgs e)
         {
             DialogResult tb = MessageBox.Show("Bạn có muốn đăng xuất không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if(tb==DialogResult.OK)
+            if (tb == DialogResult.OK)
             {
                 isThoat = false;
                 this.Close();
@@ -148,13 +148,13 @@ namespace PROJECT_NetGameVN_STINGDAU
                 this.Hide();
                 Login.ShowDialog();
             }
-            
+
         }
         private void frmMayChu_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (isThoat)
                 Application.Exit();
-         
+
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -171,7 +171,7 @@ namespace PROJECT_NetGameVN_STINGDAU
 
         private void đăngKýTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
 
             frmDangKy dangKy = new frmDangKy();
             dangKy.Show();
@@ -193,7 +193,7 @@ namespace PROJECT_NetGameVN_STINGDAU
             RefreshData();
         }
 
-       //refrest data members
+        //refrest data members
         private void RefreshData()
         {
             using (NetGameVNEntities _entity = new NetGameVNEntities())
@@ -226,7 +226,7 @@ namespace PROJECT_NetGameVN_STINGDAU
                 _ClientList = _entity.tbClients.Select(x => new Client
                 {
                     ClientName = x.ClientName,
-                    GrroupClientName = x.GroupClientName,
+                    GroupClientName = x.GroupClientName,
                     StatusClient = x.StatusClient,
                     Note = x.Note
                 }).ToList();
@@ -272,7 +272,7 @@ namespace PROJECT_NetGameVN_STINGDAU
         public void ClearFields()
         {
             tbMember st = new tbMember();
-           
+
             st.UserName = "";
             st.Password = "";
             st.Phone = "";
@@ -299,14 +299,124 @@ namespace PROJECT_NetGameVN_STINGDAU
         }
         private void tabHoiVien_Click(object sender, EventArgs e)
         {
-           
-            
+
+
         }
 
         private void dgvListTaiKhoan_SelectionChanged(object sender, EventArgs e)
         {
 
-           
+
+
+        }
+
+        public void LoadClient()
+        {
+
+            dvgList.DataSource = (from tbClient in db.tbClients select new { ClientName = tbClient.ClientName, GroupClientName = tbClient.GroupClientName, StatusClient = tbClient.StatusClient, Note = tbClient.Note }).ToArray();
+        }
+
+        private void PicOpenClientEventHandler_Click(object sender, EventArgs e)
+        {
+            using (NetGameVNEntities _entity = new NetGameVNEntities())
+            {
+                try
+                {
+                    
+                     if (dvgList.SelectedRows.Count == 0)
+                    {
+                        MessageBox.Show("Vui lòng chọn máy khách từ danh sách.", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                    int index = dvgList.SelectedRows[0].Index;
+                   
+                    // Lấy ra Client cần cập nhật trạng thái.
+                    string computerName = dvgList.Rows[index].Cells["ClientName"].Value.ToString();
+                    tbClient selectedClient = _entity.tbClients.SingleOrDefault(c => c.ClientName == computerName);
+
+                    if (selectedClient.StatusClient == "DISCONNECT")
+                    {
+                        DialogResult tb = MessageBox.Show("Bạn có mở máy này không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                        if (tb == DialogResult.OK)
+                        { 
+                            selectedClient.StatusClient = "USING";
+                        // Lưu các thay đổi vào cơ sở dữ liệu.
+                        _entity.SaveChanges();
+                        LoadClient(); // Nạp lại dữ liệu sau khi đã cập nhật thành công.
+                        }
+                    }
+                    else
+                    {
+                        if (selectedClient.StatusClient == "USING")
+                        {
+                            MessageBox.Show("Máy khách đang được sử dụng.", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            return;
+                        }
+                    }
+
+                   
+                    
+
+
+                }
+                catch (Exception ex)
+                {
+                    // Handle any exceptions here, e.g., show an error message.
+                    MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void picShutdownClient_Click(object sender, EventArgs e)
+        {
+            using (NetGameVNEntities _entity = new NetGameVNEntities())
+            {
+                try
+                {
+                    if (dvgList.SelectedRows.Count == 0)
+                    {
+                        MessageBox.Show("Vui lòng chọn máy khách từ danh sách.", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+
+                    int index = dvgList.SelectedRows[0].Index;
+                   
+                        // Lấy ra Client cần cập nhật trạng thái.
+                        string computerName = dvgList.Rows[index].Cells["ClientName"].Value.ToString();
+                        tbClient selectedClient = _entity.tbClients.SingleOrDefault(c => c.ClientName == computerName);
+
+
+
+
+                        if (selectedClient.StatusClient == "USING")
+                        {
+
+                            DialogResult tb = MessageBox.Show("Bạn có muốn tắt máy này không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                            if (tb == DialogResult.OK)
+                            {
+                                selectedClient.StatusClient = "DISCONNECT";
+                                // Lưu các thay đổi vào cơ sở dữ liệu.
+                                _entity.SaveChanges();
+                                LoadClient(); // Nạp lại dữ liệu sau khi đã cập nhật thành công.
+                            }
+                            
+
+                        }
+                        else
+                        {
+                            if (selectedClient.StatusClient == "DISCONNECT")
+                            {
+                                MessageBox.Show("Máy khách đang trạng thái tắt.","Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                return;
+                            }
+                        }
+                }
+                catch (Exception ex)
+                {
+                    // Handle any exceptions here, e.g., show an error message.
+                    MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
 
         }
     }
