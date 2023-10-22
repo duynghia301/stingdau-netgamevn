@@ -279,29 +279,107 @@ namespace PROJECT_NetGameVN_STINGDAU
             st.CurrentMoney = Convert.ToInt32("");
         }
 
+
+
+        public bool DeleteMembers(int id)
+        {
+            bool result = false;
+            try
+            {
+                using (NetGameVNEntities _entity = new NetGameVNEntities())
+                {
+                    tbMember _member = _entity.tbMembers.Find(id);
+                    if (_member != null)
+                    {
+                        _entity.tbMembers.Remove(_member);
+                        _entity.SaveChanges();
+                        result = true;
+
+                    }
+                    else
+                    {
+                        result = false;
+                    }
+                }
+            }
+            catch
+            {
+                result = false;
+            }
+            return result;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
         private void xóaTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            tbMember st = new tbMember();
-            int idstudent = Convert.ToInt32(st.MemberID);
-            bool result = DeleteStudentDetails(idstudent);
-            if (result == true)
+            using (NetGameVNEntities _entity = new NetGameVNEntities())
             {
-                MessageBox.Show("Delete Succesfully!.", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                ClearFields();
+                
+                    if (dgvListTaiKhoan.SelectedRows.Count == 0)
+                    {
+                        MessageBox.Show("Vui lòng chọn tài khoản từ danh sách.", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+
+                    DataGridViewRow selectedRow = dgvListTaiKhoan.SelectedRows[0];
+
+
+                    // Lấy ra member cần xóa
+                    int memberID = (int)selectedRow.Cells["MemberID"].Value;
+
+
+                    {
+                        try
+                        {
+                            // Lấy ra tài khoản cần xóa từ nguồn dữ liệu thực tế (ví dụ: danh sách tài khoản).
+                            tbMember selectedMember = _entity.tbMembers.SingleOrDefault(m => m.MemberID == memberID);
+
+                            if (selectedMember != null)
+                            {
+                                DialogResult result = MessageBox.Show("Bạn có muốn xóa tài khoản này không?", "Xác nhận xóa", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                                if (result == DialogResult.OK)
+                                {
+                                    // Xóa tài khoản khỏi nguồn dữ liệu.
+                                    _entity.tbMembers.Remove(selectedMember);
+
+                                    // Lưu các thay đổi vào cơ sở dữ liệu.
+                                    _entity.SaveChanges();
+
+                                    
+                                }
+                            }
+
+                        }
+
+                        catch (Exception ex)
+                        {
+                            // Handle any exceptions here, e.g., show an error message.
+                            MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                
+
             }
-            else
-            {
-                MessageBox.Show("Something went wrong!. Please try again\n", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-
-
-
         }
+
+    
         private void tabHoiVien_Click(object sender, EventArgs e)
         {
 
 
         }
+
+
 
         private void dgvListTaiKhoan_SelectionChanged(object sender, EventArgs e)
         {
@@ -309,6 +387,29 @@ namespace PROJECT_NetGameVN_STINGDAU
 
 
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         public void LoadClient()
         {
@@ -318,6 +419,7 @@ namespace PROJECT_NetGameVN_STINGDAU
 
         private void PicOpenClientEventHandler_Click(object sender, EventArgs e)
         {
+
             using (NetGameVNEntities _entity = new NetGameVNEntities())
             {
                 try
