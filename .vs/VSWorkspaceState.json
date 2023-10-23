@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\PROJECT_NetGameVN_STINGDAU",
-    "\\PROJECT_NetGameVN_STINGDAU\\PROJECT_NetGameVN_STINGDAU"
+    "\\PROJECT_NetGameVN_STINGDAU\\PROJECT_NetGameVN_STINGDAU",
+    "\\PROJECT_NetGameVN_STINGDAU\\PROJECT_NetGameVN_STINGDAU\\bin\\Release",
+    "\\PROJECT_NetGameVN_STINGDAU\\PROJECT_NetGameVN_STINGDAU\\obj"
   ],
-  "SelectedNode": "\\PROJECT_NetGameVN_STINGDAU\\PROJECT_NetGameVN_STINGDAU\\App.config",
+  "SelectedNode": "\\PROJECT_NetGameVN_STINGDAU\\PROJECT_NetGameVN_STINGDAU\\bin",
   "PreviewInSolutionExplorer": false
 }
