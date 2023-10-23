@@ -72,6 +72,27 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelDP.edmx</DependentUpon>
     </Compile>
+    <Compile Include="DPContext\sysdiagram.cs">
+      <DependentUpon>ModelDP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DPContext\tbAdmin.cs">
+      <DependentUpon>ModelDP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DPContext\tbClient.cs">
+      <DependentUpon>ModelDP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DPContext\tbGroupClient.cs">
+      <DependentUpon>ModelDP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DPContext\tbGroupUser.cs">
+      <DependentUpon>ModelDP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DPContext\tbLoginUser.cs">
+      <DependentUpon>ModelDP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DPContext\tbMember.cs">
+      <DependentUpon>ModelDP.tt</DependentUpon>
+    </Compile>
     <Compile Include="frmDangKy.cs">
       <SubType>Form</SubType>
     </Compile>
