@@ -17,9 +17,6 @@ namespace PROJECT_NetGameVN_STINGDAU
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
+     
     }
 }

@@ -637,5 +637,11 @@ namespace PROJECT_NetGameVN_STINGDAU
         {
 
         }
+
+        private void btnQLDV_Click(object sender, EventArgs e)
+        {
+            frmDichVu frm = new frmDichVu();
+            frm.ShowDialog();
+        }
     }
 }

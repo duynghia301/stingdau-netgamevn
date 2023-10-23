@@ -33,6 +33,8 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabMayTram = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
+            this.picLockClient = new System.Windows.Forms.PictureBox();
+            this.picShutdownClient = new System.Windows.Forms.PictureBox();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.dvgList = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
@@ -40,6 +42,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.PicOpenClientEventHandler = new System.Windows.Forms.PictureBox();
             this.tabTaiKhoan = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabHoiVien = new System.Windows.Forms.TabPage();
@@ -51,12 +55,15 @@
             this.dgvListTaiKhoan = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.quảnLýTàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngKýTàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đổiMậtKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xóaTàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabNhanVien = new System.Windows.Forms.TabPage();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.tabHistorySystem = new System.Windows.Forms.TabPage();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.Colten = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,6 +79,10 @@
             this.label9 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.pictureBox15 = new System.Windows.Forms.PictureBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.tabHisTrade = new System.Windows.Forms.TabPage();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,9 +98,17 @@
             this.label12 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.pictureBox14 = new System.Windows.Forms.PictureBox();
+            this.pictureBox16 = new System.Windows.Forms.PictureBox();
+            this.pictureBox17 = new System.Windows.Forms.PictureBox();
             this.tabGroubPC = new System.Windows.Forms.TabPage();
             this.drgvClientGroup = new System.Windows.Forms.DataGridView();
+            this.pictureBox18 = new System.Windows.Forms.PictureBox();
+            this.pictureBox19 = new System.Windows.Forms.PictureBox();
+            this.pictureBox20 = new System.Windows.Forms.PictureBox();
             this.tabDichVu = new System.Windows.Forms.TabPage();
+            this.pictureBox21 = new System.Windows.Forms.PictureBox();
             this.txtSearchService = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.tabCategory = new System.Windows.Forms.TabControl();
@@ -100,44 +119,45 @@
             this.tabCard = new System.Windows.Forms.TabPage();
             this.drgvCard = new System.Windows.Forms.DataGridView();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.tabGroupMems = new System.Windows.Forms.TabPage();
-            this.picLockClient = new System.Windows.Forms.PictureBox();
-            this.picShutdownClient = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.PicOpenClientEventHandler = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox15 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
-            this.pictureBox16 = new System.Windows.Forms.PictureBox();
-            this.pictureBox17 = new System.Windows.Forms.PictureBox();
-            this.pictureBox18 = new System.Windows.Forms.PictureBox();
-            this.pictureBox19 = new System.Windows.Forms.PictureBox();
-            this.pictureBox20 = new System.Windows.Forms.PictureBox();
-            this.pictureBox21 = new System.Windows.Forms.PictureBox();
             this.pictureBox22 = new System.Windows.Forms.PictureBox();
+            this.tabGroupMems = new System.Windows.Forms.TabPage();
+            this.btnQLDV = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabMayTram.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLockClient)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picShutdownClient)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvgList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PicOpenClientEventHandler)).BeginInit();
             this.tabTaiKhoan.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabHoiVien.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListTaiKhoan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.tabHistorySystem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.tabHisTrade.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             this.tabGroubPC.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.drgvClientGroup)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
             this.tabDichVu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
             this.tabCategory.SuspendLayout();
             this.tabFood.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.drgvFood)).BeginInit();
@@ -145,25 +165,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.drgvDrink)).BeginInit();
             this.tabCard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.drgvCard)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLockClient)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picShutdownClient)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PicOpenClientEventHandler)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
             this.SuspendLayout();
             // 
@@ -225,7 +226,7 @@
             this.tabMayTram.Cursor = System.Windows.Forms.Cursors.Default;
             this.tabMayTram.Location = new System.Drawing.Point(4, 32);
             this.tabMayTram.Name = "tabMayTram";
-            this.tabMayTram.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabMayTram.Padding = new System.Windows.Forms.Padding(3);
             this.tabMayTram.Size = new System.Drawing.Size(1066, 609);
             this.tabMayTram.TabIndex = 1;
             this.tabMayTram.Text = "Máy Trạm";
@@ -242,6 +243,27 @@
             this.button1.Text = "Refresh";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // picLockClient
+            // 
+            this.picLockClient.Image = global::PROJECT_NetGameVN_STINGDAU.Properties.Resources.padlock_23163_1280;
+            this.picLockClient.Location = new System.Drawing.Point(271, 20);
+            this.picLockClient.Name = "picLockClient";
+            this.picLockClient.Size = new System.Drawing.Size(79, 65);
+            this.picLockClient.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLockClient.TabIndex = 10;
+            this.picLockClient.TabStop = false;
+            // 
+            // picShutdownClient
+            // 
+            this.picShutdownClient.Image = global::PROJECT_NetGameVN_STINGDAU.Properties.Resources.kisspng_shutdown_computer_icons_scalable_vector_graphics_c_files_free_shutdown_5ab0c4ee3e9f22_2021264615215341902565;
+            this.picShutdownClient.Location = new System.Drawing.Point(394, 20);
+            this.picShutdownClient.Name = "picShutdownClient";
+            this.picShutdownClient.Size = new System.Drawing.Size(79, 65);
+            this.picShutdownClient.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picShutdownClient.TabIndex = 9;
+            this.picShutdownClient.TabStop = false;
+            this.picShutdownClient.Click += new System.EventHandler(this.picShutdownClient_Click);
             // 
             // txtTotal
             // 
@@ -311,13 +333,37 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Mở Máy";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.ErrorImage = global::PROJECT_NetGameVN_STINGDAU.Properties.Resources.blog;
+            this.pictureBox2.Image = global::PROJECT_NetGameVN_STINGDAU.Properties.Resources.internet_startup_icon;
+            this.pictureBox2.Location = new System.Drawing.Point(144, 16);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(83, 69);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // PicOpenClientEventHandler
+            // 
+            this.PicOpenClientEventHandler.ErrorImage = global::PROJECT_NetGameVN_STINGDAU.Properties.Resources.máy_tính;
+            this.PicOpenClientEventHandler.Image = global::PROJECT_NetGameVN_STINGDAU.Properties.Resources.máy_tính;
+            this.PicOpenClientEventHandler.InitialImage = global::PROJECT_NetGameVN_STINGDAU.Properties.Resources.máy_tính;
+            this.PicOpenClientEventHandler.Location = new System.Drawing.Point(22, 16);
+            this.PicOpenClientEventHandler.Name = "PicOpenClientEventHandler";
+            this.PicOpenClientEventHandler.Size = new System.Drawing.Size(83, 69);
+            this.PicOpenClientEventHandler.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PicOpenClientEventHandler.TabIndex = 0;
+            this.PicOpenClientEventHandler.TabStop = false;
+            this.PicOpenClientEventHandler.Click += new System.EventHandler(this.PicOpenClientEventHandler_Click);
+            // 
             // tabTaiKhoan
             // 
             this.tabTaiKhoan.Controls.Add(this.tabControl2);
             this.tabTaiKhoan.Controls.Add(this.pictureBox8);
             this.tabTaiKhoan.Location = new System.Drawing.Point(4, 32);
             this.tabTaiKhoan.Name = "tabTaiKhoan";
-            this.tabTaiKhoan.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabTaiKhoan.Padding = new System.Windows.Forms.Padding(3);
             this.tabTaiKhoan.Size = new System.Drawing.Size(1066, 609);
             this.tabTaiKhoan.TabIndex = 2;
             this.tabTaiKhoan.Text = "Tài Khoản";
@@ -346,7 +392,7 @@
             this.tabHoiVien.Controls.Add(this.menuStrip1);
             this.tabHoiVien.Location = new System.Drawing.Point(4, 4);
             this.tabHoiVien.Name = "tabHoiVien";
-            this.tabHoiVien.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabHoiVien.Padding = new System.Windows.Forms.Padding(3);
             this.tabHoiVien.Size = new System.Drawing.Size(1058, 570);
             this.tabHoiVien.TabIndex = 0;
             this.tabHoiVien.Text = "Hội Viên";
@@ -379,7 +425,7 @@
             // bnttimkiem
             // 
             this.bnttimkiem.Location = new System.Drawing.Point(316, 62);
-            this.bnttimkiem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bnttimkiem.Margin = new System.Windows.Forms.Padding(2);
             this.bnttimkiem.Name = "bnttimkiem";
             this.bnttimkiem.Size = new System.Drawing.Size(74, 37);
             this.bnttimkiem.TabIndex = 20;
@@ -432,6 +478,26 @@
             this.label8.TabIndex = 17;
             this.label8.Text = "Mở Máy";
             // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::PROJECT_NetGameVN_STINGDAU.Properties.Resources.internet_startup_icon;
+            this.pictureBox6.Location = new System.Drawing.Point(865, 33);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(83, 69);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 13;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::PROJECT_NetGameVN_STINGDAU.Properties.Resources.máy_tính;
+            this.pictureBox7.Location = new System.Drawing.Point(743, 33);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(83, 69);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 14;
+            this.pictureBox7.TabStop = false;
+            // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -479,11 +545,19 @@
             // 
             this.tabNhanVien.Location = new System.Drawing.Point(4, 4);
             this.tabNhanVien.Name = "tabNhanVien";
-            this.tabNhanVien.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabNhanVien.Padding = new System.Windows.Forms.Padding(3);
             this.tabNhanVien.Size = new System.Drawing.Size(1058, 570);
             this.tabNhanVien.TabIndex = 1;
             this.tabNhanVien.Text = "Nhân Viên";
             this.tabNhanVien.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Location = new System.Drawing.Point(911, 34);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(33, 31);
+            this.pictureBox8.TabIndex = 10;
+            this.pictureBox8.TabStop = false;
             // 
             // tabHistorySystem
             // 
@@ -500,7 +574,7 @@
             this.tabHistorySystem.Controls.Add(this.pictureBox10);
             this.tabHistorySystem.Location = new System.Drawing.Point(4, 32);
             this.tabHistorySystem.Name = "tabHistorySystem";
-            this.tabHistorySystem.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabHistorySystem.Padding = new System.Windows.Forms.Padding(3);
             this.tabHistorySystem.Size = new System.Drawing.Size(1066, 609);
             this.tabHistorySystem.TabIndex = 3;
             this.tabHistorySystem.Text = "Nhật Ký Hệ Thống";
@@ -618,6 +692,44 @@
             this.comboBox2.Size = new System.Drawing.Size(162, 31);
             this.comboBox2.TabIndex = 22;
             // 
+            // pictureBox12
+            // 
+            this.pictureBox12.Image = global::PROJECT_NetGameVN_STINGDAU.Properties.Resources.kisspng_hardcover_calendar_photo_book_computer_icons_calendar_icon_5ac1ec944b2878_5840903915226584523079;
+            this.pictureBox12.Location = new System.Drawing.Point(633, 3);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(49, 41);
+            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox12.TabIndex = 31;
+            this.pictureBox12.TabStop = false;
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.Image = global::PROJECT_NetGameVN_STINGDAU.Properties.Resources.kisspng_hardcover_calendar_photo_book_computer_icons_calendar_icon_5ac1ec944b2878_5840903915226584523079;
+            this.pictureBox11.Location = new System.Drawing.Point(314, 3);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(49, 41);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox11.TabIndex = 28;
+            this.pictureBox11.TabStop = false;
+            // 
+            // pictureBox15
+            // 
+            this.pictureBox15.Image = global::PROJECT_NetGameVN_STINGDAU.Properties.Resources.internet_startup_icon;
+            this.pictureBox15.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox15.Name = "pictureBox15";
+            this.pictureBox15.Size = new System.Drawing.Size(49, 41);
+            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox15.TabIndex = 25;
+            this.pictureBox15.TabStop = false;
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Location = new System.Drawing.Point(1024, 13);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(32, 31);
+            this.pictureBox10.TabIndex = 24;
+            this.pictureBox10.TabStop = false;
+            // 
             // tabHisTrade
             // 
             this.tabHisTrade.Controls.Add(this.dataGridView4);
@@ -633,7 +745,7 @@
             this.tabHisTrade.Controls.Add(this.pictureBox17);
             this.tabHisTrade.Location = new System.Drawing.Point(4, 32);
             this.tabHisTrade.Name = "tabHisTrade";
-            this.tabHisTrade.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabHisTrade.Padding = new System.Windows.Forms.Padding(3);
             this.tabHisTrade.Size = new System.Drawing.Size(1066, 609);
             this.tabHisTrade.TabIndex = 4;
             this.tabHisTrade.Text = "Nhật Ký Giao Dịch";
@@ -751,6 +863,44 @@
             this.comboBox3.Size = new System.Drawing.Size(162, 31);
             this.comboBox3.TabIndex = 33;
             // 
+            // pictureBox13
+            // 
+            this.pictureBox13.Image = global::PROJECT_NetGameVN_STINGDAU.Properties.Resources.kisspng_hardcover_calendar_photo_book_computer_icons_calendar_icon_5ac1ec944b2878_5840903915226584523079;
+            this.pictureBox13.Location = new System.Drawing.Point(633, 3);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(49, 41);
+            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox13.TabIndex = 42;
+            this.pictureBox13.TabStop = false;
+            // 
+            // pictureBox14
+            // 
+            this.pictureBox14.Image = global::PROJECT_NetGameVN_STINGDAU.Properties.Resources.kisspng_hardcover_calendar_photo_book_computer_icons_calendar_icon_5ac1ec944b2878_5840903915226584523079;
+            this.pictureBox14.Location = new System.Drawing.Point(314, 3);
+            this.pictureBox14.Name = "pictureBox14";
+            this.pictureBox14.Size = new System.Drawing.Size(49, 41);
+            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox14.TabIndex = 39;
+            this.pictureBox14.TabStop = false;
+            // 
+            // pictureBox16
+            // 
+            this.pictureBox16.Image = global::PROJECT_NetGameVN_STINGDAU.Properties.Resources.internet_startup_icon;
+            this.pictureBox16.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox16.Name = "pictureBox16";
+            this.pictureBox16.Size = new System.Drawing.Size(49, 41);
+            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox16.TabIndex = 36;
+            this.pictureBox16.TabStop = false;
+            // 
+            // pictureBox17
+            // 
+            this.pictureBox17.Location = new System.Drawing.Point(1024, 13);
+            this.pictureBox17.Name = "pictureBox17";
+            this.pictureBox17.Size = new System.Drawing.Size(32, 31);
+            this.pictureBox17.TabIndex = 35;
+            this.pictureBox17.TabStop = false;
+            // 
             // tabGroubPC
             // 
             this.tabGroubPC.Controls.Add(this.drgvClientGroup);
@@ -759,7 +909,7 @@
             this.tabGroubPC.Controls.Add(this.pictureBox20);
             this.tabGroubPC.Location = new System.Drawing.Point(4, 32);
             this.tabGroubPC.Name = "tabGroubPC";
-            this.tabGroubPC.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabGroubPC.Padding = new System.Windows.Forms.Padding(3);
             this.tabGroubPC.Size = new System.Drawing.Size(1066, 609);
             this.tabGroubPC.TabIndex = 5;
             this.tabGroubPC.Text = "Nhóm Máy";
@@ -778,8 +928,36 @@
             this.drgvClientGroup.Size = new System.Drawing.Size(1057, 545);
             this.drgvClientGroup.TabIndex = 7;
             // 
+            // pictureBox18
+            // 
+            this.pictureBox18.Location = new System.Drawing.Point(156, 6);
+            this.pictureBox18.Name = "pictureBox18";
+            this.pictureBox18.Size = new System.Drawing.Size(52, 50);
+            this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox18.TabIndex = 6;
+            this.pictureBox18.TabStop = false;
+            // 
+            // pictureBox19
+            // 
+            this.pictureBox19.Location = new System.Drawing.Point(79, 6);
+            this.pictureBox19.Name = "pictureBox19";
+            this.pictureBox19.Size = new System.Drawing.Size(52, 50);
+            this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox19.TabIndex = 5;
+            this.pictureBox19.TabStop = false;
+            // 
+            // pictureBox20
+            // 
+            this.pictureBox20.Location = new System.Drawing.Point(7, 6);
+            this.pictureBox20.Name = "pictureBox20";
+            this.pictureBox20.Size = new System.Drawing.Size(52, 50);
+            this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox20.TabIndex = 4;
+            this.pictureBox20.TabStop = false;
+            // 
             // tabDichVu
             // 
+            this.tabDichVu.Controls.Add(this.btnQLDV);
             this.tabDichVu.Controls.Add(this.pictureBox21);
             this.tabDichVu.Controls.Add(this.txtSearchService);
             this.tabDichVu.Controls.Add(this.label13);
@@ -788,17 +966,27 @@
             this.tabDichVu.Controls.Add(this.pictureBox22);
             this.tabDichVu.Location = new System.Drawing.Point(4, 32);
             this.tabDichVu.Name = "tabDichVu";
-            this.tabDichVu.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabDichVu.Padding = new System.Windows.Forms.Padding(3);
             this.tabDichVu.Size = new System.Drawing.Size(1066, 609);
             this.tabDichVu.TabIndex = 6;
             this.tabDichVu.Text = "Dịch Vụ";
             this.tabDichVu.UseVisualStyleBackColor = true;
             // 
+            // pictureBox21
+            // 
+            this.pictureBox21.Image = global::PROJECT_NetGameVN_STINGDAU.Properties.Resources.View;
+            this.pictureBox21.Location = new System.Drawing.Point(960, 17);
+            this.pictureBox21.Name = "pictureBox21";
+            this.pictureBox21.Size = new System.Drawing.Size(32, 31);
+            this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox21.TabIndex = 38;
+            this.pictureBox21.TabStop = false;
+            // 
             // txtSearchService
             // 
             this.txtSearchService.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchService.ForeColor = System.Drawing.Color.Red;
-            this.txtSearchService.Location = new System.Drawing.Point(635, 16);
+            this.txtSearchService.Location = new System.Drawing.Point(689, 16);
             this.txtSearchService.Name = "txtSearchService";
             this.txtSearchService.Size = new System.Drawing.Size(255, 29);
             this.txtSearchService.TabIndex = 13;
@@ -834,7 +1022,7 @@
             this.tabFood.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.tabFood.Location = new System.Drawing.Point(4, 4);
             this.tabFood.Name = "tabFood";
-            this.tabFood.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabFood.Padding = new System.Windows.Forms.Padding(3);
             this.tabFood.Size = new System.Drawing.Size(1064, 519);
             this.tabFood.TabIndex = 0;
             this.tabFood.Text = "Thức Ăn";
@@ -845,7 +1033,7 @@
             this.drgvFood.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.drgvFood.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.drgvFood.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.drgvFood.Location = new System.Drawing.Point(20, 6);
+            this.drgvFood.Location = new System.Drawing.Point(34, 19);
             this.drgvFood.Name = "drgvFood";
             this.drgvFood.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.drgvFood.Size = new System.Drawing.Size(1100, 536);
@@ -859,7 +1047,7 @@
             this.tabDrink.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.tabDrink.Location = new System.Drawing.Point(4, 4);
             this.tabDrink.Name = "tabDrink";
-            this.tabDrink.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabDrink.Padding = new System.Windows.Forms.Padding(3);
             this.tabDrink.Size = new System.Drawing.Size(1064, 519);
             this.tabDrink.TabIndex = 1;
             this.tabDrink.Text = "Nước Uống";
@@ -908,206 +1096,11 @@
             this.comboBox4.Items.AddRange(new object[] {
             "Tên ",
             "Danh Mục"});
-            this.comboBox4.Location = new System.Drawing.Point(339, 13);
+            this.comboBox4.Location = new System.Drawing.Point(417, 16);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(255, 32);
             this.comboBox4.TabIndex = 12;
             this.comboBox4.Text = "--Lựa chọn--";
-            // 
-            // tabGroupMems
-            // 
-            this.tabGroupMems.Location = new System.Drawing.Point(4, 32);
-            this.tabGroupMems.Name = "tabGroupMems";
-            this.tabGroupMems.Size = new System.Drawing.Size(1066, 609);
-            this.tabGroupMems.TabIndex = 7;
-            this.tabGroupMems.Text = "Nhóm người sử dụng";
-            this.tabGroupMems.UseVisualStyleBackColor = true;
-            // 
-            // picLockClient
-            // 
-            this.picLockClient.Image = global::PROJECT_NetGameVN_STINGDAU.Properties.Resources.padlock_23163_1280;
-            this.picLockClient.Location = new System.Drawing.Point(271, 20);
-            this.picLockClient.Name = "picLockClient";
-            this.picLockClient.Size = new System.Drawing.Size(79, 65);
-            this.picLockClient.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picLockClient.TabIndex = 10;
-            this.picLockClient.TabStop = false;
-            // 
-            // picShutdownClient
-            // 
-            this.picShutdownClient.Image = global::PROJECT_NetGameVN_STINGDAU.Properties.Resources.kisspng_shutdown_computer_icons_scalable_vector_graphics_c_files_free_shutdown_5ab0c4ee3e9f22_2021264615215341902565;
-            this.picShutdownClient.Location = new System.Drawing.Point(394, 20);
-            this.picShutdownClient.Name = "picShutdownClient";
-            this.picShutdownClient.Size = new System.Drawing.Size(79, 65);
-            this.picShutdownClient.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picShutdownClient.TabIndex = 9;
-            this.picShutdownClient.TabStop = false;
-            this.picShutdownClient.Click += new System.EventHandler(this.picShutdownClient_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.ErrorImage = global::PROJECT_NetGameVN_STINGDAU.Properties.Resources.blog;
-            this.pictureBox2.Image = global::PROJECT_NetGameVN_STINGDAU.Properties.Resources.internet_startup_icon;
-            this.pictureBox2.Location = new System.Drawing.Point(144, 16);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(83, 69);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // PicOpenClientEventHandler
-            // 
-            this.PicOpenClientEventHandler.ErrorImage = global::PROJECT_NetGameVN_STINGDAU.Properties.Resources.máy_tính;
-            this.PicOpenClientEventHandler.Image = global::PROJECT_NetGameVN_STINGDAU.Properties.Resources.máy_tính;
-            this.PicOpenClientEventHandler.InitialImage = global::PROJECT_NetGameVN_STINGDAU.Properties.Resources.máy_tính;
-            this.PicOpenClientEventHandler.Location = new System.Drawing.Point(22, 16);
-            this.PicOpenClientEventHandler.Name = "PicOpenClientEventHandler";
-            this.PicOpenClientEventHandler.Size = new System.Drawing.Size(83, 69);
-            this.PicOpenClientEventHandler.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PicOpenClientEventHandler.TabIndex = 0;
-            this.PicOpenClientEventHandler.TabStop = false;
-            this.PicOpenClientEventHandler.Click += new System.EventHandler(this.PicOpenClientEventHandler_Click);
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::PROJECT_NetGameVN_STINGDAU.Properties.Resources.internet_startup_icon;
-            this.pictureBox6.Location = new System.Drawing.Point(865, 33);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(83, 69);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 13;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::PROJECT_NetGameVN_STINGDAU.Properties.Resources.máy_tính;
-            this.pictureBox7.Location = new System.Drawing.Point(743, 33);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(83, 69);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 14;
-            this.pictureBox7.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Location = new System.Drawing.Point(911, 34);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(33, 31);
-            this.pictureBox8.TabIndex = 10;
-            this.pictureBox8.TabStop = false;
-            // 
-            // pictureBox12
-            // 
-            this.pictureBox12.Image = global::PROJECT_NetGameVN_STINGDAU.Properties.Resources.kisspng_hardcover_calendar_photo_book_computer_icons_calendar_icon_5ac1ec944b2878_5840903915226584523079;
-            this.pictureBox12.Location = new System.Drawing.Point(633, 3);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(49, 41);
-            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox12.TabIndex = 31;
-            this.pictureBox12.TabStop = false;
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.Image = global::PROJECT_NetGameVN_STINGDAU.Properties.Resources.kisspng_hardcover_calendar_photo_book_computer_icons_calendar_icon_5ac1ec944b2878_5840903915226584523079;
-            this.pictureBox11.Location = new System.Drawing.Point(314, 3);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(49, 41);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox11.TabIndex = 28;
-            this.pictureBox11.TabStop = false;
-            // 
-            // pictureBox15
-            // 
-            this.pictureBox15.Image = global::PROJECT_NetGameVN_STINGDAU.Properties.Resources.internet_startup_icon;
-            this.pictureBox15.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(49, 41);
-            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox15.TabIndex = 25;
-            this.pictureBox15.TabStop = false;
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Location = new System.Drawing.Point(1024, 13);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(32, 31);
-            this.pictureBox10.TabIndex = 24;
-            this.pictureBox10.TabStop = false;
-            // 
-            // pictureBox13
-            // 
-            this.pictureBox13.Image = global::PROJECT_NetGameVN_STINGDAU.Properties.Resources.kisspng_hardcover_calendar_photo_book_computer_icons_calendar_icon_5ac1ec944b2878_5840903915226584523079;
-            this.pictureBox13.Location = new System.Drawing.Point(633, 3);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(49, 41);
-            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox13.TabIndex = 42;
-            this.pictureBox13.TabStop = false;
-            // 
-            // pictureBox14
-            // 
-            this.pictureBox14.Image = global::PROJECT_NetGameVN_STINGDAU.Properties.Resources.kisspng_hardcover_calendar_photo_book_computer_icons_calendar_icon_5ac1ec944b2878_5840903915226584523079;
-            this.pictureBox14.Location = new System.Drawing.Point(314, 3);
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(49, 41);
-            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox14.TabIndex = 39;
-            this.pictureBox14.TabStop = false;
-            // 
-            // pictureBox16
-            // 
-            this.pictureBox16.Image = global::PROJECT_NetGameVN_STINGDAU.Properties.Resources.internet_startup_icon;
-            this.pictureBox16.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(49, 41);
-            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox16.TabIndex = 36;
-            this.pictureBox16.TabStop = false;
-            // 
-            // pictureBox17
-            // 
-            this.pictureBox17.Location = new System.Drawing.Point(1024, 13);
-            this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(32, 31);
-            this.pictureBox17.TabIndex = 35;
-            this.pictureBox17.TabStop = false;
-            // 
-            // pictureBox18
-            // 
-            this.pictureBox18.Location = new System.Drawing.Point(156, 6);
-            this.pictureBox18.Name = "pictureBox18";
-            this.pictureBox18.Size = new System.Drawing.Size(52, 50);
-            this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox18.TabIndex = 6;
-            this.pictureBox18.TabStop = false;
-            // 
-            // pictureBox19
-            // 
-            this.pictureBox19.Location = new System.Drawing.Point(79, 6);
-            this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.Size = new System.Drawing.Size(52, 50);
-            this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox19.TabIndex = 5;
-            this.pictureBox19.TabStop = false;
-            // 
-            // pictureBox20
-            // 
-            this.pictureBox20.Location = new System.Drawing.Point(7, 6);
-            this.pictureBox20.Name = "pictureBox20";
-            this.pictureBox20.Size = new System.Drawing.Size(52, 50);
-            this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox20.TabIndex = 4;
-            this.pictureBox20.TabStop = false;
-            // 
-            // pictureBox21
-            // 
-            this.pictureBox21.Image = global::PROJECT_NetGameVN_STINGDAU.Properties.Resources.View;
-            this.pictureBox21.Location = new System.Drawing.Point(908, 16);
-            this.pictureBox21.Name = "pictureBox21";
-            this.pictureBox21.Size = new System.Drawing.Size(32, 31);
-            this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox21.TabIndex = 38;
-            this.pictureBox21.TabStop = false;
             // 
             // pictureBox22
             // 
@@ -1118,6 +1111,25 @@
             this.pictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox22.TabIndex = 37;
             this.pictureBox22.TabStop = false;
+            // 
+            // tabGroupMems
+            // 
+            this.tabGroupMems.Location = new System.Drawing.Point(4, 32);
+            this.tabGroupMems.Name = "tabGroupMems";
+            this.tabGroupMems.Size = new System.Drawing.Size(1066, 609);
+            this.tabGroupMems.TabIndex = 7;
+            this.tabGroupMems.Text = "Nhóm người sử dụng";
+            this.tabGroupMems.UseVisualStyleBackColor = true;
+            // 
+            // btnQLDV
+            // 
+            this.btnQLDV.Location = new System.Drawing.Point(232, 12);
+            this.btnQLDV.Name = "btnQLDV";
+            this.btnQLDV.Size = new System.Drawing.Size(101, 32);
+            this.btnQLDV.TabIndex = 1;
+            this.btnQLDV.Text = "Quản Lý";
+            this.btnQLDV.UseVisualStyleBackColor = true;
+            this.btnQLDV.Click += new System.EventHandler(this.btnQLDV_Click);
             // 
             // frmMayChu
             // 
@@ -1136,7 +1148,11 @@
             this.tabControl1.ResumeLayout(false);
             this.tabMayTram.ResumeLayout(false);
             this.tabMayTram.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLockClient)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picShutdownClient)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvgList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PicOpenClientEventHandler)).EndInit();
             this.tabTaiKhoan.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.tabHoiVien.ResumeLayout(false);
@@ -1144,18 +1160,33 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListTaiKhoan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.tabHistorySystem.ResumeLayout(false);
             this.tabHistorySystem.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             this.tabHisTrade.ResumeLayout(false);
             this.tabHisTrade.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             this.tabGroubPC.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.drgvClientGroup)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
             this.tabDichVu.ResumeLayout(false);
             this.tabDichVu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
             this.tabCategory.ResumeLayout(false);
             this.tabFood.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.drgvFood)).EndInit();
@@ -1163,25 +1194,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.drgvDrink)).EndInit();
             this.tabCard.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.drgvCard)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLockClient)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picShutdownClient)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PicOpenClientEventHandler)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
             this.ResumeLayout(false);
 
@@ -1282,6 +1294,7 @@
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button bnttimkiem;
+        private System.Windows.Forms.Button btnQLDV;
     }
 }
 
