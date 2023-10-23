@@ -144,6 +144,11 @@
     <Compile Include="frmNapTien.Designer.cs">
       <DependentUpon>frmNapTien.cs</DependentUpon>
     </Compile>
+    <Compile Include="NetGameVNDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NetGameVNDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmDangKy.resx">
@@ -187,6 +192,17 @@
     </None>
     <None Include="DPContext\ModelDP.edmx.diagram">
       <DependentUpon>ModelDP.edmx</DependentUpon>
+    </None>
+    <None Include="NetGameVNDataSet.xsc">
+      <DependentUpon>NetGameVNDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="NetGameVNDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NetGameVNDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NetGameVNDataSet.xss">
+      <DependentUpon>NetGameVNDataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
