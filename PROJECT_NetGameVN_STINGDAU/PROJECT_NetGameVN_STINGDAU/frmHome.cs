@@ -14,7 +14,8 @@ namespace PROJECT_NetGameVN_STINGDAU
 {
     public partial class frmMayChu : Form
     {
-
+        //tạo biến kiểm tra thoát
+        bool isThoat = true;
 
         private static DateTime _startDateTime;
         public static void Start()
@@ -30,9 +31,7 @@ namespace PROJECT_NetGameVN_STINGDAU
  
         }
 
-        //tạo biến kiểm tra thoát
-
-        bool isThoat = true;
+        
 
         NetGameVNEntities db = new NetGameVNEntities();
         public frmMayChu(tbAdmin _user)
@@ -41,7 +40,6 @@ namespace PROJECT_NetGameVN_STINGDAU
         }
 
         //Máy trạm
-
         public void Display()
         {
             using (NetGameVNEntities _entity = new NetGameVNEntities())
@@ -53,8 +51,6 @@ namespace PROJECT_NetGameVN_STINGDAU
                     GroupClientName = x.GroupClientName,
                     StatusClient = x.StatusClient,
                     Note = x.Note,
-                    //Starttime = x.Starttime ,
-                    //UseTime = x.UseTime,
                 }).ToList();
                 dvgList.DataSource = _ClientList;
 
@@ -62,6 +58,24 @@ namespace PROJECT_NetGameVN_STINGDAU
 
             }
         }
+        //public void Display()
+        //{
+        //    using (NetGameVNEntities _entity = new NetGameVNEntities())
+        //    {
+        //        List<Client> _ClientList = new List<Client>();
+        //        _ClientList = _entity.tbClients.Select(x => new Client
+        //        {
+        //            ClientName = x.ClientName,
+        //            GroupClientName = x.GroupClientName,
+        //            StatusClient = x.StatusClient,
+        //            Note = x.Note,
+        //        }).ToList();
+        //        dvgList.DataSource = _ClientList;
+
+
+
+        //    }
+        //}
         public void DisplayMember()
         {
 
