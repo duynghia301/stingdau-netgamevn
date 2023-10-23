@@ -14,9 +14,8 @@ namespace PROJECT_NetGameVN_STINGDAU.DPContext
     
     public partial class tbDichVu
     {
-        public int Madv { get; set; }
-        public string Tendv { get; set; }
-        public Nullable<double> Giatien { get; set; }
-        public Nullable<int> soluong { get; set; }
+        public string MaDV { get; set; }
+        public string TenDV { get; set; }
+        public Nullable<double> GiaTien { get; set; }
     }
 }

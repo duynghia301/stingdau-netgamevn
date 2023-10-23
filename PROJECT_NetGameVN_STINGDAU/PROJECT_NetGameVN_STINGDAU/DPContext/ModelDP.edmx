@@ -35,6 +35,14 @@
           <Property Name="StatusClient" Type="nvarchar" MaxLength="50" />
           <Property Name="Note" Type="nvarchar" MaxLength="100" />
         </EntityType>
+        <EntityType Name="tbDichVu">
+          <Key>
+            <PropertyRef Name="MaDV" />
+          </Key>
+          <Property Name="MaDV" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="TenDV" Type="nvarchar" MaxLength="50" />
+          <Property Name="GiaTien" Type="float" />
+        </EntityType>
         <EntityType Name="tbGroupClient">
           <Key>
             <PropertyRef Name="GroupName" />
@@ -127,6 +135,7 @@
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbAdmins" EntityType="Self.tbAdmins" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbClient" EntityType="Self.tbClient" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbDichVu" EntityType="Self.tbDichVu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbGroupClient" EntityType="Self.tbGroupClient" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbGroupUser" EntityType="Self.tbGroupUser" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbLoginUsers" EntityType="Self.tbLoginUsers" Schema="dbo" store:Type="Tables" />
@@ -302,7 +311,16 @@
             <End Role="tbMembers" EntitySet="tbMembers" />
             <End Role="tbLoginUsers" EntitySet="tbLoginUsers" />
           </AssociationSet>
+          <EntitySet Name="tbDichVus" EntityType="NetGameVNModel.tbDichVu" />
         </EntityContainer>
+        <EntityType Name="tbDichVu">
+          <Key>
+            <PropertyRef Name="MaDV" />
+          </Key>
+          <Property Name="MaDV" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="TenDV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GiaTien" Type="Double" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -382,6 +400,15 @@
                 <ScalarProperty Name="StatusAccount" ColumnName="StatusAccount" />
                 <ScalarProperty Name="Fullname" ColumnName="Fullname" />
                 <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbDichVus">
+            <EntityTypeMapping TypeName="NetGameVNModel.tbDichVu">
+              <MappingFragment StoreEntitySet="tbDichVu">
+                <ScalarProperty Name="GiaTien" ColumnName="GiaTien" />
+                <ScalarProperty Name="TenDV" ColumnName="TenDV" />
+                <ScalarProperty Name="MaDV" ColumnName="MaDV" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

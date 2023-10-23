@@ -150,5 +150,14 @@
       <End Role="tbMembers" EntitySet="tbMembers" />
       <End Role="tbLoginUsers" EntitySet="tbLoginUsers" />
     </AssociationSet>
+    <EntitySet Name="tbDichVus" EntityType="NetGameVNModel.tbDichVu" />
   </EntityContainer>
+  <EntityType Name="tbDichVu">
+    <Key>
+      <PropertyRef Name="MaDV" />
+    </Key>
+    <Property Name="MaDV" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="TenDV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GiaTien" Type="Double" />
+  </EntityType>
 </Schema>
