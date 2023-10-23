@@ -77,5 +77,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tbDichVus">
+      <EntityTypeMapping TypeName="NetGameVNModel.tbDichVu">
+        <MappingFragment StoreEntitySet="tbDichVu">
+          <ScalarProperty Name="GiaTien" ColumnName="GiaTien" />
+          <ScalarProperty Name="TenDV" ColumnName="TenDV" />
+          <ScalarProperty Name="MaDV" ColumnName="MaDV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

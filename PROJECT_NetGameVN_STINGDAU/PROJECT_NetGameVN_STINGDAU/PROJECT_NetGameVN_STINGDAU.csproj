@@ -81,6 +81,9 @@
     <Compile Include="DPContext\tbClient.cs">
       <DependentUpon>ModelDP.tt</DependentUpon>
     </Compile>
+    <Compile Include="DPContext\tbDichVu.cs">
+      <DependentUpon>ModelDP.tt</DependentUpon>
+    </Compile>
     <Compile Include="DPContext\tbGroupClient.cs">
       <DependentUpon>ModelDP.tt</DependentUpon>
     </Compile>
@@ -194,7 +197,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\28-512.png" />
@@ -391,6 +396,9 @@
       <DependentUpon>ModelDP.edmx</DependentUpon>
       <LastGenOutput>ModelDP.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\kisspng-hardcover-calendar-photo-book-computer-icons-calendar-icon-5ac1ec944b2878.5840903915226584523079.png" />
+    <None Include="Resources\kisspng-shutdown-computer-icons-scalable-vector-graphics-c-files-free-shutdown-5ab0c4ee3e9f22.2021264615215341902565.png" />
+    <None Include="Resources\padlock-23163_1280.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
