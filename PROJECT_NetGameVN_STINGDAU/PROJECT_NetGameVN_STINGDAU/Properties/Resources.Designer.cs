@@ -493,6 +493,28 @@ namespace PROJECT_NetGameVN_STINGDAU.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap kisspng_hardcover_calendar_photo_book_computer_icons_calendar_icon_5ac1ec944b2878_5840903915226584523079 {
+            get {
+                object obj = ResourceManager.GetObject("kisspng-hardcover-calendar-photo-book-computer-icons-calendar-icon-5ac1ec944b2878" +
+                        ".5840903915226584523079", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap kisspng_shutdown_computer_icons_scalable_vector_graphics_c_files_free_shutdown_5ab0c4ee3e9f22_2021264615215341902565 {
+            get {
+                object obj = ResourceManager.GetObject("kisspng-shutdown-computer-icons-scalable-vector-graphics-c-files-free-shutdown-5a" +
+                        "b0c4ee3e9f22.2021264615215341902565", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap máy_tính {
             get {
                 object obj = ResourceManager.GetObject("máy tính", resourceCulture);
@@ -526,6 +548,16 @@ namespace PROJECT_NetGameVN_STINGDAU.Properties {
         internal static System.Drawing.Bitmap order_icon_21627__1_ {
             get {
                 object obj = ResourceManager.GetObject("order-icon-21627 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap padlock_23163_1280 {
+            get {
+                object obj = ResourceManager.GetObject("padlock-23163_1280", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
