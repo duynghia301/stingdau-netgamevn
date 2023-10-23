@@ -16,6 +16,7 @@
         <AssociationConnector Association="NetGameVNModel.FK_tbLoginUsers_tbClient" ManuallyRouted="false" />
         <AssociationConnector Association="NetGameVNModel.FK_tbMembers_tbGroupUser1" ManuallyRouted="false" />
         <AssociationConnector Association="NetGameVNModel.FK_tbLoginUsers_tbMembers" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="NetGameVNModel.tbDichVu" Width="1.5" PointX="7.375" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
