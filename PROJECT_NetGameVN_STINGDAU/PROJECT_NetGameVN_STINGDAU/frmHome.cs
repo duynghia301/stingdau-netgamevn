@@ -19,6 +19,9 @@ namespace PROJECT_NetGameVN_STINGDAU
         //tạo biến kiểm tra thoát
         bool isThoat = true;
 
+
+
+                                                                                        //Dlong
         private static DateTime _startDateTime;
         public static void Start()
         {
@@ -32,15 +35,18 @@ namespace PROJECT_NetGameVN_STINGDAU
             TimeSpan _timeSpan = _endDateTime - _startDateTime;
  
         }
-
-        
-
         NetGameVNEntities db = new NetGameVNEntities();
+
+
+
         public frmMayChu(tbAdmin _user)
         {
             InitializeComponent();
         }
 
+
+
+                                                                                         //Nghia
         //Máy trạm
         public void Display()
         {
@@ -73,9 +79,6 @@ namespace PROJECT_NetGameVN_STINGDAU
         //            Note = x.Note,
         //        }).ToList();
         //        dvgList.DataSource = _ClientList;
-
-
-
         //    }
         //}
         public void DisplayMember()
@@ -110,8 +113,6 @@ namespace PROJECT_NetGameVN_STINGDAU
             Display();
             DisplayMember();
 
-
-
             cbxTimTk.Items.Add("UserName");
             cbxTimTk.Items.Add("Phone");
             
@@ -138,31 +139,7 @@ namespace PROJECT_NetGameVN_STINGDAU
       
 
 
-        private void LoadSourceToDRGV()
-        {
-            drgvFood.Columns[0].HeaderText = "Mã Định Danh";
-            drgvFood.Columns[1].HeaderText = "Tên Món Ăn";
-            drgvFood.Columns[2].HeaderText = "Thuộc Loại";
-            drgvFood.Columns[3].HeaderText = "Đơn Giá";
-            drgvFood.Columns[4].HeaderText = "Đơn Vị Tính";
-            drgvFood.Columns[5].HeaderText = "Số Lượng Tồn";
 
-            drgvDrink.Columns[0].HeaderText = "Mã Định Danh";
-            drgvDrink.Columns[1].HeaderText = "Tên Món Ăn";
-            drgvDrink.Columns[2].HeaderText = "Thuộc Loại";
-            drgvDrink.Columns[3].HeaderText = "Đơn Giá";
-            drgvDrink.Columns[4].HeaderText = "Đơn Vị Tính";
-            drgvDrink.Columns[5].HeaderText = "Số Lượng Tồn";
-
-            drgvCard.Columns[0].HeaderText = "Mã Định Danh";
-            drgvCard.Columns[1].HeaderText = "Tên Món Ăn";
-            drgvCard.Columns[2].HeaderText = "Thuộc Loại";
-            drgvCard.Columns[3].HeaderText = "Đơn Giá";
-            drgvCard.Columns[4].HeaderText = "Đơn Vị Tính";
-            drgvCard.Columns[5].HeaderText = "Số Lượng Tồn";
-
-
-        }
         private void button1_Click(object sender, EventArgs e)
         {
             DialogResult tb = MessageBox.Show("Bạn có muốn đăng xuất không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
@@ -183,16 +160,7 @@ namespace PROJECT_NetGameVN_STINGDAU
 
         //}
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void picCalculateMoney_Click(object sender, EventArgs e)
-        {
-
-        }
-
+    
 
 
         private void đăngKýTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
@@ -267,33 +235,7 @@ namespace PROJECT_NetGameVN_STINGDAU
             Refresh();
         }
 
-
-        public bool DeleteStudentDetails(int id)
-        {
-            bool result = false;
-            try
-            {
-                using (NetGameVNEntities _entity = new NetGameVNEntities())
-                {
-                    tbMember _user = _entity.tbMembers.Find(id);
-                    if (_user != null)
-                    {
-                        _entity.tbMembers.Remove(_user);
-                        _entity.SaveChanges();
-                        result = true;
-
-                    }
-                    else
-                        result = false;
-                }
-            }
-            catch
-            {
-                result = false;
-            }
-            return result;
-
-        }
+   
 
         public void ClearFields()
         {
@@ -307,42 +249,7 @@ namespace PROJECT_NetGameVN_STINGDAU
 
 
 
-        public bool DeleteMembers(int id)
-        {
-            bool result = false;
-            try
-            {
-                using (NetGameVNEntities _entity = new NetGameVNEntities())
-                {
-                    tbMember _member = _entity.tbMembers.Find(id);
-                    if (_member != null)
-                    {
-                        _entity.tbMembers.Remove(_member);
-                        _entity.SaveChanges();
-                        result = true;
-
-                    }
-                    else
-                    {
-                        result = false;
-                    }
-                }
-            }
-            catch
-            {
-                result = false;
-            }
-            return result;
-        }
-
-
-
-
-
-
-
-
-
+   
 
 
 
@@ -399,50 +306,26 @@ namespace PROJECT_NetGameVN_STINGDAU
         }
 
     
-        private void tabHoiVien_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
-
-
-        private void dgvListTaiKhoan_SelectionChanged(object sender, EventArgs e)
-        {
-
-
-
-        }
+      
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        //tải lại client
         public void LoadClient()
         {
 
             dvgList.DataSource = (from tbClient in db.tbClients select new { ClientName = tbClient.ClientName, GroupClientName = tbClient.GroupClientName, StatusClient = tbClient.StatusClient, Note = tbClient.Note }).ToArray();
         }
 
+
+
+
+
+
+        // mo may
         private void PicOpenClientEventHandler_Click(object sender, EventArgs e)
         {
             
@@ -486,11 +369,6 @@ namespace PROJECT_NetGameVN_STINGDAU
                             return;
                         }
                     }
-
-                   
-                    
-
-
                 }
                 catch (Exception ex)
                 {
@@ -500,6 +378,10 @@ namespace PROJECT_NetGameVN_STINGDAU
             }
         }
 
+
+
+
+        //tat may
         private void picShutdownClient_Click(object sender, EventArgs e)
         {
             using (NetGameVNEntities _entity = new NetGameVNEntities())
@@ -553,6 +435,10 @@ namespace PROJECT_NetGameVN_STINGDAU
 
         }
 
+
+
+
+                                                                                                  //Dlong
         public void Display_Member(string _ttkusername)
         {
 
@@ -627,17 +513,47 @@ namespace PROJECT_NetGameVN_STINGDAU
 
         }
 
+
+
+    
+                                                                                                   //VInh
         private void btnQLDV_Click(object sender, EventArgs e)
         {
             frmDichVu frm = new frmDichVu();
             frm.ShowDialog();
         }
 
+
+
+
+
+
         private void tabDichVu_Click(object sender, EventArgs e)
         {
 
         }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                    //Dnghia chua xong
+
+
+                                                                                                    
         private void frmMayChu_Resize(object sender, EventArgs e)
         {
             if(WindowState==FormWindowState.Minimized)
@@ -651,29 +567,17 @@ namespace PROJECT_NetGameVN_STINGDAU
 
         private void frmMayChu_FormClosing(object sender, FormClosingEventArgs e)
         {
-            notifyIcon1.Visible = true;
-            DialogResult rs = MessageBox.Show("Bạn có muốn đăng xuất không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (rs == DialogResult.OK)
-            {
-                Application.Exit();
-            }
-            else
-            {
-                notifyIcon1.ShowBalloonTip(500, "Thông báo", "NetGameVN", ToolTipIcon.Info);
-                this.Hide();
-            }
-
-        }
-
-        private void frmMayChu_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            
+            //DialogResult rs = MessageBox.Show("Bạn có muốn đăng xuất không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            //if (rs == DialogResult.OK)
+            //{
+            //    Application.Exit();
+            //}      
         }
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            notifyIcon1.Visible = false;
-            this.Show();
+            //notifyIcon1.Visible = false;
+            //this.Show();
         }
     }
 }

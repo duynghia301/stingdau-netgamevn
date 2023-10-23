@@ -25,43 +25,41 @@ namespace PROJECT_NetGameVN_STINGDAU
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            
-            
-               
+                                 
                 string tk = txtTaiKhoan.Text;
                 string mk = txtMatKhau.Text;
                 tbAdmin _user = db.tbAdmins.Where(s => s.UserName == tk && s.Password == mk).FirstOrDefault();
 
-                if (_user != null)
+            if (_user != null)
+            {
+                if (_user.GroupUser == "Admin")
                 {
-                    if (_user.GroupUser == "Admin")
-                    {
                     this.Hide();
-                        frmMayChu frm = new frmMayChu(_user);
-                        frm.ShowDialog();
+                    frmMayChu frm = new frmMayChu(_user);
+                    frm.ShowDialog();
                     this.Close();
-                    
-                    }
 
+                }
+                else if (_user.GroupUser == "Staff")
+                {
+                    this.Hide();
+                    frmDichVu frm = new frmDichVu();
+                    frm.ShowDialog();
+                    this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Vui long kiem tra lai!");
+                    MessageBox.Show("Vui lòng kiểm tra lại!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtTaiKhoan.Focus();
                     return;
                 }
 
-
-
-            
-            
-
-
+            }
+      
         }
 
 
-         
-
+        
         private void frmLogin_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
@@ -81,9 +79,20 @@ namespace PROJECT_NetGameVN_STINGDAU
             }
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
+     
 
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
+            this.KeyDown += frmLogin_KeyDown;
+        }
+
+        private void frmLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnDangNhap_Click(sender, e);
+            }
         }
     }
 }

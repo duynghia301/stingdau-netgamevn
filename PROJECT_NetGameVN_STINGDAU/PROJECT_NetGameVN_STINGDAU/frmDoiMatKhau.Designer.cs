@@ -110,6 +110,7 @@
             this.txtNewPass.Name = "txtNewPass";
             this.txtNewPass.Size = new System.Drawing.Size(208, 26);
             this.txtNewPass.TabIndex = 2;
+            this.txtNewPass.UseSystemPasswordChar = true;
             // 
             // txtConfirm
             // 
@@ -119,6 +120,7 @@
             this.txtConfirm.Name = "txtConfirm";
             this.txtConfirm.Size = new System.Drawing.Size(208, 26);
             this.txtConfirm.TabIndex = 3;
+            this.txtConfirm.UseSystemPasswordChar = true;
             // 
             // txtOldPass
             // 

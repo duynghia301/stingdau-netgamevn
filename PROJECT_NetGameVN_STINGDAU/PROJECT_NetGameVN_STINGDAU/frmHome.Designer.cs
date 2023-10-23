@@ -326,7 +326,6 @@
             resources.ApplyResources(this.tabHoiVien, "tabHoiVien");
             this.tabHoiVien.Name = "tabHoiVien";
             this.tabHoiVien.UseVisualStyleBackColor = true;
-            this.tabHoiVien.Click += new System.EventHandler(this.tabHoiVien_Click);
             // 
             // panel1
             // 
@@ -397,7 +396,6 @@
             this.dgvListTaiKhoan.BackgroundColor = System.Drawing.Color.White;
             this.dgvListTaiKhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListTaiKhoan.Name = "dgvListTaiKhoan";
-            this.dgvListTaiKhoan.SelectionChanged += new System.EventHandler(this.dgvListTaiKhoan_SelectionChanged);
             // 
             // menuStrip1
             // 
@@ -900,7 +898,6 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMayChu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMayChu_FormClosing);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMayChu_FormClosed);
             this.Load += new System.EventHandler(this.frmMayChu_Load);
             this.Resize += new System.EventHandler(this.frmMayChu_Resize);
             this.tabControl1.ResumeLayout(false);
