@@ -14,6 +14,8 @@ namespace PROJECT_NetGameVN_STINGDAU
 {
     public partial class frmMayChu : Form
     {
+
+        
         //tạo biến kiểm tra thoát
         bool isThoat = true;
 
@@ -104,10 +106,7 @@ namespace PROJECT_NetGameVN_STINGDAU
 
         private void frmMayChu_Load(object sender, EventArgs e)
         {
-            float scaleX = ((float)Screen.PrimaryScreen.WorkingArea.Width / 1024);
-            float scaleY = ((float)Screen.PrimaryScreen.WorkingArea.Height / 768);
-            SizeF aSf = new SizeF(scaleX, scaleY);
-            this.Scale(aSf);
+            
             Display();
             DisplayMember();
 
@@ -120,33 +119,23 @@ namespace PROJECT_NetGameVN_STINGDAU
         }
 
 
-        void ResizeTabs()
-        {
-            int numTabs = tabControl1.TabCount;
+        //void ResizeTabs()
+        //{
+        //    int numTabs = tabControl1.TabCount;
 
-            float totLen = 0;
-            using (Graphics g = CreateGraphics())
-            {
-                // Get total length of the text of each Tab name
-                for (int i = 0; i < numTabs; i++)
-                    totLen += g.MeasureString(tabControl1.TabPages[i].Text, tabControl1.Font).Width;
-            }
+        //    float totLen = 0;
+        //    using (Graphics g = CreateGraphics())
+        //    {
+        //        // Get total length of the text of each Tab name
+        //        for (int i = 0; i < numTabs; i++)
+        //            totLen += g.MeasureString(tabControl1.TabPages[i].Text, tabControl1.Font).Width;
+        //    }
 
-            int newX = (int)((tabControl1.Width - totLen) / numTabs) / 2;
-            tabControl1.Padding = new Point(newX, tabControl1.Padding.Y);
-        }
+        //    int newX = (int)((tabControl1.Width - totLen) / numTabs) / 2;
+        //    tabControl1.Padding = new Point(newX, tabControl1.Padding.Y);
+        //}
 
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+      
 
 
         private void LoadSourceToDRGV()
@@ -187,12 +176,12 @@ namespace PROJECT_NetGameVN_STINGDAU
             }
 
         }
-        private void frmMayChu_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            if (isThoat)
-                Application.Exit();
+        //private void frmMayChu_FormClosed(object sender, FormClosedEventArgs e)
+        //{
+        //    if (isThoat)
+        //        Application.Exit();
 
-        }
+        //}
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
@@ -642,6 +631,49 @@ namespace PROJECT_NetGameVN_STINGDAU
         {
             frmDichVu frm = new frmDichVu();
             frm.ShowDialog();
+        }
+
+        private void tabDichVu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmMayChu_Resize(object sender, EventArgs e)
+        {
+            if(WindowState==FormWindowState.Minimized)
+            {
+                notifyIcon1.Visible = true;
+                notifyIcon1.ShowBalloonTip(500,"Thông báo", "NetGameVN", ToolTipIcon.Info);
+                this.Hide();
+            }
+            
+        }
+
+        private void frmMayChu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            notifyIcon1.Visible = true;
+            DialogResult rs = MessageBox.Show("Bạn có muốn đăng xuất không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (rs == DialogResult.OK)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                notifyIcon1.ShowBalloonTip(500, "Thông báo", "NetGameVN", ToolTipIcon.Info);
+                this.Hide();
+            }
+
+        }
+
+        private void frmMayChu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
+        }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            notifyIcon1.Visible = false;
+            this.Show();
         }
     }
 }

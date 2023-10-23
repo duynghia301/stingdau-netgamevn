@@ -515,6 +515,26 @@ namespace PROJECT_NetGameVN_STINGDAU.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Logo_UEF {
+            get {
+                object obj = ResourceManager.GetObject("Logo-UEF", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logo_UEF1 {
+            get {
+                object obj = ResourceManager.GetObject("Logo-UEF1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap máy_tính {
             get {
                 object obj = ResourceManager.GetObject("máy tính", resourceCulture);

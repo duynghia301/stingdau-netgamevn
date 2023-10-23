@@ -80,5 +80,10 @@ namespace PROJECT_NetGameVN_STINGDAU
                 txtMatKhau.UseSystemPasswordChar = true;
             }
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
