@@ -31,6 +31,8 @@
     <Property Name="StatusClient" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Note" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="tbLoginUsers" Relationship="Self.FK_tbLoginUsers_tbClient" FromRole="tbClient" ToRole="tbLoginUsers" />
+    <Property Name="Starttime" Type="Time" Precision="7" />
+    <Property Name="UseTime" Type="Time" Precision="7" />
   </EntityType>
   <EntityType Name="tbGroupClient">
     <Key>
@@ -150,5 +152,15 @@
       <End Role="tbMembers" EntitySet="tbMembers" />
       <End Role="tbLoginUsers" EntitySet="tbLoginUsers" />
     </AssociationSet>
+    <EntitySet Name="tbDichVus" EntityType="NetGameVNModel1.tbDichVu" />
   </EntityContainer>
+  <EntityType Name="tbDichVu">
+    <Key>
+      <PropertyRef Name="Madv" />
+    </Key>
+    <Property Name="Madv" Type="Int32" Nullable="false" />
+    <Property Name="Tendv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Giatien" Type="Double" />
+    <Property Name="soluong" Type="Int32" />
+  </EntityType>
 </Schema>

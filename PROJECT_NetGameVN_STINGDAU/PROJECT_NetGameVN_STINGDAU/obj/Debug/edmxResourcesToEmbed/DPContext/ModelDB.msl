@@ -27,6 +27,8 @@
     <EntitySetMapping Name="tbClients">
       <EntityTypeMapping TypeName="NetGameVNModel1.tbClient">
         <MappingFragment StoreEntitySet="tbClient">
+          <ScalarProperty Name="UseTime" ColumnName="UseTime" />
+          <ScalarProperty Name="Starttime" ColumnName="Starttime" />
           <ScalarProperty Name="ClientName" ColumnName="ClientName" />
           <ScalarProperty Name="GroupClientName" ColumnName="GroupClientName" />
           <ScalarProperty Name="StatusClient" ColumnName="StatusClient" />
@@ -74,6 +76,16 @@
           <ScalarProperty Name="StatusAccount" ColumnName="StatusAccount" />
           <ScalarProperty Name="Fullname" ColumnName="Fullname" />
           <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbDichVus">
+      <EntityTypeMapping TypeName="NetGameVNModel1.tbDichVu">
+        <MappingFragment StoreEntitySet="tbDichVu">
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+          <ScalarProperty Name="Giatien" ColumnName="Giatien" />
+          <ScalarProperty Name="Tendv" ColumnName="Tendv" />
+          <ScalarProperty Name="Madv" ColumnName="Madv" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

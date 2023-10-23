@@ -96,6 +96,9 @@
     <Compile Include="DPContext\tbClient.cs">
       <DependentUpon>ModelDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="DPContext\tbDichVu.cs">
+      <DependentUpon>ModelDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="DPContext\tbGroupClient.cs">
       <DependentUpon>ModelDB.tt</DependentUpon>
     </Compile>

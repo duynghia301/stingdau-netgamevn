@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="NetGameVNModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="NetGameVNModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -34,6 +34,17 @@
           <Property Name="GroupClientName" Type="varchar" MaxLength="30" />
           <Property Name="StatusClient" Type="nvarchar" MaxLength="50" />
           <Property Name="Note" Type="nvarchar" MaxLength="100" />
+          <Property Name="Starttime" Type="time" Precision="7" />
+          <Property Name="UseTime" Type="time" Precision="7" />
+        </EntityType>
+        <EntityType Name="tbDichVu">
+          <Key>
+            <PropertyRef Name="Madv" />
+          </Key>
+          <Property Name="Madv" Type="int" Nullable="false" />
+          <Property Name="Tendv" Type="nvarchar" MaxLength="50" />
+          <Property Name="Giatien" Type="float" />
+          <Property Name="soluong" Type="int" />
         </EntityType>
         <EntityType Name="tbGroupClient">
           <Key>
@@ -127,6 +138,7 @@
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbAdmins" EntityType="Self.tbAdmins" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbClient" EntityType="Self.tbClient" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbDichVu" EntityType="Self.tbDichVu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbGroupClient" EntityType="Self.tbGroupClient" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbGroupUser" EntityType="Self.tbGroupUser" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbLoginUsers" EntityType="Self.tbLoginUsers" Schema="dbo" store:Type="Tables" />
@@ -148,8 +160,7 @@
             <End Role="tbMembers" EntitySet="tbMembers" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="NetGameVNModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -184,6 +195,8 @@
           <Property Name="StatusClient" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Note" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="tbLoginUsers" Relationship="Self.FK_tbLoginUsers_tbClient" FromRole="tbClient" ToRole="tbLoginUsers" />
+          <Property Name="Starttime" Type="Time" Precision="7" />
+          <Property Name="UseTime" Type="Time" Precision="7" />
         </EntityType>
         <EntityType Name="tbGroupClient">
           <Key>
@@ -303,7 +316,17 @@
             <End Role="tbMembers" EntitySet="tbMembers" />
             <End Role="tbLoginUsers" EntitySet="tbLoginUsers" />
           </AssociationSet>
+          <EntitySet Name="tbDichVus" EntityType="NetGameVNModel1.tbDichVu" />
         </EntityContainer>
+        <EntityType Name="tbDichVu">
+          <Key>
+            <PropertyRef Name="Madv" />
+          </Key>
+          <Property Name="Madv" Type="Int32" Nullable="false" />
+          <Property Name="Tendv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Giatien" Type="Double" />
+          <Property Name="soluong" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -336,6 +359,8 @@
           <EntitySetMapping Name="tbClients">
             <EntityTypeMapping TypeName="NetGameVNModel1.tbClient">
               <MappingFragment StoreEntitySet="tbClient">
+                <ScalarProperty Name="UseTime" ColumnName="UseTime" />
+                <ScalarProperty Name="Starttime" ColumnName="Starttime" />
                 <ScalarProperty Name="ClientName" ColumnName="ClientName" />
                 <ScalarProperty Name="GroupClientName" ColumnName="GroupClientName" />
                 <ScalarProperty Name="StatusClient" ColumnName="StatusClient" />
@@ -383,6 +408,16 @@
                 <ScalarProperty Name="StatusAccount" ColumnName="StatusAccount" />
                 <ScalarProperty Name="Fullname" ColumnName="Fullname" />
                 <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbDichVus">
+            <EntityTypeMapping TypeName="NetGameVNModel1.tbDichVu">
+              <MappingFragment StoreEntitySet="tbDichVu">
+                <ScalarProperty Name="soluong" ColumnName="soluong" />
+                <ScalarProperty Name="Giatien" ColumnName="Giatien" />
+                <ScalarProperty Name="Tendv" ColumnName="Tendv" />
+                <ScalarProperty Name="Madv" ColumnName="Madv" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

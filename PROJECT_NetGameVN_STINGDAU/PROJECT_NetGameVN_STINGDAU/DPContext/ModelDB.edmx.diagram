@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3a30419a7f394f97b09dde06afc86037" Name="Diagram1">
+      <Diagram DiagramId="3a30419a7f394f97b09dde06afc86037" Name="Diagram1" ZoomLevel="86">
         <EntityTypeShape EntityType="NetGameVNModel1.sysdiagram" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="NetGameVNModel1.tbAdmin" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="NetGameVNModel1.tbClient" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
@@ -16,6 +16,7 @@
         <AssociationConnector Association="NetGameVNModel1.FK_tbLoginUsers_tbClient" ManuallyRouted="false" />
         <AssociationConnector Association="NetGameVNModel1.FK_tbMembers_tbGroupUser1" ManuallyRouted="false" />
         <AssociationConnector Association="NetGameVNModel1.FK_tbLoginUsers_tbMembers" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="NetGameVNModel1.tbDichVu" Width="1.5" PointX="7.375" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

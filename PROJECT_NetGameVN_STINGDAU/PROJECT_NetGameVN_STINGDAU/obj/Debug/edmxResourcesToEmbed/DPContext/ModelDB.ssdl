@@ -29,6 +29,17 @@
     <Property Name="GroupClientName" Type="varchar" MaxLength="30" />
     <Property Name="StatusClient" Type="nvarchar" MaxLength="50" />
     <Property Name="Note" Type="nvarchar" MaxLength="100" />
+    <Property Name="Starttime" Type="time" Precision="7" />
+    <Property Name="UseTime" Type="time" Precision="7" />
+  </EntityType>
+  <EntityType Name="tbDichVu">
+    <Key>
+      <PropertyRef Name="Madv" />
+    </Key>
+    <Property Name="Madv" Type="int" Nullable="false" />
+    <Property Name="Tendv" Type="nvarchar" MaxLength="50" />
+    <Property Name="Giatien" Type="float" />
+    <Property Name="soluong" Type="int" />
   </EntityType>
   <EntityType Name="tbGroupClient">
     <Key>
@@ -122,6 +133,7 @@
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbAdmins" EntityType="Self.tbAdmins" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbClient" EntityType="Self.tbClient" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbDichVu" EntityType="Self.tbDichVu" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbGroupClient" EntityType="Self.tbGroupClient" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbGroupUser" EntityType="Self.tbGroupUser" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbLoginUsers" EntityType="Self.tbLoginUsers" Schema="dbo" store:Type="Tables" />

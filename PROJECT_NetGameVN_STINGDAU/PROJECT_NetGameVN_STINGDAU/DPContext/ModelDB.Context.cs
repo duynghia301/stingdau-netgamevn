@@ -32,5 +32,6 @@ namespace PROJECT_NetGameVN_STINGDAU.DPContext
         public virtual DbSet<tbGroupUser> tbGroupUsers { get; set; }
         public virtual DbSet<tbLoginUser> tbLoginUsers { get; set; }
         public virtual DbSet<tbMember> tbMembers { get; set; }
+        public virtual DbSet<tbDichVu> tbDichVus { get; set; }
     }
 }

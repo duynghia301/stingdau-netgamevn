@@ -14,8 +14,24 @@ namespace PROJECT_NetGameVN_STINGDAU
 {
     public partial class frmMayChu : Form
     {
-       
+
+
+        private static DateTime _startDateTime;
+        public static void Start()
+        {
+            _startDateTime = DateTime.Now;
+        }
+
+        public static void Stop()
+        {
+            
+            DateTime _endDateTime = DateTime.Now;
+            TimeSpan _timeSpan = _endDateTime - _startDateTime;
+ 
+        }
+
         //tạo biến kiểm tra thoát
+
         bool isThoat = true;
 
         NetGameVNEntities db = new NetGameVNEntities();
@@ -36,7 +52,9 @@ namespace PROJECT_NetGameVN_STINGDAU
                     ClientName = x.ClientName,
                     GroupClientName = x.GroupClientName,
                     StatusClient = x.StatusClient,
-                    Note = x.Note
+                    Note = x.Note,
+                    //Starttime = x.Starttime ,
+                    //UseTime = x.UseTime,
                 }).ToList();
                 dvgList.DataSource = _ClientList;
 
@@ -72,6 +90,10 @@ namespace PROJECT_NetGameVN_STINGDAU
 
         private void frmMayChu_Load(object sender, EventArgs e)
         {
+            float scaleX = ((float)Screen.PrimaryScreen.WorkingArea.Width / 1024);
+            float scaleY = ((float)Screen.PrimaryScreen.WorkingArea.Height / 768);
+            SizeF aSf = new SizeF(scaleX, scaleY);
+            this.Scale(aSf);
             Display();
             DisplayMember();
 
@@ -420,7 +442,7 @@ namespace PROJECT_NetGameVN_STINGDAU
 
         private void PicOpenClientEventHandler_Click(object sender, EventArgs e)
         {
-
+            
             using (NetGameVNEntities _entity = new NetGameVNEntities())
             {
                 try
@@ -441,10 +463,15 @@ namespace PROJECT_NetGameVN_STINGDAU
                     {
                         DialogResult tb = MessageBox.Show("Bạn có mở máy này không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                         if (tb == DialogResult.OK)
-                        { 
+                        {
+                           
                             selectedClient.StatusClient = "USING";
-                        // Lưu các thay đổi vào cơ sở dữ liệu.
-                        _entity.SaveChanges();
+                           
+                            DateTime now = DateTime.Now;
+                            _startDateTime = DateTime.Now;
+                           
+                            // Lưu các thay đổi vào cơ sở dữ liệu.
+                            _entity.SaveChanges();
                         LoadClient(); // Nạp lại dữ liệu sau khi đã cập nhật thành công.
                         }
                     }
@@ -590,6 +617,11 @@ namespace PROJECT_NetGameVN_STINGDAU
                 Display_pMember(_username);
             }
            
+        }
+
+        private void dateTimePicker4_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
