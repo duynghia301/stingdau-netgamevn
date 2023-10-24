@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="DPContext\Client.cs" />
     <Compile Include="DPContext\DichVu.cs" />
+    <Compile Include="DPContext\LoginMember.cs" />
     <Compile Include="DPContext\Members.cs" />
     <Compile Include="DPContext\ModelDP.Context.cs">
       <AutoGen>True</AutoGen>

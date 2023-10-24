@@ -34,6 +34,10 @@
           <Property Name="GroupClientName" Type="varchar" MaxLength="30" />
           <Property Name="StatusClient" Type="nvarchar" MaxLength="50" />
           <Property Name="Note" Type="nvarchar" MaxLength="100" />
+          <Property Name="Starttime" Type="time" Precision="7" />
+          <Property Name="Usetime" Type="time" Precision="7" />
+          <Property Name="Start" Type="datetime" />
+          <Property Name="Endtime" Type="datetime" />
         </EntityType>
         <EntityType Name="tbDichVu">
           <Key>
@@ -192,6 +196,10 @@
           <Property Name="StatusClient" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Note" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="tbLoginUsers" Relationship="Self.FK_tbLoginUsers_tbClient" FromRole="tbClient" ToRole="tbLoginUsers" />
+          <Property Name="Starttime" Type="Time" Precision="7" />
+          <Property Name="Usetime" Type="Time" Precision="7" />
+          <Property Name="Start" Type="DateTime" Precision="3" />
+          <Property Name="Endtime" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="tbGroupClient">
           <Key>
@@ -353,6 +361,10 @@
           <EntitySetMapping Name="tbClients">
             <EntityTypeMapping TypeName="NetGameVNModel.tbClient">
               <MappingFragment StoreEntitySet="tbClient">
+                <ScalarProperty Name="Endtime" ColumnName="Endtime" />
+                <ScalarProperty Name="Start" ColumnName="Start" />
+                <ScalarProperty Name="Usetime" ColumnName="Usetime" />
+                <ScalarProperty Name="Starttime" ColumnName="Starttime" />
                 <ScalarProperty Name="ClientName" ColumnName="ClientName" />
                 <ScalarProperty Name="GroupClientName" ColumnName="GroupClientName" />
                 <ScalarProperty Name="StatusClient" ColumnName="StatusClient" />

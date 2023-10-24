@@ -38,11 +38,10 @@ namespace PROJECT_NetGameVN_STINGDAU
             txtMaDV.Text = string.Empty;
             txtTenDV.Text = string.Empty;
             txtGiaTien.Text = string.Empty;
-
-
-
-
         }
+
+
+
         public bool Saveuser(tbDichVu user)
         {
             bool result = false;
@@ -54,6 +53,9 @@ namespace PROJECT_NetGameVN_STINGDAU
             }
             return result;
         }
+
+
+
 
         private void btnThem_Click(object sender, EventArgs e)
         {

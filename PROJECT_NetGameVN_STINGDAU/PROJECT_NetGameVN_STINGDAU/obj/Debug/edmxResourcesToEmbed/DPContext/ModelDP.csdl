@@ -31,6 +31,10 @@
     <Property Name="StatusClient" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Note" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="tbLoginUsers" Relationship="Self.FK_tbLoginUsers_tbClient" FromRole="tbClient" ToRole="tbLoginUsers" />
+    <Property Name="Starttime" Type="Time" Precision="7" />
+    <Property Name="Usetime" Type="Time" Precision="7" />
+    <Property Name="Start" Type="DateTime" Precision="3" />
+    <Property Name="Endtime" Type="DateTime" Precision="3" />
   </EntityType>
   <EntityType Name="tbGroupClient">
     <Key>

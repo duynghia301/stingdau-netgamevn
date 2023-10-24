@@ -24,6 +24,10 @@ namespace PROJECT_NetGameVN_STINGDAU.DPContext
         public string GroupClientName { get; set; }
         public string StatusClient { get; set; }
         public string Note { get; set; }
+        public Nullable<System.TimeSpan> Starttime { get; set; }
+        public Nullable<System.TimeSpan> Usetime { get; set; }
+        public Nullable<System.DateTime> Start { get; set; }
+        public Nullable<System.DateTime> Endtime { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbLoginUser> tbLoginUsers { get; set; }

@@ -15,13 +15,13 @@ namespace PROJECT_NetGameVN_STINGDAU
     public partial class frmMayChu : Form
     {
 
-        
+
         //tạo biến kiểm tra thoát
         bool isThoat = true;
 
 
 
-                                                                                        //Dlong
+        //Dlong
         private static DateTime _startDateTime;
         public static void Start()
         {
@@ -59,6 +59,7 @@ namespace PROJECT_NetGameVN_STINGDAU
                     GroupClientName = x.GroupClientName,
                     StatusClient = x.StatusClient,
                     Note = x.Note,
+
                 }).ToList();
                 dvgList.DataSource = _ClientList;
 
@@ -66,21 +67,43 @@ namespace PROJECT_NetGameVN_STINGDAU
 
             }
         }
-        //public void Display()
+
+
+        // Hàm mới cần làm   mà không xuất dữ liệu ra dgv dc
+        //public void Display1()
         //{
         //    using (NetGameVNEntities _entity = new NetGameVNEntities())
         //    {
-        //        List<Client> _ClientList = new List<Client>();
-        //        _ClientList = _entity.tbClients.Select(x => new Client
-        //        {
-        //            ClientName = x.ClientName,
-        //            GroupClientName = x.GroupClientName,
-        //            StatusClient = x.StatusClient,
-        //            Note = x.Note,
-        //        }).ToList();
-        //        dvgList.DataSource = _ClientList;
+        //        var query = from client in _entity.tbClients
+        //                    join login in _entity.tbLoginUsers on client.ClientName equals login.ClientName
+        //                    select new
+        //                    {
+        //                        login.MemberID,
+        //                        client.ClientName,
+        //                        client.GroupClientName,
+        //                        client.StatusClient,
+        //                        login.StartTime,
+        //                        login.UseTime,
+        //                        login.LeftTime,
+        //                        client.Note
+        //                    };
+
+        //        dvgList.DataSource = query.ToList();
         //    }
         //}
+
+
+
+
+
+
+
+
+
+
+
+
+
         public void DisplayMember()
         {
 
@@ -106,7 +129,6 @@ namespace PROJECT_NetGameVN_STINGDAU
 
         }
 
-
         private void frmMayChu_Load(object sender, EventArgs e)
         {
             
@@ -120,21 +142,7 @@ namespace PROJECT_NetGameVN_STINGDAU
         }
 
 
-        //void ResizeTabs()
-        //{
-        //    int numTabs = tabControl1.TabCount;
-
-        //    float totLen = 0;
-        //    using (Graphics g = CreateGraphics())
-        //    {
-        //        // Get total length of the text of each Tab name
-        //        for (int i = 0; i < numTabs; i++)
-        //            totLen += g.MeasureString(tabControl1.TabPages[i].Text, tabControl1.Font).Width;
-        //    }
-
-        //    int newX = (int)((tabControl1.Width - totLen) / numTabs) / 2;
-        //    tabControl1.Padding = new Point(newX, tabControl1.Padding.Y);
-        //}
+       
 
       
 
@@ -317,7 +325,7 @@ namespace PROJECT_NetGameVN_STINGDAU
         public void LoadClient()
         {
 
-            dvgList.DataSource = (from tbClient in db.tbClients select new { ClientName = tbClient.ClientName, GroupClientName = tbClient.GroupClientName, StatusClient = tbClient.StatusClient, Note = tbClient.Note }).ToArray();
+            dvgList.DataSource = (from tbClient in db.tbClients select new { ClientName = tbClient.ClientName, GroupClientName = tbClient.GroupClientName, StatusClient = tbClient.StatusClient, Note = tbClient.Note ,StartTime= tbClient.Start,EndTime=tbClient.Endtime}).ToArray();
         }
 
 
@@ -334,7 +342,7 @@ namespace PROJECT_NetGameVN_STINGDAU
                 try
                 {
                     
-                     if (dvgList.SelectedRows.Count == 0)
+                    if (dvgList.SelectedRows.Count == 0)
                     {
                         MessageBox.Show("Vui lòng chọn máy khách từ danh sách.", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
@@ -352,13 +360,20 @@ namespace PROJECT_NetGameVN_STINGDAU
                         {
                            
                             selectedClient.StatusClient = "USING";
-                           
-                            DateTime now = DateTime.Now;
-                            _startDateTime = DateTime.Now;
-                           
+
+
+
+
+                            // Láy thời gian hiện tại
+                            DateTime currentTime = DateTime.Now;
+                            selectedClient.Start = currentTime;
+
+
+
+
                             // Lưu các thay đổi vào cơ sở dữ liệu.
                             _entity.SaveChanges();
-                        LoadClient(); // Nạp lại dữ liệu sau khi đã cập nhật thành công.
+                            LoadClient(); // Nạp lại dữ liệu sau khi đã cập nhật thành công.
                         }
                     }
                     else
@@ -410,8 +425,13 @@ namespace PROJECT_NetGameVN_STINGDAU
                             if (tb == DialogResult.OK)
                             {
                                 selectedClient.StatusClient = "DISCONNECT";
-                                // Lưu các thay đổi vào cơ sở dữ liệu.
-                                _entity.SaveChanges();
+
+
+
+                                DateTime currentTime = DateTime.Now;
+                                selectedClient.Endtime = currentTime;
+                            // Lưu các thay đổi vào cơ sở dữ liệu.
+                                 _entity.SaveChanges();
                                 LoadClient(); // Nạp lại dữ liệu sau khi đã cập nhật thành công.
                             }
                             

@@ -27,6 +27,10 @@
     <EntitySetMapping Name="tbClients">
       <EntityTypeMapping TypeName="NetGameVNModel.tbClient">
         <MappingFragment StoreEntitySet="tbClient">
+          <ScalarProperty Name="Endtime" ColumnName="Endtime" />
+          <ScalarProperty Name="Start" ColumnName="Start" />
+          <ScalarProperty Name="Usetime" ColumnName="Usetime" />
+          <ScalarProperty Name="Starttime" ColumnName="Starttime" />
           <ScalarProperty Name="ClientName" ColumnName="ClientName" />
           <ScalarProperty Name="GroupClientName" ColumnName="GroupClientName" />
           <ScalarProperty Name="StatusClient" ColumnName="StatusClient" />
