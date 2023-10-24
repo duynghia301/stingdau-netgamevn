@@ -41,21 +41,23 @@
             this.btnSua = new System.Windows.Forms.Button();
             this.btnBaoCao = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.grbDV = new System.Windows.Forms.GroupBox();
             this.dgvListDV = new System.Windows.Forms.DataGridView();
+            this.picBDV = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.grbDV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListDV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBDV)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Montserrat Subrayada", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(303, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(330, 43);
+            this.label1.Size = new System.Drawing.Size(292, 39);
             this.label1.TabIndex = 2;
             this.label1.Text = "Quản Lý Dịch Vụ";
             // 
@@ -122,6 +124,7 @@
             this.btnThem.TabIndex = 3;
             this.btnThem.Text = "Thêm Dịch Vụ";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnXoa
             // 
@@ -132,6 +135,7 @@
             this.btnXoa.TabIndex = 4;
             this.btnXoa.Text = "Xóa Dịch Vụ";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -142,6 +146,7 @@
             this.btnSua.TabIndex = 5;
             this.btnSua.Text = "Sửa Dịch Vụ";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnBaoCao
             // 
@@ -174,16 +179,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Quản Lý";
             // 
-            // groupBox2
+            // grbDV
             // 
-            this.groupBox2.Controls.Add(this.dgvListDV);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(386, 69);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(532, 370);
-            this.groupBox2.TabIndex = 7;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Danh sách dịch vụ";
+            this.grbDV.Controls.Add(this.dgvListDV);
+            this.grbDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbDV.Location = new System.Drawing.Point(386, 69);
+            this.grbDV.Name = "grbDV";
+            this.grbDV.Size = new System.Drawing.Size(532, 370);
+            this.grbDV.TabIndex = 7;
+            this.grbDV.TabStop = false;
+            this.grbDV.Text = "Danh sách dịch vụ";
+            this.grbDV.Enter += new System.EventHandler(this.grbDV_Enter);
             // 
             // dgvListDV
             // 
@@ -196,21 +202,37 @@
             this.dgvListDV.Name = "dgvListDV";
             this.dgvListDV.Size = new System.Drawing.Size(526, 347);
             this.dgvListDV.TabIndex = 0;
+            this.dgvListDV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListDV_CellClick);
+            this.dgvListDV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListDV_CellContentClick);
+            // 
+            // picBDV
+            // 
+            this.picBDV.Image = global::PROJECT_NetGameVN_STINGDAU.Properties.Resources.Sync;
+            this.picBDV.Location = new System.Drawing.Point(803, 23);
+            this.picBDV.Name = "picBDV";
+            this.picBDV.Size = new System.Drawing.Size(43, 40);
+            this.picBDV.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBDV.TabIndex = 8;
+            this.picBDV.TabStop = false;
+            this.picBDV.Click += new System.EventHandler(this.picBDV_Click);
             // 
             // frmDichVu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(930, 459);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.picBDV);
+            this.Controls.Add(this.grbDV);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Name = "frmDichVu";
             this.Text = "Dịch vụ";
+            this.Load += new System.EventHandler(this.frmDichVu_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
+            this.grbDV.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListDV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBDV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,7 +253,8 @@
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnBaoCao;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox grbDV;
         private System.Windows.Forms.DataGridView dgvListDV;
+        private System.Windows.Forms.PictureBox picBDV;
     }
 }
