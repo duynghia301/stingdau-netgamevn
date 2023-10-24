@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDoiMatKhau));
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -105,25 +106,27 @@
             // 
             this.txtNewPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNewPass.Location = new System.Drawing.Point(157, 181);
-            this.txtNewPass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNewPass.Margin = new System.Windows.Forms.Padding(2);
             this.txtNewPass.Name = "txtNewPass";
             this.txtNewPass.Size = new System.Drawing.Size(208, 26);
             this.txtNewPass.TabIndex = 2;
+            this.txtNewPass.UseSystemPasswordChar = true;
             // 
             // txtConfirm
             // 
             this.txtConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConfirm.Location = new System.Drawing.Point(157, 237);
-            this.txtConfirm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtConfirm.Margin = new System.Windows.Forms.Padding(2);
             this.txtConfirm.Name = "txtConfirm";
             this.txtConfirm.Size = new System.Drawing.Size(208, 26);
             this.txtConfirm.TabIndex = 3;
+            this.txtConfirm.UseSystemPasswordChar = true;
             // 
             // txtOldPass
             // 
             this.txtOldPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOldPass.Location = new System.Drawing.Point(157, 122);
-            this.txtOldPass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtOldPass.Margin = new System.Windows.Forms.Padding(2);
             this.txtOldPass.Name = "txtOldPass";
             this.txtOldPass.Size = new System.Drawing.Size(208, 26);
             this.txtOldPass.TabIndex = 1;
@@ -133,7 +136,7 @@
             // 
             this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUserName.Location = new System.Drawing.Point(157, 64);
-            this.txtUserName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUserName.Margin = new System.Windows.Forms.Padding(2);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(208, 26);
             this.txtUserName.TabIndex = 0;
@@ -143,7 +146,7 @@
             this.btnApply.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnApply.ForeColor = System.Drawing.Color.Red;
             this.btnApply.Location = new System.Drawing.Point(277, 347);
-            this.btnApply.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnApply.Margin = new System.Windows.Forms.Padding(2);
             this.btnApply.Name = "btnApply";
             this.btnApply.Size = new System.Drawing.Size(88, 31);
             this.btnApply.TabIndex = 4;
@@ -155,7 +158,7 @@
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Location = new System.Drawing.Point(157, 347);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(88, 31);
             this.btnCancel.TabIndex = 5;
@@ -167,7 +170,7 @@
             // 
             this.chkShowPass.AutoSize = true;
             this.chkShowPass.Location = new System.Drawing.Point(262, 284);
-            this.chkShowPass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkShowPass.Margin = new System.Windows.Forms.Padding(2);
             this.chkShowPass.Name = "chkShowPass";
             this.chkShowPass.Size = new System.Drawing.Size(101, 17);
             this.chkShowPass.TabIndex = 16;
@@ -268,6 +271,7 @@
             this.Controls.Add(this.txtOldPass);
             this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmDoiMatKhau";
             this.Text = "Đổi mật khẩu";
             this.Load += new System.EventHandler(this.frmDoiMatKhau_Load);
