@@ -92,6 +92,7 @@ namespace PROJECT_NetGameVN_STINGDAU
                     st.Password = txtpassword.Text;
                     st.Phone = txtPhone.Text;
                     st.CurrentMoney = Convert.ToInt32(txtAmount.Text);
+                    st.Fullname = txtName.Text;
 
 
 

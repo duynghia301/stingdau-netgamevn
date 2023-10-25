@@ -12,12 +12,12 @@ namespace PROJECT_NetGameVN_STINGDAU.DPContext
         public string UserName { get; set; }
         public string Password { get; set; }
         public string Phone { get; set; }
-        public string GroupUser { get; set; }
+        //public string GroupUser { get; set; }
         public TimeSpan? CurrentTime { get; set; }
         public  double? CurrentMoney { get; set; }
-        public string StatusAccount { get; set; }
+        //public string StatusAccount { get; set; }
         public string Fullname { get; set; }
-        public DateTime? Birthday { get; set; }
+        //public DateTime? Birthday { get; set; }
 
 
 

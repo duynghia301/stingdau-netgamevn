@@ -108,12 +108,12 @@ namespace PROJECT_NetGameVN_STINGDAU
                     UserName = x.UserName,
                     Password = x.Password,
                     Phone = x.Phone,
-                    GroupUser = x.GroupUser,
+                    //GroupUser = x.GroupUser,
                     CurrentTime = x.CurrentTime,
                     CurrentMoney = x.CurrentMoney,
-                    StatusAccount = x.StatusAccount,
+                    //StatusAccount = x.StatusAccount,
                     Fullname = x.Fullname,
-                    Birthday = x.Birthday
+                    //Birthday = x.Birthday
                 }).ToList();
                 dgvListTaiKhoan.DataSource = _MembersList;
             }
@@ -200,12 +200,12 @@ namespace PROJECT_NetGameVN_STINGDAU
                     UserName = x.UserName,
                     Password = x.Password,
                     Phone = x.Phone,
-                    GroupUser = x.GroupUser,
+                    //GroupUser = x.GroupUser,
                     CurrentTime = x.CurrentTime,
                     CurrentMoney = x.CurrentMoney,
-                    StatusAccount = x.StatusAccount,
+                    //StatusAccount = x.StatusAccount,
                     Fullname = x.Fullname,
-                    Birthday = x.Birthday
+                    //Birthday = x.Birthday
                 }).ToList();
                 dgvListTaiKhoan.DataSource = _MembersList;
             }
@@ -465,12 +465,12 @@ namespace PROJECT_NetGameVN_STINGDAU
                     UserName = x.UserName,
                     Password = x.Password,
                     Phone = x.Phone,
-                    GroupUser = x.GroupUser,
+                    //GroupUser = x.GroupUser,
                     CurrentTime = x.CurrentTime,
                     CurrentMoney = x.CurrentMoney,
-                    StatusAccount = x.StatusAccount,
+                    //StatusAccount = x.StatusAccount,
                     Fullname = x.Fullname,
-                    Birthday = x.Birthday
+                    //Birthday = x.Birthday
                 }).ToList();
                 dgvListTaiKhoan.DataSource = _MembersList;
             }
@@ -490,12 +490,12 @@ namespace PROJECT_NetGameVN_STINGDAU
                     UserName = x.UserName,
                     Password = x.Password,
                     Phone = x.Phone,
-                    GroupUser = x.GroupUser,
+                    //GroupUser = x.GroupUser,
                     CurrentTime = x.CurrentTime,
                     CurrentMoney = x.CurrentMoney,
-                    StatusAccount = x.StatusAccount,
+                    //StatusAccount = x.StatusAccount,
                     Fullname = x.Fullname,
-                    Birthday = x.Birthday
+                    //Birthday = x.Birthday
                 }).ToList();
                 dgvListTaiKhoan.DataSource = _MembersList;
             }
