@@ -34,18 +34,18 @@
           <Property Name="GroupClientName" Type="varchar" MaxLength="30" />
           <Property Name="StatusClient" Type="nvarchar" MaxLength="50" />
           <Property Name="Note" Type="nvarchar" MaxLength="100" />
-          <Property Name="Starttime" Type="time" Precision="7" />
-          <Property Name="Usetime" Type="time" Precision="7" />
           <Property Name="Start" Type="datetime" />
           <Property Name="Endtime" Type="datetime" />
         </EntityType>
         <EntityType Name="tbDichVu">
           <Key>
-            <PropertyRef Name="MaDV" />
+            <PropertyRef Name="Madv" />
           </Key>
-          <Property Name="MaDV" Type="nchar" MaxLength="10" Nullable="false" />
-          <Property Name="TenDV" Type="nvarchar" MaxLength="50" />
-          <Property Name="GiaTien" Type="float" />
+          <Property Name="Madv" Type="int" Nullable="false" />
+          <Property Name="Tendv" Type="nvarchar" MaxLength="50" />
+          <Property Name="Giatien" Type="float" />
+          <Property Name="soluong" Type="int" />
+          <Property Name="ngaynhap" Type="datetime" />
         </EntityType>
         <EntityType Name="tbGroupClient">
           <Key>
@@ -187,20 +187,6 @@
           <Property Name="isLock" Type="Boolean" />
           <NavigationProperty Name="tbGroupUser" Relationship="Self.FK_tbAdmins_tbGroupUser" FromRole="tbAdmins" ToRole="tbGroupUser" />
         </EntityType>
-        <EntityType Name="tbClient">
-          <Key>
-            <PropertyRef Name="ClientName" />
-          </Key>
-          <Property Name="ClientName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="GroupClientName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="StatusClient" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Note" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="tbLoginUsers" Relationship="Self.FK_tbLoginUsers_tbClient" FromRole="tbClient" ToRole="tbLoginUsers" />
-          <Property Name="Starttime" Type="Time" Precision="7" />
-          <Property Name="Usetime" Type="Time" Precision="7" />
-          <Property Name="Start" Type="DateTime" Precision="3" />
-          <Property Name="Endtime" Type="DateTime" Precision="3" />
-        </EntityType>
         <EntityType Name="tbGroupClient">
           <Key>
             <PropertyRef Name="GroupName" />
@@ -227,8 +213,8 @@
           <Property Name="StartTime" Type="Time" Precision="7" />
           <Property Name="UseTime" Type="Time" Precision="7" />
           <Property Name="LeftTime" Type="Time" Precision="7" />
-          <NavigationProperty Name="tbClient" Relationship="Self.FK_tbLoginUsers_tbClient" FromRole="tbLoginUsers" ToRole="tbClient" />
           <NavigationProperty Name="tbMember" Relationship="Self.FK_tbLoginUsers_tbMembers" FromRole="tbLoginUsers" ToRole="tbMembers" />
+          <NavigationProperty Name="tbClient" Relationship="NetGameVNModel.FK_tbLoginUsers_tbClient" FromRole="tbLoginUser" ToRole="tbClient" />
         </EntityType>
         <EntityType Name="tbMember">
           <Key>
@@ -259,18 +245,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_tbLoginUsers_tbClient">
-          <End Role="tbClient" Type="Self.tbClient" Multiplicity="1" />
-          <End Role="tbLoginUsers" Type="Self.tbLoginUser" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tbClient">
-              <PropertyRef Name="ClientName" />
-            </Principal>
-            <Dependent Role="tbLoginUsers">
-              <PropertyRef Name="ClientName" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_tbMembers_tbGroupUser1">
           <End Role="tbGroupUser" Type="Self.tbGroupUser" Multiplicity="0..1" />
           <End Role="tbMembers" Type="Self.tbMember" Multiplicity="*" />
@@ -298,7 +272,6 @@
         <EntityContainer Name="NetGameVNEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="tbAdmins" EntityType="Self.tbAdmin" />
-          <EntitySet Name="tbClients" EntityType="Self.tbClient" />
           <EntitySet Name="tbGroupClients" EntityType="Self.tbGroupClient" />
           <EntitySet Name="tbGroupUsers" EntityType="Self.tbGroupUser" />
           <EntitySet Name="tbLoginUsers" EntityType="Self.tbLoginUser" />
@@ -306,10 +279,6 @@
           <AssociationSet Name="FK_tbAdmins_tbGroupUser" Association="Self.FK_tbAdmins_tbGroupUser">
             <End Role="tbGroupUser" EntitySet="tbGroupUsers" />
             <End Role="tbAdmins" EntitySet="tbAdmins" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tbLoginUsers_tbClient" Association="Self.FK_tbLoginUsers_tbClient">
-            <End Role="tbClient" EntitySet="tbClients" />
-            <End Role="tbLoginUsers" EntitySet="tbLoginUsers" />
           </AssociationSet>
           <AssociationSet Name="FK_tbMembers_tbGroupUser1" Association="Self.FK_tbMembers_tbGroupUser1">
             <End Role="tbGroupUser" EntitySet="tbGroupUsers" />
@@ -319,15 +288,46 @@
             <End Role="tbMembers" EntitySet="tbMembers" />
             <End Role="tbLoginUsers" EntitySet="tbLoginUsers" />
           </AssociationSet>
+          <EntitySet Name="tbClients" EntityType="NetGameVNModel.tbClient" />
+          <AssociationSet Name="FK_tbLoginUsers_tbClient" Association="NetGameVNModel.FK_tbLoginUsers_tbClient">
+            <End Role="tbClient" EntitySet="tbClients" />
+            <End Role="tbLoginUser" EntitySet="tbLoginUsers" />
+          </AssociationSet>
           <EntitySet Name="tbDichVus" EntityType="NetGameVNModel.tbDichVu" />
         </EntityContainer>
+        <EntityType Name="tbClient">
+          <Key>
+            <PropertyRef Name="ClientName" />
+          </Key>
+          <Property Name="ClientName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="GroupClientName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="StatusClient" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Note" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Start" Type="DateTime" Precision="3" />
+          <Property Name="Endtime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tbLoginUsers" Relationship="NetGameVNModel.FK_tbLoginUsers_tbClient" FromRole="tbClient" ToRole="tbLoginUser" />
+        </EntityType>
+        <Association Name="FK_tbLoginUsers_tbClient">
+          <End Type="NetGameVNModel.tbClient" Role="tbClient" Multiplicity="1" />
+          <End Type="NetGameVNModel.tbLoginUser" Role="tbLoginUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbClient">
+              <PropertyRef Name="ClientName" />
+            </Principal>
+            <Dependent Role="tbLoginUser">
+              <PropertyRef Name="ClientName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityType Name="tbDichVu">
           <Key>
-            <PropertyRef Name="MaDV" />
+            <PropertyRef Name="Madv" />
           </Key>
-          <Property Name="MaDV" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="TenDV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="GiaTien" Type="Double" />
+          <Property Name="Madv" Type="Int32" Nullable="false" />
+          <Property Name="Tendv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Giatien" Type="Double" />
+          <Property Name="soluong" Type="Int32" />
+          <Property Name="ngaynhap" Type="DateTime" Precision="3" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -355,20 +355,6 @@
                 <ScalarProperty Name="fullname" ColumnName="fullname" />
                 <ScalarProperty Name="GroupUser" ColumnName="GroupUser" />
                 <ScalarProperty Name="isLock" ColumnName="isLock" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tbClients">
-            <EntityTypeMapping TypeName="NetGameVNModel.tbClient">
-              <MappingFragment StoreEntitySet="tbClient">
-                <ScalarProperty Name="Endtime" ColumnName="Endtime" />
-                <ScalarProperty Name="Start" ColumnName="Start" />
-                <ScalarProperty Name="Usetime" ColumnName="Usetime" />
-                <ScalarProperty Name="Starttime" ColumnName="Starttime" />
-                <ScalarProperty Name="ClientName" ColumnName="ClientName" />
-                <ScalarProperty Name="GroupClientName" ColumnName="GroupClientName" />
-                <ScalarProperty Name="StatusClient" ColumnName="StatusClient" />
-                <ScalarProperty Name="Note" ColumnName="Note" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -415,12 +401,26 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="tbClients">
+            <EntityTypeMapping TypeName="NetGameVNModel.tbClient">
+              <MappingFragment StoreEntitySet="tbClient">
+                <ScalarProperty Name="Endtime" ColumnName="Endtime" />
+                <ScalarProperty Name="Start" ColumnName="Start" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="StatusClient" ColumnName="StatusClient" />
+                <ScalarProperty Name="GroupClientName" ColumnName="GroupClientName" />
+                <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="tbDichVus">
             <EntityTypeMapping TypeName="NetGameVNModel.tbDichVu">
               <MappingFragment StoreEntitySet="tbDichVu">
-                <ScalarProperty Name="GiaTien" ColumnName="GiaTien" />
-                <ScalarProperty Name="TenDV" ColumnName="TenDV" />
-                <ScalarProperty Name="MaDV" ColumnName="MaDV" />
+                <ScalarProperty Name="ngaynhap" ColumnName="ngaynhap" />
+                <ScalarProperty Name="soluong" ColumnName="soluong" />
+                <ScalarProperty Name="Giatien" ColumnName="Giatien" />
+                <ScalarProperty Name="Tendv" ColumnName="Tendv" />
+                <ScalarProperty Name="Madv" ColumnName="Madv" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

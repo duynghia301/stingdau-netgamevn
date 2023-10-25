@@ -129,7 +129,8 @@ namespace PROJECT_NetGameVN_STINGDAU
 
             cbxTimTk.Items.Add("UserName");
             cbxTimTk.Items.Add("Phone");
-
+            load();
+            loadquesion(0);
 
         }
 
@@ -613,19 +614,13 @@ namespace PROJECT_NetGameVN_STINGDAU
         // nạp tiền
         private void pictureBox6_Click(object sender, EventArgs e)
         {
-            if (dgvListTaiKhoan.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Vui lòng chọn tài khoản từ danh sách.", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            else
-            {
-                DataGridViewRow selectedRow = dgvListTaiKhoan.SelectedRows[0];
-                int memberID = (int)selectedRow.Cells["MemberID"].Value;
+         
+            
+               
 
                 frmNapTien NapTien = new frmNapTien();
                 NapTien.Show();
-            }
+            
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -650,12 +645,13 @@ namespace PROJECT_NetGameVN_STINGDAU
                     TimeSpan? usageTime = endtime - starttime;
 
                     // Define your cost per unit of time (e.g., per minute)
-                    double costPerMinute = 10000; // Replace with your actual cost
+                    const double costPerHour = 10000; // Replace with your actual cost
 
                     // Calculate the total cost
-                    double sotien = usageTime.Value.TotalMinutes * costPerMinute;
+                    double sotien = Math.Round(usageTime.Value.TotalHours * costPerHour);
 
                     MessageBox.Show("Thời gian sử dụng: " + usageTime.Value.TotalMinutes + " phút\nTiền cần thanh toán: " + sotien + " đồng", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtTotal.Text = sotien.ToString();
                     selectedClient.Endtime = null;
                     selectedClient.Start = null;
                     _entity.SaveChanges();
@@ -667,48 +663,67 @@ namespace PROJECT_NetGameVN_STINGDAU
                 }
             }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            //using (NetGameVNEntities _entity = new NetGameVNEntities())
-            //{
-
-
-            //        if (dvgList.SelectedRows.Count == 0)
-            //        {
-            //            MessageBox.Show("Vui lòng chọn máy khách từ danh sách.", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //            return;
-            //        }
-
-            //        int index = dvgList.SelectedRows[0].Index;
-            //    string computerName = dvgList.Rows[index].Cells["ClientName"].Value.ToString();
-            //    tbClient selectedClient = _entity.tbClients.SingleOrDefault(c => c.ClientName == computerName);
-            //    DateTime starttime = Convert.ToDateTime(selectedClient.Start);
-            //    DateTime endtime = Convert.ToDateTime(selectedClient.Endtime);
-            //    DateTime usetime = Convert.ToDateTime(starttime - endtime) ;
-            //    double sotien = usetime.Ticks * 10000;
-            //    MessageBox.Show("Tiền cần thanh toán: " + sotien, "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
-
-
-            //}
+            
 
         }
 
-    
+        private void load()
+        {
+            List<tbDichVu> list = new List<tbDichVu>();
+            list = db.tbDichVus.ToList();
+            cbluachon.DataSource = list;
+            cbluachon.DisplayMember = "Tendv";
+            cbluachon.ValueMember = "Madv";
+        }
+        private void loadquesion(int quesiontype  )
+        {
+            List<quessionmodel> list = new List<quessionmodel>();
+            list = (from qt in db.tbDichVus
+                    where qt.Madv == quesiontype
+                    select new quessionmodel
+                    {
+                        Tendv = qt.Tendv ,
+                        Madv =qt.Madv,
+                        ngaynhap = qt.ngaynhap,
+                        Giatien = qt.Giatien,
+                        soluong = qt.soluong,
+                    }
+                    ).ToList();
+            dgvdichvu.DataSource = list ;
+        }
+
+
+
+        private void drgvFood_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void cbluachon_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = cbluachon.SelectedIndex;
+            tbDichVu item  = (tbDichVu) cbluachon.Items[index];
+            int idquessiontype = Convert.ToInt32(item.Madv.ToString());
+            loadquesion(item.Madv);
+
+        }
+
+        private void btnreport_Click(object sender, EventArgs e)
+        {
+            if (chart1.Series.IndexOf("soluong") == -1)
+            {
+                chart1.Series.Add("soluong");
+            }
+
+            chart1.Titles.Add("Report so luong");
+            List<tbDichVu> list = db.tbDichVus.ToList();
+
+            
+            foreach (var item in list)
+            {
+                chart1.Series["soluong"].Points.AddXY(item.Tendv, item.soluong);
+            }
+
+          }
     }
 }

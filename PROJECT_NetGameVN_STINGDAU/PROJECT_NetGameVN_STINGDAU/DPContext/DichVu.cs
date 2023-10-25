@@ -8,7 +8,7 @@ namespace PROJECT_NetGameVN_STINGDAU.DPContext
 {
     public class DichVu
     {
-        public string MaDV { get; set; }
+        public int MaDV { get; set; }
         public string TenDV { get; set; }
         public Nullable<double> GiaTien { get; set; }
     }

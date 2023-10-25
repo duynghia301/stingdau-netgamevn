@@ -27,11 +27,11 @@ namespace PROJECT_NetGameVN_STINGDAU.DPContext
     
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<tbAdmin> tbAdmins { get; set; }
-        public virtual DbSet<tbClient> tbClients { get; set; }
         public virtual DbSet<tbGroupClient> tbGroupClients { get; set; }
         public virtual DbSet<tbGroupUser> tbGroupUsers { get; set; }
         public virtual DbSet<tbLoginUser> tbLoginUsers { get; set; }
         public virtual DbSet<tbMember> tbMembers { get; set; }
+        public virtual DbSet<tbClient> tbClients { get; set; }
         public virtual DbSet<tbDichVu> tbDichVus { get; set; }
     }
 }

@@ -24,20 +24,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="tbClients">
-      <EntityTypeMapping TypeName="NetGameVNModel.tbClient">
-        <MappingFragment StoreEntitySet="tbClient">
-          <ScalarProperty Name="Endtime" ColumnName="Endtime" />
-          <ScalarProperty Name="Start" ColumnName="Start" />
-          <ScalarProperty Name="Usetime" ColumnName="Usetime" />
-          <ScalarProperty Name="Starttime" ColumnName="Starttime" />
-          <ScalarProperty Name="ClientName" ColumnName="ClientName" />
-          <ScalarProperty Name="GroupClientName" ColumnName="GroupClientName" />
-          <ScalarProperty Name="StatusClient" ColumnName="StatusClient" />
-          <ScalarProperty Name="Note" ColumnName="Note" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="tbGroupClients">
       <EntityTypeMapping TypeName="NetGameVNModel.tbGroupClient">
         <MappingFragment StoreEntitySet="tbGroupClient">
@@ -81,12 +67,26 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tbClients">
+      <EntityTypeMapping TypeName="NetGameVNModel.tbClient">
+        <MappingFragment StoreEntitySet="tbClient">
+          <ScalarProperty Name="Endtime" ColumnName="Endtime" />
+          <ScalarProperty Name="Start" ColumnName="Start" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="StatusClient" ColumnName="StatusClient" />
+          <ScalarProperty Name="GroupClientName" ColumnName="GroupClientName" />
+          <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="tbDichVus">
       <EntityTypeMapping TypeName="NetGameVNModel.tbDichVu">
         <MappingFragment StoreEntitySet="tbDichVu">
-          <ScalarProperty Name="GiaTien" ColumnName="GiaTien" />
-          <ScalarProperty Name="TenDV" ColumnName="TenDV" />
-          <ScalarProperty Name="MaDV" ColumnName="MaDV" />
+          <ScalarProperty Name="ngaynhap" ColumnName="ngaynhap" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+          <ScalarProperty Name="Giatien" ColumnName="Giatien" />
+          <ScalarProperty Name="Tendv" ColumnName="Tendv" />
+          <ScalarProperty Name="Madv" ColumnName="Madv" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

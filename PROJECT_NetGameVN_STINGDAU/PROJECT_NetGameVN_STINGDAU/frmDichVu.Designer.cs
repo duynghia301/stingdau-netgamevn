@@ -32,7 +32,7 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtMaDV = new System.Windows.Forms.TextBox();
+            this.txtMadv = new System.Windows.Forms.TextBox();
             this.txtTenDV = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtGiaTien = new System.Windows.Forms.TextBox();
@@ -74,11 +74,11 @@
             // 
             // txtMaDV
             // 
-            this.txtMaDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaDV.Location = new System.Drawing.Point(133, 23);
-            this.txtMaDV.Name = "txtMaDV";
-            this.txtMaDV.Size = new System.Drawing.Size(198, 26);
-            this.txtMaDV.TabIndex = 0;
+            this.txtMadv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMadv.Location = new System.Drawing.Point(133, 23);
+            this.txtMadv.Name = "txtMaDV";
+            this.txtMadv.Size = new System.Drawing.Size(198, 26);
+            this.txtMadv.TabIndex = 0;
             // 
             // txtTenDV
             // 
@@ -164,7 +164,7 @@
             // 
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btnBaoCao);
-            this.groupBox1.Controls.Add(this.txtMaDV);
+            this.groupBox1.Controls.Add(this.txtMadv);
             this.groupBox1.Controls.Add(this.btnSua);
             this.groupBox1.Controls.Add(this.txtTenDV);
             this.groupBox1.Controls.Add(this.btnXoa);
@@ -245,7 +245,7 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtMaDV;
+        private System.Windows.Forms.TextBox txtMadv;
         private System.Windows.Forms.TextBox txtTenDV;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtGiaTien;

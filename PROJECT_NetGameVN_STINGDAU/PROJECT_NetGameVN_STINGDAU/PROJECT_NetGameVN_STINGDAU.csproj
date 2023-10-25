@@ -44,6 +44,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -74,6 +75,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelDP.edmx</DependentUpon>
     </Compile>
+    <Compile Include="DPContext\quessionmodel.cs" />
     <Compile Include="DPContext\sysdiagram.cs">
       <DependentUpon>ModelDP.tt</DependentUpon>
     </Compile>

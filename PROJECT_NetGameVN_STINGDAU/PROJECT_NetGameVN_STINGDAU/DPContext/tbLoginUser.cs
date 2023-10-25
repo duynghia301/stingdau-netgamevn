@@ -20,7 +20,7 @@ namespace PROJECT_NetGameVN_STINGDAU.DPContext
         public Nullable<System.TimeSpan> UseTime { get; set; }
         public Nullable<System.TimeSpan> LeftTime { get; set; }
     
-        public virtual tbClient tbClient { get; set; }
         public virtual tbMember tbMember { get; set; }
+        public virtual tbClient tbClient { get; set; }
     }
 }
