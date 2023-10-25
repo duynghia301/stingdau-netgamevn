@@ -59,7 +59,8 @@ namespace PROJECT_NetGameVN_STINGDAU
                     GroupClientName = x.GroupClientName,
                     StatusClient = x.StatusClient,
                     Note = x.Note,
-
+                    Start = x.Start,
+                    EndTime =x.Endtime
                 }).ToList();
                 dvgList.DataSource = _ClientList;
 
@@ -91,15 +92,6 @@ namespace PROJECT_NetGameVN_STINGDAU
         //        dvgList.DataSource = query.ToList();
         //    }
         //}
-
-
-
-
-
-
-
-
-
 
 
 
@@ -220,27 +212,28 @@ namespace PROJECT_NetGameVN_STINGDAU
 
 
         //refrest data Client
-        private void RefreshClient()
-        {
-            using (NetGameVNEntities _entity = new NetGameVNEntities())
-            {
-                List<Client> _ClientList = new List<Client>();
-                _ClientList = _entity.tbClients.Select(x => new Client
-                {
-                    ClientName = x.ClientName,
-                    GroupClientName = x.GroupClientName,
-                    StatusClient = x.StatusClient,
-                    Note = x.Note
-                }).ToList();
-                dvgList.DataSource = _ClientList;
+        //private void RefreshClient()
+        //{
+        //    using (NetGameVNEntities _entity = new NetGameVNEntities())
+        //    {
+        //        List<Client> _ClientList = new List<Client>();
+        //        _ClientList = _entity.tbClients.Select(x => new Client
+        //        {
+        //            ClientName = x.ClientName,
+        //            GroupClientName = x.GroupClientName,
+        //            StatusClient = x.StatusClient,
+        //            Note = x.Note
+        //        }).ToList();
+        //        dvgList.DataSource = _ClientList;
 
 
 
-            }
-        }
+        //    }
+        //}
+
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Refresh();
+            LoadClient();
         }
 
    
@@ -367,7 +360,7 @@ namespace PROJECT_NetGameVN_STINGDAU
                             // Láy thời gian hiện tại
                             DateTime currentTime = DateTime.Now;
                             selectedClient.Start = currentTime;
-
+                            selectedClient.Endtime = null;
 
 
 
@@ -585,19 +578,52 @@ namespace PROJECT_NetGameVN_STINGDAU
             
         }
 
-        private void frmMayChu_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            //DialogResult rs = MessageBox.Show("Bạn có muốn đăng xuất không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            //if (rs == DialogResult.OK)
-            //{
-            //    Application.Exit();
-            //}      
-        }
+        //private void frmMayChu_FormClosing(object sender, FormClosingEventArgs e)
+        //{
+        //    DialogResult rs = MessageBox.Show("Bạn có muốn thoát không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+        //    if (rs == DialogResult.OK)
+        //    {
+        //        isThoat = false;
+        //        this.Close();
+        //        notifyIcon1.Visible = true;
+        //        notifyIcon1.ShowBalloonTip(500, "Thông báo", "NetGameVN", ToolTipIcon.Info);
+        //        this.Hide();    
+        //    }
+        //}
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            //notifyIcon1.Visible = false;
-            //this.Show();
+            notifyIcon1.Visible = false;
+            this.Show();
+        }
+
+        private void frmMayChu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //DialogResult rs = MessageBox.Show("Bạn có muốn thoát không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            //if (rs == DialogResult.OK)
+            //{        
+            //    this.Close();
+            //    notifyIcon1.Visible = true;
+            //    notifyIcon1.ShowBalloonTip(500, "Thông báo", "NetGameVN", ToolTipIcon.Info);
+            //    this.Hide();
+            //}
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            if (dgvListTaiKhoan.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn tài khoản từ danh sách.", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            else
+            {
+                DataGridViewRow selectedRow = dgvListTaiKhoan.SelectedRows[0];
+                int memberID = (int)selectedRow.Cells["MemberID"].Value;
+
+                frmNapTien NapTien = new frmNapTien();
+                NapTien.Show();
+            }
         }
     }
 }

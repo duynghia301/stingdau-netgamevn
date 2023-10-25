@@ -94,6 +94,7 @@
             this.btnNapTien.TabIndex = 3;
             this.btnNapTien.Text = "Nạp Tiền";
             this.btnNapTien.UseVisualStyleBackColor = true;
+            this.btnNapTien.Click += new System.EventHandler(this.btnNapTien_Click);
             // 
             // frmNapTien
             // 

@@ -13,8 +13,8 @@ namespace PROJECT_NetGameVN_STINGDAU.DPContext
         public string GroupClientName { get; set; }
         public string StatusClient { get; set; }
         public string Note { get; set; }
-        public TimeSpan? StartTime { get; set; }
-        public TimeSpan? UseTime { get; set; }
+        public DateTime? Start { get; set; }
+        public DateTime? EndTime { get; set; }
         //public TimeSpan? LeftTime { get; set; }
     }
 }
