@@ -30,10 +30,10 @@ namespace PROJECT_NetGameVN_STINGDAU
 
         public static void Stop()
         {
-            
+
             DateTime _endDateTime = DateTime.Now;
             TimeSpan _timeSpan = _endDateTime - _startDateTime;
- 
+
         }
         NetGameVNEntities db = new NetGameVNEntities();
 
@@ -46,7 +46,7 @@ namespace PROJECT_NetGameVN_STINGDAU
 
 
 
-                                                                                         //Nghia
+        //Nghia
         //Máy trạm
         public void Display()
         {
@@ -60,7 +60,7 @@ namespace PROJECT_NetGameVN_STINGDAU
                     StatusClient = x.StatusClient,
                     Note = x.Note,
                     Start = x.Start,
-                    EndTime =x.Endtime
+                    EndTime = x.Endtime
                 }).ToList();
                 dvgList.DataSource = _ClientList;
 
@@ -123,20 +123,20 @@ namespace PROJECT_NetGameVN_STINGDAU
 
         private void frmMayChu_Load(object sender, EventArgs e)
         {
-            
+
             Display();
             DisplayMember();
 
             cbxTimTk.Items.Add("UserName");
             cbxTimTk.Items.Add("Phone");
-            
+
 
         }
 
 
-       
 
-      
+
+
 
 
 
@@ -160,7 +160,7 @@ namespace PROJECT_NetGameVN_STINGDAU
 
         //}
 
-    
+
 
 
         private void đăngKýTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
@@ -236,7 +236,7 @@ namespace PROJECT_NetGameVN_STINGDAU
             LoadClient();
         }
 
-   
+
 
         public void ClearFields()
         {
@@ -250,7 +250,7 @@ namespace PROJECT_NetGameVN_STINGDAU
 
 
 
-   
+
 
 
 
@@ -258,56 +258,56 @@ namespace PROJECT_NetGameVN_STINGDAU
         {
             using (NetGameVNEntities _entity = new NetGameVNEntities())
             {
-                
-                    if (dgvListTaiKhoan.SelectedRows.Count == 0)
+
+                if (dgvListTaiKhoan.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Vui lòng chọn tài khoản từ danh sách.", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                DataGridViewRow selectedRow = dgvListTaiKhoan.SelectedRows[0];
+
+
+                // Lấy ra member cần xóa
+                int memberID = (int)selectedRow.Cells["MemberID"].Value;
+
+
+                {
+                    try
                     {
-                        MessageBox.Show("Vui lòng chọn tài khoản từ danh sách.", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
-                    }
+                        // Lấy ra tài khoản cần xóa từ nguồn dữ liệu thực tế (ví dụ: danh sách tài khoản).
+                        tbMember selectedMember = _entity.tbMembers.SingleOrDefault(m => m.MemberID == memberID);
 
-                    DataGridViewRow selectedRow = dgvListTaiKhoan.SelectedRows[0];
-
-
-                    // Lấy ra member cần xóa
-                    int memberID = (int)selectedRow.Cells["MemberID"].Value;
-
-
-                    {
-                        try
+                        if (selectedMember != null)
                         {
-                            // Lấy ra tài khoản cần xóa từ nguồn dữ liệu thực tế (ví dụ: danh sách tài khoản).
-                            tbMember selectedMember = _entity.tbMembers.SingleOrDefault(m => m.MemberID == memberID);
-
-                            if (selectedMember != null)
+                            DialogResult result = MessageBox.Show("Bạn có muốn xóa tài khoản này không?", "Xác nhận xóa", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                            if (result == DialogResult.OK)
                             {
-                                DialogResult result = MessageBox.Show("Bạn có muốn xóa tài khoản này không?", "Xác nhận xóa", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                                if (result == DialogResult.OK)
-                                {
-                                    // Xóa tài khoản khỏi nguồn dữ liệu.
-                                    _entity.tbMembers.Remove(selectedMember);
+                                // Xóa tài khoản khỏi nguồn dữ liệu.
+                                _entity.tbMembers.Remove(selectedMember);
 
-                                    // Lưu các thay đổi vào cơ sở dữ liệu.
-                                    _entity.SaveChanges();
+                                // Lưu các thay đổi vào cơ sở dữ liệu.
+                                _entity.SaveChanges();
 
-                                    
-                                }
+
                             }
-
                         }
 
-                        catch (Exception ex)
-                        {
-                            // Handle any exceptions here, e.g., show an error message.
-                            MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
                     }
-                
+
+                    catch (Exception ex)
+                    {
+                        // Handle any exceptions here, e.g., show an error message.
+                        MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+
 
             }
         }
 
-    
-      
+
+
 
 
 
@@ -318,7 +318,7 @@ namespace PROJECT_NetGameVN_STINGDAU
         public void LoadClient()
         {
 
-            dvgList.DataSource = (from tbClient in db.tbClients select new { ClientName = tbClient.ClientName, GroupClientName = tbClient.GroupClientName, StatusClient = tbClient.StatusClient, Note = tbClient.Note ,StartTime= tbClient.Start,EndTime=tbClient.Endtime}).ToArray();
+            dvgList.DataSource = (from tbClient in db.tbClients select new { ClientName = tbClient.ClientName, GroupClientName = tbClient.GroupClientName, StatusClient = tbClient.StatusClient, Note = tbClient.Note, StartTime = tbClient.Start, EndTime = tbClient.Endtime }).ToArray();
         }
 
 
@@ -329,19 +329,19 @@ namespace PROJECT_NetGameVN_STINGDAU
         // mo may
         private void PicOpenClientEventHandler_Click(object sender, EventArgs e)
         {
-            
+
             using (NetGameVNEntities _entity = new NetGameVNEntities())
             {
                 try
                 {
-                    
+
                     if (dvgList.SelectedRows.Count == 0)
                     {
                         MessageBox.Show("Vui lòng chọn máy khách từ danh sách.", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                     }
                     int index = dvgList.SelectedRows[0].Index;
-                   
+
                     // Lấy ra Client cần cập nhật trạng thái.
                     string computerName = dvgList.Rows[index].Cells["ClientName"].Value.ToString();
                     tbClient selectedClient = _entity.tbClients.SingleOrDefault(c => c.ClientName == computerName);
@@ -351,7 +351,7 @@ namespace PROJECT_NetGameVN_STINGDAU
                         DialogResult tb = MessageBox.Show("Bạn có mở máy này không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                         if (tb == DialogResult.OK)
                         {
-                           
+
                             selectedClient.StatusClient = "USING";
 
 
@@ -403,41 +403,41 @@ namespace PROJECT_NetGameVN_STINGDAU
                     }
 
                     int index = dvgList.SelectedRows[0].Index;
-                   
-                        // Lấy ra Client cần cập nhật trạng thái.
-                        string computerName = dvgList.Rows[index].Cells["ClientName"].Value.ToString();
-                        tbClient selectedClient = _entity.tbClients.SingleOrDefault(c => c.ClientName == computerName);
+
+                    // Lấy ra Client cần cập nhật trạng thái.
+                    string computerName = dvgList.Rows[index].Cells["ClientName"].Value.ToString();
+                    tbClient selectedClient = _entity.tbClients.SingleOrDefault(c => c.ClientName == computerName);
 
 
 
 
-                        if (selectedClient.StatusClient == "USING")
+                    if (selectedClient.StatusClient == "USING")
+                    {
+
+                        DialogResult tb = MessageBox.Show("Bạn có muốn tắt máy này không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                        if (tb == DialogResult.OK)
                         {
-
-                            DialogResult tb = MessageBox.Show("Bạn có muốn tắt máy này không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                            if (tb == DialogResult.OK)
-                            {
-                                selectedClient.StatusClient = "DISCONNECT";
+                            selectedClient.StatusClient = "DISCONNECT";
 
 
 
-                                DateTime currentTime = DateTime.Now;
-                                selectedClient.Endtime = currentTime;
+                            DateTime currentTime = DateTime.Now;
+                            selectedClient.Endtime = currentTime;
                             // Lưu các thay đổi vào cơ sở dữ liệu.
-                                 _entity.SaveChanges();
-                                LoadClient(); // Nạp lại dữ liệu sau khi đã cập nhật thành công.
-                            }
-                            
+                            _entity.SaveChanges();
+                            LoadClient(); // Nạp lại dữ liệu sau khi đã cập nhật thành công.
+                        }
 
-                        }
-                        else
+
+                    }
+                    else
+                    {
+                        if (selectedClient.StatusClient == "DISCONNECT")
                         {
-                            if (selectedClient.StatusClient == "DISCONNECT")
-                            {
-                                MessageBox.Show("Máy khách đang trạng thái tắt.","Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                return;
-                            }
+                            MessageBox.Show("Máy khách đang trạng thái tắt.", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            return;
                         }
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -451,14 +451,14 @@ namespace PROJECT_NetGameVN_STINGDAU
 
 
 
-                                                                                                  //Dlong
+        //Dlong
         public void Display_Member(string _ttkusername)
         {
 
             using (NetGameVNEntities _entity = new NetGameVNEntities())
             {
                 List<Members> _MembersList = new List<Members>();
-                _MembersList = _entity.tbMembers.Where(s => s.UserName.Equals(_ttkusername) ).Select(x => new Members
+                _MembersList = _entity.tbMembers.Where(s => s.UserName.Equals(_ttkusername)).Select(x => new Members
                 {
                     MemberID = x.MemberID,
                     UserName = x.UserName,
@@ -502,23 +502,23 @@ namespace PROJECT_NetGameVN_STINGDAU
 
         }
 
-       
 
-        
+
+
         private void bnttimkiem_Click(object sender, EventArgs e)
         {
             string _username = txttimkiem.Text;
             if (cbxTimTk.Text == "UserName")
             {
-             
+
                 Display_Member(_username);
             }
-            else  
+            else
             {
 
                 Display_pMember(_username);
             }
-           
+
         }
 
         private void dateTimePicker4_ValueChanged(object sender, EventArgs e)
@@ -528,8 +528,8 @@ namespace PROJECT_NetGameVN_STINGDAU
 
 
 
-    
-                                                                                                   //VInh
+
+        //VInh
         private void btnQLDV_Click(object sender, EventArgs e)
         {
             frmDichVu frm = new frmDichVu();
@@ -563,19 +563,19 @@ namespace PROJECT_NetGameVN_STINGDAU
 
 
 
-                                                                                                    //Dnghia chua xong
+        //Dnghia chua xong
 
 
-                                                                                                    
+
         private void frmMayChu_Resize(object sender, EventArgs e)
         {
-            if(WindowState==FormWindowState.Minimized)
+            if (WindowState == FormWindowState.Minimized)
             {
                 notifyIcon1.Visible = true;
-                notifyIcon1.ShowBalloonTip(500,"Thông báo", "NetGameVN", ToolTipIcon.Info);
+                notifyIcon1.ShowBalloonTip(500, "Thông báo", "NetGameVN", ToolTipIcon.Info);
                 this.Hide();
             }
-            
+
         }
 
         //private void frmMayChu_FormClosing(object sender, FormClosingEventArgs e)
@@ -609,6 +609,8 @@ namespace PROJECT_NetGameVN_STINGDAU
             //}
         }
 
+
+        // nạp tiền
         private void pictureBox6_Click(object sender, EventArgs e)
         {
             if (dgvListTaiKhoan.SelectedRows.Count == 0)
@@ -625,5 +627,88 @@ namespace PROJECT_NetGameVN_STINGDAU
                 NapTien.Show();
             }
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+            using (NetGameVNEntities _entity = new NetGameVNEntities())
+            {
+                if (dvgList.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Vui lòng chọn máy khách từ danh sách.", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                int index = dvgList.SelectedRows[0].Index;
+                string computerName = dvgList.Rows[index].Cells["ClientName"].Value.ToString();
+                tbClient selectedClient = _entity.tbClients.SingleOrDefault(c => c.ClientName == computerName);
+
+                if (selectedClient != null)
+                {
+                    DateTime? starttime = selectedClient.Start;
+                    DateTime? endtime = selectedClient.Endtime;
+                    TimeSpan? usageTime = endtime - starttime;
+
+                    // Define your cost per unit of time (e.g., per minute)
+                    double costPerMinute = 10000; // Replace with your actual cost
+
+                    // Calculate the total cost
+                    double sotien = usageTime.Value.TotalMinutes * costPerMinute;
+
+                    MessageBox.Show("Thời gian sử dụng: " + usageTime.Value.TotalMinutes + " phút\nTiền cần thanh toán: " + sotien + " đồng", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    selectedClient.Endtime = null;
+                    selectedClient.Start = null;
+                    _entity.SaveChanges();
+                    LoadClient();
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy thông tin máy khách.", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            //using (NetGameVNEntities _entity = new NetGameVNEntities())
+            //{
+
+
+            //        if (dvgList.SelectedRows.Count == 0)
+            //        {
+            //            MessageBox.Show("Vui lòng chọn máy khách từ danh sách.", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //            return;
+            //        }
+
+            //        int index = dvgList.SelectedRows[0].Index;
+            //    string computerName = dvgList.Rows[index].Cells["ClientName"].Value.ToString();
+            //    tbClient selectedClient = _entity.tbClients.SingleOrDefault(c => c.ClientName == computerName);
+            //    DateTime starttime = Convert.ToDateTime(selectedClient.Start);
+            //    DateTime endtime = Convert.ToDateTime(selectedClient.Endtime);
+            //    DateTime usetime = Convert.ToDateTime(starttime - endtime) ;
+            //    double sotien = usetime.Ticks * 10000;
+            //    MessageBox.Show("Tiền cần thanh toán: " + sotien, "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+
+
+            //}
+
+        }
+
+    
     }
 }

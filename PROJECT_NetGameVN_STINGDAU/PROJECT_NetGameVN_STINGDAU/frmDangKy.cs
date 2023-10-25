@@ -19,8 +19,8 @@ namespace PROJECT_NetGameVN_STINGDAU
             double hours = (double)money / costPerHour;
             return TimeSpan.FromHours(hours);
         }
+     
 
-       
 
         public frmDangKy()
         {
