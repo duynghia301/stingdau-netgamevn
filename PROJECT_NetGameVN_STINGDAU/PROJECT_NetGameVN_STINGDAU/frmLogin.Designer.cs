@@ -41,7 +41,7 @@
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
-            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
             this.label1.Name = "label1";
             // 
             // label2
@@ -62,7 +62,7 @@
             // 
             // btnDangNhap
             // 
-            this.btnDangNhap.BackColor = System.Drawing.Color.Blue;
+            this.btnDangNhap.BackColor = System.Drawing.Color.Red;
             resources.ApplyResources(this.btnDangNhap, "btnDangNhap");
             this.btnDangNhap.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnDangNhap.Name = "btnDangNhap";
@@ -79,7 +79,7 @@
             // label3
             // 
             resources.ApplyResources(this.label3, "label3");
-            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.ForeColor = System.Drawing.Color.Red;
             this.label3.Name = "label3";
             // 
@@ -87,7 +87,7 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.label3);
             this.Controls.Add(this.chkShowPass);
             this.Controls.Add(this.btnDangNhap);

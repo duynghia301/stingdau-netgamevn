@@ -8,7 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PROJECT_NetGameVN_STINGDAU.DPContext;
-
+using System.Net.Sockets;
+using System.Net;
+using System.Text;
 
 namespace PROJECT_NetGameVN_STINGDAU
 {
@@ -445,6 +447,43 @@ namespace PROJECT_NetGameVN_STINGDAU
                     // Handle any exceptions here, e.g., show an error message.
                     MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
+
+
+
+
+
+
+
+
+                /////////////////////////////////////////////////////////////////////
+
+
+
+
+                // Theo yeu cầu của thày
+                string ipAddress = "IP_Client"; // Địa chỉ IP của máy client
+                int port = 20; // Số cổng kết nối
+                string command = "shutdown"; // Lệnh tắt máy (có thể thay đổi)
+
+                try
+                {
+                    TcpClient client = new TcpClient(ipAddress, port);
+                    NetworkStream stream = client.GetStream();
+                    byte[] data = Encoding.UTF8.GetBytes(command);
+                    stream.Write(data, 0, data.Length);
+                    client.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message);
+                }
+
+
+
+                //////////////////////////////////////////////////////////////////////////
+
+
             }
 
         }
@@ -626,41 +665,48 @@ namespace PROJECT_NetGameVN_STINGDAU
         private void pictureBox2_Click(object sender, EventArgs e)
         {
 
-            using (NetGameVNEntities _entity = new NetGameVNEntities())
+            try
             {
-                if (dvgList.SelectedRows.Count == 0)
+                using (NetGameVNEntities _entity = new NetGameVNEntities())
                 {
-                    MessageBox.Show("Vui lòng chọn máy khách từ danh sách.", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
+                    if (dvgList.SelectedRows.Count == 0)
+                    {
+                        MessageBox.Show("Vui lòng chọn máy khách từ danh sách.", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+
+                    int index = dvgList.SelectedRows[0].Index;
+                    string computerName = dvgList.Rows[index].Cells["ClientName"].Value.ToString();
+                    tbClient selectedClient = _entity.tbClients.SingleOrDefault(c => c.ClientName == computerName);
+
+                    if (selectedClient != null)
+                    {
+                        DateTime? starttime = selectedClient.Start;
+                        DateTime? endtime = selectedClient.Endtime;
+                        TimeSpan? usageTime = endtime - starttime;
+
+                        // Define your cost per unit of time (e.g., per minute)
+                        const double costPerHour = 10000; // Replace with your actual cost
+
+                        // Calculate the total cost
+                        double sotien = Math.Round(usageTime.Value.TotalHours * costPerHour);
+
+                        MessageBox.Show("Thời gian sử dụng: " + usageTime.Value.TotalMinutes + " phút\nTiền cần thanh toán: " + sotien + " đồng", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txtTotal.Text = sotien.ToString();
+                        selectedClient.Endtime = null;
+                        selectedClient.Start = null;
+                        _entity.SaveChanges();
+                        LoadClient();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không tìm thấy thông tin máy khách.", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-
-                int index = dvgList.SelectedRows[0].Index;
-                string computerName = dvgList.Rows[index].Cells["ClientName"].Value.ToString();
-                tbClient selectedClient = _entity.tbClients.SingleOrDefault(c => c.ClientName == computerName);
-
-                if (selectedClient != null)
-                {
-                    DateTime? starttime = selectedClient.Start;
-                    DateTime? endtime = selectedClient.Endtime;
-                    TimeSpan? usageTime = endtime - starttime;
-
-                    // Define your cost per unit of time (e.g., per minute)
-                    const double costPerHour = 10000; // Replace with your actual cost
-
-                    // Calculate the total cost
-                    double sotien = Math.Round(usageTime.Value.TotalHours * costPerHour);
-
-                    MessageBox.Show("Thời gian sử dụng: " + usageTime.Value.TotalMinutes + " phút\nTiền cần thanh toán: " + sotien + " đồng", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtTotal.Text = sotien.ToString();
-                    selectedClient.Endtime = null;
-                    selectedClient.Start = null;
-                    _entity.SaveChanges();
-                    LoadClient();
-                }
-                else
-                {
-                    MessageBox.Show("Không tìm thấy thông tin máy khách.", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            }
+            catch
+            {
+                MessageBox.Show("Máy chưa được sử dụng!!! " , "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             
@@ -710,6 +756,8 @@ namespace PROJECT_NetGameVN_STINGDAU
 
         private void btnreport_Click(object sender, EventArgs e)
         {
+            chart1.Series.Clear();
+            chart1.Titles.Clear();
             if (chart1.Series.IndexOf("soluong") == -1)
             {
                 chart1.Series.Add("soluong");
@@ -725,5 +773,10 @@ namespace PROJECT_NetGameVN_STINGDAU
             }
 
           }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

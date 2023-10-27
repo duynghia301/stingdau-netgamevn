@@ -30,22 +30,21 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMayChu));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.netGameVNDataSet1 = new PROJECT_NetGameVN_STINGDAU.NetGameVNDataSet();
             this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
             this.tabDichVu = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnreport = new System.Windows.Forms.Button();
             this.btnQLDV = new System.Windows.Forms.Button();
             this.pictureBox22 = new System.Windows.Forms.PictureBox();
             this.cbluachon = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.tabCategory = new System.Windows.Forms.TabControl();
             this.tabFood = new System.Windows.Forms.TabPage();
+            this.btnreport = new System.Windows.Forms.Button();
             this.dgvdichvu = new System.Windows.Forms.DataGridView();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.drgvFood = new System.Windows.Forms.DataGridView();
@@ -88,6 +87,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.panel4 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.netGameVNDataSet1)).BeginInit();
             this.tabDichVu.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -118,6 +118,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picLockClient)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picShutdownClient)).BeginInit();
             this.tabControl1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // notifyIcon1
@@ -150,19 +151,12 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btnreport);
             this.panel3.Controls.Add(this.btnQLDV);
             this.panel3.Controls.Add(this.pictureBox22);
             this.panel3.Controls.Add(this.cbluachon);
-            this.panel3.Controls.Add(this.label13);
             resources.ApplyResources(this.panel3, "panel3");
             this.panel3.Name = "panel3";
-            // 
-            // btnreport
-            // 
-            resources.ApplyResources(this.btnreport, "btnreport");
-            this.btnreport.Name = "btnreport";
-            this.btnreport.UseVisualStyleBackColor = true;
-            this.btnreport.Click += new System.EventHandler(this.btnreport_Click);
             // 
             // btnQLDV
             // 
@@ -189,12 +183,6 @@
             this.cbluachon.Name = "cbluachon";
             this.cbluachon.SelectedIndexChanged += new System.EventHandler(this.cbluachon_SelectedIndexChanged);
             // 
-            // label13
-            // 
-            this.label13.ForeColor = System.Drawing.Color.Red;
-            resources.ApplyResources(this.label13, "label13");
-            this.label13.Name = "label13";
-            // 
             // tabCategory
             // 
             resources.ApplyResources(this.tabCategory, "tabCategory");
@@ -207,13 +195,19 @@
             // tabFood
             // 
             this.tabFood.BackColor = System.Drawing.Color.White;
-            this.tabFood.Controls.Add(this.btnreport);
+            this.tabFood.Controls.Add(this.panel4);
             this.tabFood.Controls.Add(this.dgvdichvu);
-            this.tabFood.Controls.Add(this.chart1);
             this.tabFood.Controls.Add(this.drgvFood);
             resources.ApplyResources(this.tabFood, "tabFood");
             this.tabFood.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.tabFood.Name = "tabFood";
+            // 
+            // btnreport
+            // 
+            resources.ApplyResources(this.btnreport, "btnreport");
+            this.btnreport.Name = "btnreport";
+            this.btnreport.UseVisualStyleBackColor = true;
+            this.btnreport.Click += new System.EventHandler(this.btnreport_Click);
             // 
             // dgvdichvu
             // 
@@ -224,16 +218,16 @@
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
             resources.ApplyResources(this.chart1, "chart1");
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart1.Series.Add(series2);
             // 
             // drgvFood
             // 
@@ -430,8 +424,8 @@
             // 
             // dvgList
             // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dvgList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dvgList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dvgList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dvgList.BackgroundColor = System.Drawing.Color.White;
             this.dvgList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -546,6 +540,13 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.chart1);
+            resources.ApplyResources(this.panel4, "panel4");
+            this.panel4.Name = "panel4";
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
             // frmMayChu
             // 
             resources.ApplyResources(this, "$this");
@@ -556,6 +557,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMayChu";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMayChu_FormClosed);
             this.Load += new System.EventHandler(this.frmMayChu_Load);
             this.Resize += new System.EventHandler(this.frmMayChu_Resize);
@@ -594,6 +596,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picLockClient)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picShutdownClient)).EndInit();
             this.tabControl1.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -608,7 +611,6 @@
         private System.Windows.Forms.Button btnQLDV;
         private System.Windows.Forms.PictureBox pictureBox22;
         private System.Windows.Forms.ComboBox cbluachon;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TabControl tabCategory;
         private System.Windows.Forms.TabPage tabFood;
         private System.Windows.Forms.DataGridView dgvdichvu;
@@ -653,6 +655,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.Panel panel4;
     }
 }
 

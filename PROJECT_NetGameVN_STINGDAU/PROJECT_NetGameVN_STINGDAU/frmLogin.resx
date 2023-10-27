@@ -126,10 +126,14 @@
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>25, 54</value>
+    <value>34, 106</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 20</value>
+    <value>115, 25</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -156,10 +160,13 @@
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>25, 104</value>
+    <value>34, 168</value>
+  </data>
+  <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 20</value>
+    <value>114, 25</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -183,10 +190,13 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="txtTaiKhoan.Location" type="System.Drawing.Point, System.Drawing">
-    <value>124, 54</value>
+    <value>166, 106</value>
+  </data>
+  <data name="txtTaiKhoan.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="txtTaiKhoan.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 26</value>
+    <value>296, 30</value>
   </data>
   <data name="txtTaiKhoan.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -207,10 +217,13 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="txtMatKhau.Location" type="System.Drawing.Point, System.Drawing">
-    <value>124, 104</value>
+    <value>166, 168</value>
+  </data>
+  <data name="txtMatKhau.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="txtMatKhau.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 26</value>
+    <value>296, 30</value>
   </data>
   <data name="txtMatKhau.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -228,13 +241,16 @@
     <value>3</value>
   </data>
   <data name="btnDangNhap.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
+    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
   <data name="btnDangNhap.Location" type="System.Drawing.Point, System.Drawing">
-    <value>243, 166</value>
+    <value>314, 233</value>
+  </data>
+  <data name="btnDangNhap.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="btnDangNhap.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 34</value>
+    <value>148, 45</value>
   </data>
   <data name="btnDangNhap.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -258,10 +274,13 @@
     <value>True</value>
   </data>
   <data name="chkShowPass.Location" type="System.Drawing.Point, System.Drawing">
-    <value>243, 143</value>
+    <value>166, 206</value>
+  </data>
+  <data name="chkShowPass.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="chkShowPass.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 17</value>
+    <value>128, 21</value>
   </data>
   <data name="chkShowPass.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -285,23 +304,25 @@
     <value>True</value>
   </data>
   <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 15.75pt, style=Bold</value>
+    <value>Perpetua Titling MT, 19.8000011pt, style=Bold</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>174, 9</value>
+    <value>170, 26</value>
+  </data>
+  <data name="label3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 25</value>
+    <value>148, 41</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>Login</value>
+    <value>Admin</value>
   </data>
   <data name="&gt;&gt;label3.Name" xml:space="preserve">
     <value>label3</value>
@@ -319,10 +340,10 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>8, 16</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>434, 210</value>
+    <value>527, 335</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -931,6 +952,9 @@
         wDsGRT/TgMcD8okwQwclR/ACppV/4WakXC9RxmHj5RBBzhL5MS/43IY7njCj1GfoQJFer8w6F2YGgdz/
         Zos6X+THtOCn8P8DD6Fw0ThMOa0AAAAASUVORK5CYII=
 </value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
